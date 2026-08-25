@@ -1,0 +1,18 @@
+{
+  "name": "bv-nodepack-docs-development",
+  "private": true,
+  "workspaces": [
+    "spikes/custom-vite-mdx",
+    "spikes/docusaurus",
+    "spikes/visual-prototype"
+  ],
+  "scripts": {
+    "spike:custom:dev": "npm run dev --workspace @bv-docs-spike/custom-vite-mdx",
+    "spike:custom:build": "npm run build --workspace @bv-docs-spike/custom-vite-mdx",
+    "spike:docusaurus:dev": "npm run start --workspace @bv-docs-spike/docusaurus",
+    "spike:docusaurus:build": "npm run build --workspace @bv-docs-spike/docusaurus",
+    "spike:build": "npm run spike:custom:build && npm run spike:docusaurus:build",
+    "prototype:visual:dev": "npm run dev --workspace @bv-docs-spike/visual-prototype",
+    "prototype:visual:build": "npm run build --workspace @bv-docs-spike/visual-prototype"
+  }
+}

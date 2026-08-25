@@ -1,0 +1,17 @@
+# Local planning and generated audit working data
+*.local.md
+.DS_Store
+Thumbs.db
+
+# Future build output (framework intentionally not selected yet)
+dist/
+coverage/
+node_modules/
+
+# Framework and browser-test caches
+spikes/docusaurus/.docusaurus/
+spikes/visual-prototype/.*profile*/
+
+# Framework and browser-test caches
+spikes/docusaurus/.docusaurus/
+spikes/visual-prototype/.*profile*/

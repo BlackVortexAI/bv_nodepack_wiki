@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_bv_docs_spike_docusaurus=self.webpackChunk_bv_docs_spike_docusaurus||[]).push([[235],{8552(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);
