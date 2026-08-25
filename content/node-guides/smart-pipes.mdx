@@ -1,0 +1,22 @@
+export const meta = {title:"Build with Smart Pipes",slug:"/node-guides/smart-pipes",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Goal
+
+Grow and merge typed workflow state without binding identity to visible slot
+position.
+
+## Configure a pipe
+
+1. Add **BV Smart Pipe** and open its editor.
+2. Create descriptive named slots.
+3. Connect local values or inherit an upstream Smart Pipe.
+4. Save and reload before building branches.
+
+Every slot owns a stable ID. Labels may change, and new slots are appended, but
+identity and serialized order remain stable.
+
+## Merge branches
+
+Use **BV Smart Pipe Merge** with explicit source order. Genuine branch writes
+beat inherited base values; later divergent writes win. Wireless routing remains
+workflow-scoped and must not leak across simultaneously open workflows.

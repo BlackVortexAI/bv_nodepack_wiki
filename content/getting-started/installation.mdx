@@ -1,0 +1,22 @@
+export const meta = {title:"Installation",slug:"/getting-started/installation",category:"Getting Started",documentationStatus:"under-review",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Install with ConfigUI Manager
+
+1. Search for **BV Node Pack**.
+2. Install or update the package.
+3. Restart ConfigUI completely.
+4. Hard-refresh the browser so the Python nodes and shipped JavaScript bundle match.
+
+## Install with Git
+
+Clone `https://github.com/BlackVortexAI/bv_nodepack.git` into
+`ComfyUI/custom_nodes`, restart ConfigUI, and hard-refresh the browser.
+
+## Verify discovery
+
+Search the node library for `BV Regional Prompt` and `BV Seed`. If neither
+appears, inspect the complete ConfigUI startup log before changing the
+installation. A browser refresh cannot repair a failed Python import.
+
+> This documentation targets BV Node Pack 1.0.0. Pages remain under review until
+> the release build and runtime are verified together.

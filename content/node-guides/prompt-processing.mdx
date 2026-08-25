@@ -1,0 +1,38 @@
+export const meta = {title:"Build a Structured Prompt Pipeline",slug:"/node-guides/prompt-processing",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Goal
+
+Turn categorized prompt text into a structured prompt document, select or remove
+categories without brittle string replacement, and decode the result for the
+next conditioning or text-processing step.
+
+## Build the pipeline
+
+1. Add **BV Prompt Encode** and define a small, explicit category set.
+2. Connect its structured output to **BV Prompt Filter Categories**.
+3. Choose the categories to retain or exclude for this branch.
+4. Inspect the intermediate value with **BV Prompt AST Display** while authoring.
+5. Decode the final document with **BV Prompt Decode**.
+
+Category names are part of the authored data contract. Prefer stable semantic
+names such as `subject`, `environment`, and `style`; do not encode ordering or
+temporary UI positions into those names.
+
+## Branch safely
+
+Branch from the encoded document when multiple consumers need different views.
+Each filter should state its intent locally. Re-encoding already decoded text
+loses structure and makes later category changes harder to reason about.
+
+## Verify
+
+Use deliberately distinct marker text in every category. Confirm that each
+branch contains exactly the expected markers, then save and reload the workflow.
+Visual output is optional for structural verification; decoded text is the
+primary evidence.
+
+## Limitations
+
+Filtering controls document structure, not a downstream model's interpretation.
+Whitespace and formatting can change when structured content is decoded; compare
+semantic content rather than relying on byte-for-byte text identity.

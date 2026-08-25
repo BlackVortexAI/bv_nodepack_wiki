@@ -1,0 +1,36 @@
+export const meta = {title:"Build Reproducible Latent Utilities",slug:"/node-guides/latent-utilities",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Goal
+
+Create repeatable seed and latent inputs for examples and regression checks
+without implying that one seed is visually suitable for every model or prompt.
+
+## Freeze the structural inputs
+
+1. Add **BV Seed** and select a fixed value for the workflow under review.
+2. Add **BV Empty Latent Random Ratio**.
+3. Select the resolution required by the model family.
+4. Enable only the aspect ratios that the workflow intentionally supports.
+5. For the baseline example, choose 1:1 and confirm the resulting dimensions.
+
+The fixed seed proves reproducibility for that concrete workflow. It is not a
+package-wide recommended seed. A published visual example may use another fixed
+seed after output review.
+
+## Add variation deliberately
+
+If a recipe demonstrates randomized ratios or seeds, document the allowed set
+and expose the effective selected values in its output or execution log. Do not
+use uncontrolled variation in compatibility checks or before/after comparisons.
+
+## Verify
+
+Queue the graph twice with unchanged inputs, then save, reload, and queue again.
+Confirm the effective seed, width, height, and batch size. Visual pixel identity
+may still depend on the model stack, backend, device, and upstream implementation.
+
+## Migration note
+
+**BV Latent Random Aspect Ratio** is deprecated. Use **BV Empty Latent Random
+Ratio** for new workflows and consult the Deprecated Nodes page before the
+temporary 1.0 compatibility window closes.

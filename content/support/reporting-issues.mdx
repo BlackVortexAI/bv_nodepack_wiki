@@ -1,0 +1,31 @@
+export const meta = { slug: "/support/reporting-issues", title: "Reporting Issues", documentationStatus: "under-review" };
+
+## Before reporting
+
+Restart ConfigUI, hard-refresh the frontend, and reproduce once with the smallest graph that still fails. Save the reproduction as a new file; never overwrite the only copy of an affected workflow.
+
+## Required evidence
+
+Include:
+
+- BV Node Pack version and commit when using an unreleased build;
+- ConfigUI/ComfyUI and frontend versions;
+- operating system, Python, PyTorch, and GPU class;
+- exact BV node display names;
+- complete exception and relevant startup-log section;
+- minimal workflow JSON;
+- numbered reproduction steps and expected versus actual behavior;
+- whether the problem survives save, reload, and an uncached execution;
+- migration summary or Legacy Debug warning when applicable.
+
+## Visual issues
+
+Provide a screenshot of the complete affected node or editor and state the interface size, language, theme, browser, zoom, and whether reduced effects are enabled. For output-quality reports, freeze model, seed, sampler, scheduler, steps, CFG, resolution, prompts, and all model patches.
+
+## Remove sensitive data
+
+Delete API keys, authorization headers, local usernames, private paths, proprietary prompts, and unrelated workflow metadata. Remote LLM credentials belong in provider settings and must never be embedded in workflow JSON or an issue attachment.
+
+## Triage labels
+
+Classify the report as installation, migration, runtime, persistence, UI, model compatibility, experimental behavior, or documentation. A quality preference without a controlled comparison is feedback, not a deterministic defect.

@@ -1,0 +1,56 @@
+export const meta = {title:"Troubleshooting",slug:"/troubleshooting",category:"Troubleshooting",documentationStatus:"under-review",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Nodes are missing
+
+Restart ComfyUI, hard-refresh the browser, and inspect the complete startup log.
+A browser refresh cannot repair a failed Python import. Confirm that the backend
+log names the same installation directory as the frontend you opened; duplicate
+ComfyUI installations commonly cause an apparently successful install with no
+matching nodes.
+
+## Collector or resource is unresolved
+
+Confirm the persisted provider link exists inside the same concrete graph.
+Re-select the collector and resource by stable identity. Never repair execution
+by matching a title, label, or slot number.
+
+If the provider was copied separately, reconnect it deliberately. Do not edit
+serialized IDs by hand; that can create a graph that appears repaired but no
+longer preserves identity after another copy or reload.
+
+## A copied group is unresolved
+
+Copy the complete provider and consumer group or reconnect it in the destination
+graph. An isolated consumer deliberately fails closed.
+
+## Output changed after an update
+
+Keep the original file, capture the migration summary, save to a new filename,
+reload, and compare an uncached run with identical model, seed, sampler,
+scheduler, resolution, prompts, and unrelated parameters.
+
+Classify the first divergence: workflow load, migration, editor state,
+validation, execution, or visual result. Report the earliest failing boundary
+instead of only the final image difference.
+
+## A BV editor targets the wrong node
+
+Stop editing and save a copy under a new filename. Record both workflow names,
+node titles, and concrete node IDs, then reload. If the issue reproduces, include
+the two-workflow sequence in the report; do not continue changing either graph.
+
+## A shortcut does nothing
+
+Move focus out of text inputs and try once from the canvas or owning BV window.
+Check browser and operating-system shortcut conflicts. For Legacy Debug Mode,
+the ComfyUI setting is the authoritative fallback to `Ctrl+Alt+B`.
+
+## Report a bug
+
+Include BV Node Pack version, ConfigUI version, exact node names, complete error
+report, minimal workflow, dependency versions, and reproduction steps. Remove API
+keys, personal paths, and private prompts before sharing.
+
+Use the [Reporting Issues](/support/reporting-issues) checklist for the complete
+minimal evidence bundle and consult [Known Issues](/troubleshooting/known-issues)
+before filing a duplicate.

@@ -1,17 +1,14 @@
 # Local planning and generated audit working data
 *.local.md
+.source-archive/
+start-wiki-local.cmd
 .DS_Store
 Thumbs.db
 
-# Future build output (framework intentionally not selected yet)
+# Generated build output and installed dependencies
 dist/
 coverage/
 node_modules/
 
-# Framework and browser-test caches
-spikes/docusaurus/.docusaurus/
-spikes/visual-prototype/.*profile*/
-
-# Framework and browser-test caches
-spikes/docusaurus/.docusaurus/
-spikes/visual-prototype/.*profile*/
+# Browser-test profiles
+.*profile*/

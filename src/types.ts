@@ -1,0 +1,23 @@
+export type Port = {name: string; type: string; dynamic?: boolean};
+export type NodeContract = {
+  name: string;
+  slug: string;
+  description: string;
+  category: string;
+  section: string;
+  status: "stable" | "experimental" | "deprecated";
+  legacyPorts: boolean;
+  inputs: Record<string, Port[]>;
+  outputs: Port[];
+  inputError?: string | null;
+};
+export type AssetType = "node" | "connection" | "configuration" | "legacy" | "workflow" | "result";
+export type AssetEntry = {
+  id: string;
+  page: string;
+  type: AssetType;
+  status: "missing" | "captured" | "reviewed" | "optimized" | "approved";
+  instructions: string;
+  path?: string;
+};
+export type PageInfo = {path: string; title: string; summary: string; section: string; hidden?: boolean};

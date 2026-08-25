@@ -1,0 +1,30 @@
+export const meta = {title:"Upgrading to 1.0",slug:"/migration/upgrading-to-1-0",category:"Compatibility",documentationStatus:"under-review",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Automatic migration
+
+Supported 0.x documents and configuration values migrate in memory when loaded.
+Opening a workflow never overwrites its file. After successful migration, save
+once, reload, reopen the relevant BV editor, and perform an uncached execution.
+
+## Temporary compatibility surface
+
+Legacy Regional ports are hidden on newly created nodes. Existing connected
+ports remain visible, and **BV Regional Legacy Debug Mode** reveals them for
+diagnosis. Compatibility features are scheduled for removal after
+**25 October 2026**.
+
+## Before the removal date
+
+1. Keep an unchanged copy of every important workflow.
+2. Open it with BV Node Pack 1.0.0.
+3. Review the migration summary and legacy warning.
+4. Save under a deliberate filename.
+5. Reload and execute once without relying on a cached result.
+
+## Deprecated nodes
+
+- Replace **BV Pipe** and **BV Pipe Config** with Smart Pipe nodes.
+- Replace **BV Latent Random Aspect Ratio** with **BV Empty Latent Random Ratio**.
+
+Individual Regional node pages list hidden compatibility ports and provide an
+expandable legacy-debug screenshot placeholder.

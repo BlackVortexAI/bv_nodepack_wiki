@@ -1,0 +1,44 @@
+export const meta = {title:"Workflow Verification",slug:"/workflow-recipes/verification",category:"Workflow Recipes",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Why verification has two gates
+
+A workflow can be structurally correct and still produce a poor or misleading
+example image. Conversely, an attractive image does not prove that migration,
+persistence, dependencies, or embedded workflow metadata are correct. Published
+recipes therefore pass a structural gate and, where applicable, a visual gate.
+
+## Structural gate
+
+For every recipe:
+
+1. record BV Node Pack, ComfyUI, frontend, and external dependency versions;
+2. load the distributed JSON without missing-node or migration warnings;
+3. verify required models and resources without publishing personal paths;
+4. inspect all connections, widgets, stable provider selections, and defaults;
+5. execute an uncached run through the documented output;
+6. save, reload, reopen BV editors, and execute again;
+7. import the exported workflow PNG into a clean canvas;
+8. extract its workflow JSON and compare it with the distributed JSON;
+9. confirm that no API key, private prompt, username, or local path is embedded.
+
+## Visual gate
+
+When the recipe promises an image result, keep the model, revision, sampler,
+scheduler, steps, guidance, resolution, prompts, and accepted fixed seed recorded.
+Review the actual result for the claim made by the page. Model-dependent quality
+requires explicit visual approval before publication.
+
+## Allowed seed exceptions
+
+The baseline uses a fixed seed and normally a 1024 × 1024 latent. A different
+fixed seed or supported resolution is allowed when the recipe's model or visual
+claim needs it. Document the exception in the recipe; never silently search for
+a favorable random result after capturing the workflow.
+
+## Approval states
+
+- **Draft:** text and placeholder exist; workflow is not yet supplied.
+- **Structurally verified:** both JSON forms load, persist, and execute correctly.
+- **Visual review required:** structure passed, but the representative output is
+  awaiting owner review.
+- **Approved:** structural and required visual gates passed for the named versions.

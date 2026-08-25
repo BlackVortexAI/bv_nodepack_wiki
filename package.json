@@ -1,18 +1,26 @@
 {
-  "name": "bv-nodepack-docs-development",
+  "name": "bv-nodepack-wiki",
   "private": true,
-  "workspaces": [
-    "spikes/custom-vite-mdx",
-    "spikes/docusaurus",
-    "spikes/visual-prototype"
-  ],
+  "type": "module",
   "scripts": {
-    "spike:custom:dev": "npm run dev --workspace @bv-docs-spike/custom-vite-mdx",
-    "spike:custom:build": "npm run build --workspace @bv-docs-spike/custom-vite-mdx",
-    "spike:docusaurus:dev": "npm run start --workspace @bv-docs-spike/docusaurus",
-    "spike:docusaurus:build": "npm run build --workspace @bv-docs-spike/docusaurus",
-    "spike:build": "npm run spike:custom:build && npm run spike:docusaurus:build",
-    "prototype:visual:dev": "npm run dev --workspace @bv-docs-spike/visual-prototype",
-    "prototype:visual:build": "npm run build --workspace @bv-docs-spike/visual-prototype"
+    "dev": "vite --port 5174",
+    "wiki:dev": "vite --port 5174",
+    "build": "tsc --noEmit && vite build && node scripts/materialize-static-routes.mjs",
+    "wiki:build": "npm run build",
+    "generate:contracts": "python scripts/generate-node-contracts.py --output src/generated/node-contracts.json --assets src/generated/asset-manifest.json",
+    "validate": "node scripts/validate-docs.mjs"
+  },
+  "dependencies": {
+    "@mdx-js/react": "latest",
+    "@mdx-js/rollup": "latest",
+    "@vitejs/plugin-react": "latest",
+    "vite": "8.2.2",
+    "typescript": "latest",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
   }
 }

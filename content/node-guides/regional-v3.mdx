@@ -1,0 +1,44 @@
+export const meta = {title:"Build a Regional V3 Workflow",slug:"/node-guides/regional-v3",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Goal
+
+Create a two-region 1024 × 1024 workflow, optionally assign independent LoRA
+resources, and execute it through one compatible conditioning or attention node.
+
+## Prerequisites
+
+- BV Node Pack 1.0.0 release candidate or later;
+- one compatible model and matching execution node;
+- optional external LoRA stack producer and tested LoRAs;
+- every collector and consumer in the same concrete graph.
+
+## Build the document
+
+1. Add **BV Regional Prompt** and open the Regional Editor.
+2. Set the document to 1024 × 1024.
+3. Author Global and Background prompts.
+4. Add two named regions and draw their geometry.
+5. Choose `generation`, `detailer`, or `both` usage deliberately.
+
+## Add a consumer
+
+Connect `regional` to Native Conditioning or one compatible model-specific
+Attention node. Connect the ordinary model, CLIP, conditioning, latent, and
+sampler path required by that backend.
+
+## Add scoped LoRA resources
+
+1. Name an external stack with **BV Named LoRA Stack**.
+2. Connect it to **BV LoRA Stack Collector**.
+3. Open the LoRA capability editor.
+4. Select the collector and resource for Global or one region.
+5. Use `Replace`, `Merge`, `Subtract`, or `Clear` intentionally.
+
+## Verify
+
+Save, reload, reopen the editor, change a live external stack, and queue an
+uncached run. Confirm unrelated scopes remain unchanged.
+
+> Spatial conditioning guides a model. It does not guarantee anatomy,
+> separation, interaction, or prompt compliance. Freeze a visually accepted
+> seed per published workflow.

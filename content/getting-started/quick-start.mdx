@@ -1,0 +1,19 @@
+export const meta = {title:"Quick Start",slug:"/getting-started/quick-start",category:"Getting Started",documentationStatus:"under-review",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Build a deterministic first graph
+
+1. Add **BV Seed** and choose a fixed value for this workflow.
+2. Add **BV Empty Latent Random Ratio**.
+3. Select `1024`, enable only `1:1`, and use the alignment required by the model.
+4. Connect the latent to the sampler path required by the selected model.
+5. Save, reload, and confirm the same dimensions and effective seed.
+
+The documentation does not enforce one global seed. Every published workflow
+freezes its own visually accepted seed. Comparisons must keep model, seed,
+sampler, scheduler, resolution, prompts, and all unrelated parameters unchanged.
+
+## Continue by task
+
+- Use **Build a Regional V3 Workflow** for spatial prompting and scoped resources.
+- Use **Build a Regional Detailer Loop** for ordered region refinement.
+- Use **Build with Smart Pipes** for stable typed workflow state.

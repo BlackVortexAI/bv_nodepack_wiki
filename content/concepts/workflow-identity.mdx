@@ -1,0 +1,19 @@
+export const meta = {title:"Workflow Identity",slug:"/concepts/workflow-identity",category:"Core Concepts",documentationStatus:"under-review",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Stable identity
+
+Visible titles and order are presentation. Persisted document, region,
+collector, resource, node, and Smart Pipe slot IDs carry executable identity.
+Renaming a region or collector must not silently retarget a relationship.
+
+## Copy and paste
+
+Copy complete provider and consumer groups when resource relationships must
+survive. An isolated consumer never searches another workflow, root graph, or
+Subgraph for a similarly named provider.
+
+## Reload and caching
+
+Persistence acceptance requires save, reload, editor reactivation, and a
+genuinely uncached execution. A visible restored configuration is not evidence
+that the current runtime result used that configuration.

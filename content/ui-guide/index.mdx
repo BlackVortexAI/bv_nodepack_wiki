@@ -1,0 +1,48 @@
+export const meta = {title:"BV UI Guide",slug:"/ui-guide",category:"BV UI Guide",documentationStatus:"under-review",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## BV windows
+
+BV-owned editors support workspace, floating, minimized, and switching behavior.
+Window identity is scoped by workflow and concrete node identity.
+
+Open an editor from the node that owns its data. When two workflows or two nodes
+are open, the title and active owner must change with the selected window. A BV
+window must never edit a similarly titled node in another graph.
+
+## Persistence
+
+Product data belongs in the workflow. Appearance and local window preferences
+remain outside workflow JSON unless they are explicitly part of a node contract.
+
+After editing product data, save the workflow and reload it. Moving, minimizing,
+or docking a window may remain a local preference and must not be used as proof
+that the workflow data persisted.
+
+## Keyboard and focus
+
+Shortcuts act only in their documented context. Text fields and prompt editors
+must retain normal typing, selection, copy, paste, and undo behavior. Before
+reporting a shortcut failure, click the canvas or owning BV window and repeat the
+documented combination once.
+
+## Legacy Debug Mode
+
+Newly inserted Regional nodes hide deprecated ports. Enable **BV Regional Legacy
+Debug Mode** in ConfigUI Settings or press `Ctrl+Alt+B` to inspect them. Existing
+connected legacy ports stay visible.
+
+## Notifications
+
+Migration summaries, unresolved resources, validation fallbacks, and legacy
+wiring warnings remain visible. A warning or deployment state is not evidence of
+successful execution.
+
+Record the exact notification text and the action that produced it. Dismissed
+messages may remove useful diagnosis context, so capture them before retrying or
+changing the workflow.
+
+## Recovery
+
+If an editor appears stale, close and reopen that editor first. Then save and
+reload the workflow. Use a full ComfyUI restart and browser hard refresh only
+when the shipped frontend and Python runtime may be out of sync.

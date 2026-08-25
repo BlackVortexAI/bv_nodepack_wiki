@@ -1,0 +1,38 @@
+export const meta = {title:"Build Deterministic Workflow Controls",slug:"/node-guides/workflow-control",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Goal
+
+Apply named activate, mute, or bypass states to deliberate workflow stages
+without making node order, selection state, or manual canvas edits part of the
+execution procedure.
+
+## Define controlled stages
+
+1. Divide the graph into stages with one clear responsibility each.
+2. Add the matching BV control nodes to the stages that may be switched.
+3. Give every controlled target a stable, descriptive name.
+4. Configure **BV Control Center** with explicit states for each target.
+5. Save and reload before testing state transitions.
+
+Use `active` for normal execution, `bypass` only where input-to-output forwarding
+is valid, and `mute` where the branch must produce no result. These states are
+not interchangeable.
+
+## Test the state matrix
+
+Exercise every documented control state independently. Confirm both the visible
+node mode and the resulting execution path. Then test combinations that users
+will actually select; a valid individual state does not prove that two states
+compose safely.
+
+## Failure boundary
+
+Do not use controls to hide invalid required connections. A bypassed node must
+still have a meaningful forwarding contract, and downstream nodes must tolerate
+the output that the selected state produces.
+
+## Persistence check
+
+Save, close, reopen, and confirm the selected controls and target associations.
+Copy the controlled stage once and verify that the copy does not unintentionally
+operate on the original stage.

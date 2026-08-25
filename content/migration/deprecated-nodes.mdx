@@ -1,0 +1,24 @@
+export const meta = { slug: "/migration/deprecated-nodes", title: "Deprecated Nodes", documentationStatus: "under-review" };
+
+## Compatibility policy
+
+Deprecated nodes remain visible so existing workflows can be opened, migrated, and resaved. Do not add them to new workflows. Removal may occur after **25 October 2026**, following the temporary 1.0 migration window.
+
+## BV Pipe and BV Pipe Config
+
+Replace both nodes with **BV Smart Pipe** and **BV Smart Pipe Merge**. Smart Pipes retain named values through stable slot IDs and make merge order explicit. Rebuild the smallest branch first, save, reload, and compare resolved values before converting the remaining branches.
+
+## BV Latent Random Aspect Ratio
+
+Replace it with **BV Empty Latent Random Ratio**. Reproduce the former resolution and enabled-ratio set explicitly. Documentation starter workflows use 1024×1024 with only 1:1 enabled unless a model family requires another supported resolution.
+
+## Verification sequence
+
+1. Keep the original workflow unchanged.
+2. Open it with the 1.0 migration build and review all warnings.
+3. Save under a new filename.
+4. Reload and confirm no provider or slot identity is unresolved.
+5. Execute once without cached outputs.
+6. Compare with the original using identical model, seed, sampler, scheduler, steps, CFG, resolution, and prompts.
+
+Automatic migration reduces manual editing; it does not replace persistence and execution verification.

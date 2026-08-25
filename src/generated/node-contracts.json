@@ -1,0 +1,2710 @@
+{
+  "targetVersion": "1.0.0",
+  "generated": "2026-08-25",
+  "nodes": [
+    {
+      "name": "BV Latent Random Aspect Ratio",
+      "slug": "bv-latent-random-aspect-ratio",
+      "description": "Resize latent dimensions using deterministic or random configured aspect ratios.",
+      "category": "🌀 BV Node Pack/latent/Deprecated Legacy Nodes",
+      "section": "Deprecated & Migration",
+      "status": "deprecated",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "seed",
+            "type": "INT"
+          },
+          {
+            "name": "enabled",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "base_resolution_px",
+            "type": "INT"
+          },
+          {
+            "name": "use_1_1",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_3_2",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_2_3",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_4_3",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_3_4",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_16_9",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_9_16",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_21_9",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_9_21",
+            "type": "BOOLEAN"
+          }
+        ],
+        "optional": [
+          {
+            "name": "latent",
+            "type": "LATENT"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT"
+        },
+        {
+          "name": "latent_width",
+          "type": "INT"
+        },
+        {
+          "name": "latent_height",
+          "type": "INT"
+        },
+        {
+          "name": "picked_ratio",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Pipe",
+      "slug": "bv-pipe",
+      "description": "Carry configurable named values through a typed workflow pipe.",
+      "category": "🌀 BV Node Pack/pipe/Deprecated Legacy Nodes",
+      "section": "Deprecated & Migration",
+      "status": "deprecated",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "pipe",
+            "type": "BV_PIPE"
+          }
+        ],
+        "optional": [
+          {
+            "name": "v_001 … v_100",
+            "type": "*",
+            "dynamic": true
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "BV_PIPE"
+        },
+        {
+          "name": "out_001 … out_100",
+          "type": "*",
+          "dynamic": true
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Pipe Config",
+      "slug": "bv-pipe-config",
+      "description": "Define the configurable slots used by a BV Pipe.",
+      "category": "🌀 BV Node Pack/pipe/Deprecated Legacy Nodes",
+      "section": "Deprecated & Migration",
+      "status": "deprecated",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "names",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "BV_PIPE"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Detailer Loop Detect to SEGS (Impact)",
+      "slug": "bv-detailer-loop-detect-to-segs-impact",
+      "description": "Resolve the current job's detector binding inside the region crop and return mask-gated Impact SEGS.",
+      "category": "🌀 BV Node Pack/regional/integrations/Impact Pack",
+      "section": "Detailer",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "detailer_job",
+            "type": "BV_DETAILER_JOB"
+          },
+          {
+            "name": "current_image",
+            "type": "IMAGE"
+          },
+          {
+            "name": "region_mask",
+            "type": "MASK"
+          },
+          {
+            "name": "roi_padding",
+            "type": "FLOAT"
+          },
+          {
+            "name": "threshold",
+            "type": "FLOAT"
+          },
+          {
+            "name": "dilation",
+            "type": "INT"
+          },
+          {
+            "name": "crop_factor",
+            "type": "FLOAT"
+          },
+          {
+            "name": "drop_size",
+            "type": "INT"
+          },
+          {
+            "name": "detector_query",
+            "type": "STRING"
+          },
+          {
+            "name": "detector_labels",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "segs",
+          "type": "SEGS"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Detailer Loop End",
+      "slug": "bv-detailer-loop-end",
+      "description": "Feed a processed image into the next BV detailer job and return the final accumulated image.",
+      "category": "🌀 BV Node Pack/regional/detailer",
+      "section": "Detailer",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "flow",
+            "type": "FLOW_CONTROL"
+          },
+          {
+            "name": "processed_image",
+            "type": "IMAGE"
+          }
+        ],
+        "hidden": [
+          {
+            "name": "dynprompt",
+            "type": "DYNPROMPT"
+          },
+          {
+            "name": "unique_id",
+            "type": "UNIQUE_ID"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "final_image",
+          "type": "IMAGE"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Detailer Loop Job Resolver",
+      "slug": "bv-detailer-loop-job-resolver",
+      "description": "Resolve loop state into the four values consumed by one detailer iteration.",
+      "category": "🌀 BV Node Pack/regional/detailer",
+      "section": "Detailer",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "loop_state",
+            "type": "BV_DETAILER_LOOP_STATE"
+          },
+          {
+            "name": "model",
+            "type": "MODEL"
+          },
+          {
+            "name": "clip",
+            "type": "CLIP"
+          },
+          {
+            "name": "vae",
+            "type": "VAE"
+          },
+          {
+            "name": "global_influence",
+            "type": "FLOAT"
+          },
+          {
+            "name": "background_influence",
+            "type": "FLOAT"
+          },
+          {
+            "name": "primary_region_influence",
+            "type": "FLOAT"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "detailer_job",
+          "type": "BV_DETAILER_JOB"
+        },
+        {
+          "name": "current_image",
+          "type": "IMAGE"
+        },
+        {
+          "name": "region_mask",
+          "type": "MASK"
+        },
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Detailer Loop Start",
+      "slug": "bv-detailer-loop-start",
+      "description": "Start a BV detailer loop with an immutable plan and a single accumulated image.",
+      "category": "🌀 BV Node Pack/regional/detailer",
+      "section": "Detailer",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "detailer_plan",
+            "type": "BV_DETAILER_PLAN"
+          },
+          {
+            "name": "initial_image",
+            "type": "IMAGE"
+          }
+        ],
+        "hidden": [
+          {
+            "name": "initial_value0",
+            "type": "*"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "flow",
+          "type": "FLOW_CONTROL"
+        },
+        {
+          "name": "loop_state",
+          "type": "BV_DETAILER_LOOP_STATE"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Detector Binding",
+      "slug": "bv-detector-binding",
+      "description": "Advanced adapter for external BBOX, segmentation and SAM objects; not required by the self-loading BV Detector Registry.",
+      "category": "🌀 BV Node Pack/advanced/integrations",
+      "section": "Detailer",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "detector_id",
+            "type": "STRING"
+          }
+        ],
+        "optional": [
+          {
+            "name": "bbox_detector",
+            "type": "BBOX_DETECTOR"
+          },
+          {
+            "name": "segm_detector",
+            "type": "SEGM_DETECTOR"
+          },
+          {
+            "name": "sam_model",
+            "type": "SAM_MODEL"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "detector_binding",
+          "type": "BV_DETECTOR_BINDING"
+        },
+        {
+          "name": "detector_id",
+          "type": "STRING"
+        },
+        {
+          "name": "has_bbox",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "has_segmentation",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "has_sam",
+          "type": "BOOLEAN"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Detector Registry",
+      "slug": "bv-detector-registry",
+      "description": "Configure and load several named Ultralytics, ONNX and optional SAM detector models in one node.",
+      "category": "🌀 BV Node Pack/regional/detailer",
+      "section": "Detailer",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "config_json",
+            "type": "STRING"
+          }
+        ],
+        "optional": [
+          {
+            "name": "external_detector_1",
+            "type": "BV_DETECTOR_BINDING"
+          },
+          {
+            "name": "external_detector_2",
+            "type": "BV_DETECTOR_BINDING"
+          },
+          {
+            "name": "external_detector_3",
+            "type": "BV_DETECTOR_BINDING"
+          },
+          {
+            "name": "external_detector_4",
+            "type": "BV_DETECTOR_BINDING"
+          },
+          {
+            "name": "external_detector_5",
+            "type": "BV_DETECTOR_BINDING"
+          },
+          {
+            "name": "external_detector_6",
+            "type": "BV_DETECTOR_BINDING"
+          },
+          {
+            "name": "external_detector_7",
+            "type": "BV_DETECTOR_BINDING"
+          },
+          {
+            "name": "external_detector_8",
+            "type": "BV_DETECTOR_BINDING"
+          },
+          {
+            "name": "external_detector_9",
+            "type": "BV_DETECTOR_BINDING"
+          },
+          {
+            "name": "external_detector_10",
+            "type": "BV_DETECTOR_BINDING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "detector_registry",
+          "type": "BV_DETECTOR_REGISTRY"
+        },
+        {
+          "name": "detector_count",
+          "type": "INT"
+        },
+        {
+          "name": "registry_summary",
+          "type": "STRING"
+        },
+        {
+          "name": "resource_provider",
+          "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Detailer Mask",
+      "slug": "bv-regional-detailer-mask",
+      "description": "Render a selected BV region and build an Impact-compatible BASIC_PIPE from its Global + Region prompts.",
+      "category": "🌀 BV Node Pack/regional/integrations/Impact Pack",
+      "section": "Detailer",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "image",
+            "type": "IMAGE"
+          },
+          {
+            "name": "model",
+            "type": "MODEL"
+          },
+          {
+            "name": "clip",
+            "type": "CLIP"
+          },
+          {
+            "name": "vae",
+            "type": "VAE"
+          },
+          {
+            "name": "region",
+            "type": "STRING"
+          },
+          {
+            "name": "global_influence",
+            "type": "FLOAT"
+          },
+          {
+            "name": "background_influence",
+            "type": "FLOAT"
+          },
+          {
+            "name": "primary_region_influence",
+            "type": "FLOAT"
+          },
+          {
+            "name": "context_regions_json",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE"
+        },
+        {
+          "name": "mask",
+          "type": "MASK"
+        },
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING"
+        },
+        {
+          "name": "positive_text",
+          "type": "STRING"
+        },
+        {
+          "name": "negative_text",
+          "type": "STRING"
+        },
+        {
+          "name": "positive_weighted_text",
+          "type": "STRING"
+        },
+        {
+          "name": "negative_weighted_text",
+          "type": "STRING"
+        },
+        {
+          "name": "x",
+          "type": "INT"
+        },
+        {
+          "name": "y",
+          "type": "INT"
+        },
+        {
+          "name": "width",
+          "type": "INT"
+        },
+        {
+          "name": "height",
+          "type": "INT"
+        },
+        {
+          "name": "region_id",
+          "type": "STRING"
+        },
+        {
+          "name": "region_name",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Detailer Plan",
+      "slug": "bv-regional-detailer-plan",
+      "description": "Build an ordered detailer plan and own its optional validated Detector Registry.",
+      "category": "🌀 BV Node Pack/regional/detailer",
+      "section": "Detailer",
+      "status": "stable",
+      "legacyPorts": true,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional_prompt",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "config_json",
+            "type": "STRING"
+          }
+        ],
+        "optional": [
+          {
+            "name": "detector_registry",
+            "type": "BV_DETECTOR_REGISTRY"
+          },
+          {
+            "name": "resource_provider",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_1",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_2",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_3",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_4",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_5",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_6",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_7",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_8",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_9",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_10",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_11",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_12",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_13",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_14",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_15",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_16",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_17",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_18",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_19",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_20",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "detailer_plan",
+          "type": "BV_DETAILER_PLAN"
+        },
+        {
+          "name": "job_count",
+          "type": "INT"
+        },
+        {
+          "name": "plan_summary",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Empty Latent Random Ratio",
+      "slug": "bv-empty-latent-random-ratio",
+      "description": "Create an empty latent at a randomly selected configured aspect ratio.",
+      "category": "🌀 BV Node Pack/latent",
+      "section": "Latent & Utilities",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "seed",
+            "type": "INT"
+          },
+          {
+            "name": "resolution",
+            "type": "choice: 512 | 768 | 1024 | 1536 | 2048 | Custom"
+          },
+          {
+            "name": "custom_resolution",
+            "type": "INT"
+          },
+          {
+            "name": "alignment",
+            "type": "choice: 8 | 16 | 32 | 64"
+          },
+          {
+            "name": "use_1_1",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_3_2",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_2_3",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_4_3",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_3_4",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_16_9",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_9_16",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_21_9",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "use_9_21",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "ratios",
+            "type": "STRING"
+          },
+          {
+            "name": "batch_size",
+            "type": "INT"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT"
+        },
+        {
+          "name": "width",
+          "type": "INT"
+        },
+        {
+          "name": "height",
+          "type": "INT"
+        },
+        {
+          "name": "picked_ratio",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Latent Random Rotate 90",
+      "slug": "bv-latent-random-rotate-90",
+      "description": "Rotate a latent by a deterministic or random multiple of 90 degrees.",
+      "category": "🌀 BV Node Pack/latent",
+      "section": "Latent & Utilities",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "latent",
+            "type": "LATENT"
+          },
+          {
+            "name": "seed",
+            "type": "INT"
+          },
+          {
+            "name": "enabled",
+            "type": "BOOLEAN"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT"
+        },
+        {
+          "name": "latent_width",
+          "type": "INT"
+        },
+        {
+          "name": "latent_height",
+          "type": "INT"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Smart Pipe",
+      "slug": "bv-smart-pipe",
+      "description": "Incrementally extend a typed pipe while preserving inherited stable slot identities.",
+      "category": "🌀 BV Node Pack/pipe",
+      "section": "Pipes & Workflow Data",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "bv_smart_pipe_schema_json",
+            "type": "STRING"
+          },
+          {
+            "name": "bv_smart_pipe_route_json",
+            "type": "STRING"
+          }
+        ],
+        "optional": [
+          {
+            "name": "pipe",
+            "type": "BV_SMART_PIPE"
+          },
+          {
+            "name": "v_001 … v_100",
+            "type": "*",
+            "dynamic": true
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "BV_SMART_PIPE"
+        },
+        {
+          "name": "out_001 … out_100",
+          "type": "*",
+          "dynamic": true
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Smart Pipe Merge",
+      "slug": "bv-smart-pipe-merge",
+      "description": "Merge Smart Pipe branches with explicit source order and deterministic conflict handling.",
+      "category": "🌀 BV Node Pack/pipe",
+      "section": "Pipes & Workflow Data",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "bv_smart_pipe_merge_json",
+            "type": "STRING"
+          }
+        ],
+        "optional": [
+          {
+            "name": "pipe_001 … pipe_016",
+            "type": "BV_SMART_PIPE",
+            "dynamic": true
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "BV_SMART_PIPE"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Prompt AST Debug",
+      "slug": "bv-prompt-ast-debug",
+      "description": "Inspect a structured BV prompt AST as readable JSON.",
+      "category": "🌀 BV Node Pack/prompting",
+      "section": "Prompt Processing",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "ast",
+            "type": "BV_AST"
+          }
+        ],
+        "optional": [
+          {
+            "name": "pretty",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "indent",
+            "type": "INT"
+          },
+          {
+            "name": "sort_keys",
+            "type": "BOOLEAN"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "ast_json",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Prompt Category Switch",
+      "slug": "bv-prompt-category-switch",
+      "description": "Select structured prompt content by category.",
+      "category": "🌀 BV Node Pack/prompting",
+      "section": "Prompt Processing",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "ast",
+            "type": "BV_AST"
+          },
+          {
+            "name": "enable_categories",
+            "type": "STRING"
+          },
+          {
+            "name": "disable_categories",
+            "type": "STRING"
+          },
+          {
+            "name": "inherit",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "mode",
+            "type": "BOOLEAN"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "ast",
+          "type": "BV_AST"
+        },
+        {
+          "name": "report",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Prompt Decode",
+      "slug": "bv-prompt-decode",
+      "description": "Decode a structured BV prompt AST into filtered text outputs.",
+      "category": "🌀 BV Node Pack/prompting",
+      "section": "Prompt Processing",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "ast",
+            "type": "BV_AST"
+          },
+          {
+            "name": "category_filter",
+            "type": "STRING"
+          },
+          {
+            "name": "with_comments",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "inherit",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "mode",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "prettify",
+            "type": "BOOLEAN"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "ast",
+          "type": "BV_AST"
+        },
+        {
+          "name": "filtered_prompt",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Prompt Encode",
+      "slug": "bv-prompt-encode",
+      "description": "Parse marked-up prompt text into a structured BV prompt AST.",
+      "category": "🌀 BV Node Pack/prompting",
+      "section": "Prompt Processing",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "prompt",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "ast",
+          "type": "BV_AST"
+        },
+        {
+          "name": "cleaned_prompt",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Apply Regional Enhancement",
+      "slug": "bv-apply-regional-enhancement",
+      "description": "Apply a verified prompt-only enhancement to its matching BV Regional source document.",
+      "category": "🌀 BV Node Pack/regional/prompt enhancement",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "enhancement",
+            "type": "BV_ENHANCEMENT_RESULT"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "regional",
+          "type": "BV_REGIONAL"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Comfy CLIP LLM Provider",
+      "slug": "bv-comfy-clip-llm-provider",
+      "description": "Expose a compatible generative ComfyUI CLIP through the BV-owned local LLM provider contract.",
+      "category": "🌀 BV Node Pack/regional/prompt enhancement",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "clip",
+            "type": "CLIP"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "provider",
+          "type": "BV_LLM_PROVIDER"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV LoRA Stack Collector",
+      "slug": "bv-lora-stack-collector",
+      "description": "Expose live named LoRA stacks through the typed BV Regional v3 resource-provider contract.",
+      "category": "🌀 BV Node Pack/regional/core",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "lora_registry",
+            "type": "BV_LORA_STACK_REGISTRY"
+          },
+          {
+            "name": "collector_id",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "resource_provider",
+          "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Named LoRA Stack",
+      "slug": "bv-named-lora-stack",
+      "description": "Name an external LoRA stack and add it to a chainable regional stack registry.",
+      "category": "🌀 BV Node Pack/regional/core",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "lora_stack",
+            "type": "LORA_STACK"
+          },
+          {
+            "name": "name",
+            "type": "STRING"
+          },
+          {
+            "name": "stack_id",
+            "type": "STRING"
+          }
+        ],
+        "optional": [
+          {
+            "name": "registry",
+            "type": "BV_LORA_STACK_REGISTRY"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "registry",
+          "type": "BV_LORA_STACK_REGISTRY"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Anima Adapter",
+      "slug": "bv-regional-anima-adapter",
+      "description": "Compile a BV Regional document for the external Anima regional-conditioning chain format.",
+      "category": "🌀 BV Node Pack/regional/models/Anima",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "clip",
+            "type": "CLIP"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING"
+        },
+        {
+          "name": "regions",
+          "type": "ANIMA_CONDITIONING_REGIONS"
+        },
+        {
+          "name": "background",
+          "type": "CONDITIONING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Anima Conditioning",
+      "slug": "bv-regional-anima-conditioning",
+      "description": "Apply BV's built-in Anima regional attention patch and produce sampler conditioning.",
+      "category": "🌀 BV Node Pack/regional/models/Anima",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": true,
+      "inputs": {
+        "required": [
+          {
+            "name": "model",
+            "type": "MODEL"
+          },
+          {
+            "name": "clip",
+            "type": "CLIP"
+          },
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "base_mode",
+            "type": "choice: disabled | uncovered_only | global"
+          },
+          {
+            "name": "base_strength",
+            "type": "FLOAT"
+          },
+          {
+            "name": "start_percent",
+            "type": "FLOAT"
+          },
+          {
+            "name": "end_percent",
+            "type": "FLOAT"
+          },
+          {
+            "name": "cross_mask_strength",
+            "type": "FLOAT"
+          },
+          {
+            "name": "self_mask_strength",
+            "type": "FLOAT"
+          },
+          {
+            "name": "base_ratio",
+            "type": "FLOAT"
+          },
+          {
+            "name": "cross_inject_every_n_blocks",
+            "type": "INT"
+          },
+          {
+            "name": "self_inject_every_n_blocks",
+            "type": "INT"
+          },
+          {
+            "name": "regional_lora_mode",
+            "type": "choice: multipass_legacy | token_gated_singlepass"
+          }
+        ],
+        "optional": [
+          {
+            "name": "lora_registry",
+            "type": "BV_LORA_STACK_REGISTRY"
+          },
+          {
+            "name": "lora_bindings",
+            "type": "BV_REGIONAL_LORA_BINDINGS"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "patched_model",
+          "type": "MODEL"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Anima LLLite",
+      "slug": "bv-regional-anima-lllite",
+      "description": "Apply an Anima LLLite regional layout model using a deterministic color control image.",
+      "category": "🌀 BV Node Pack/regional/models/Anima",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "model",
+            "type": "MODEL"
+          },
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "model_patch_name",
+            "type": "choice: "
+          },
+          {
+            "name": "strength",
+            "type": "FLOAT"
+          },
+          {
+            "name": "start_percent",
+            "type": "FLOAT"
+          },
+          {
+            "name": "end_percent",
+            "type": "FLOAT"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "patched_model",
+          "type": "MODEL"
+        },
+        {
+          "name": "control_image",
+          "type": "IMAGE"
+        },
+        {
+          "name": "legend_json",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Color Control Image",
+      "slug": "bv-regional-color-control-image",
+      "description": "Render deterministic solid region colors and a machine-readable legend for layout control.",
+      "category": "🌀 BV Node Pack/regional/models/Anima",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "control_image",
+          "type": "IMAGE"
+        },
+        {
+          "name": "legend_json",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Debug",
+      "slug": "bv-regional-debug",
+      "description": "Inspect and summarize a BV Regional document as JSON.",
+      "category": "🌀 BV Node Pack/regional/core",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          }
+        ],
+        "optional": [
+          {
+            "name": "pretty",
+            "type": "BOOLEAN"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "regional_json",
+          "type": "STRING"
+        },
+        {
+          "name": "summary",
+          "type": "STRING"
+        },
+        {
+          "name": "document_id",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Deconstructor",
+      "slug": "bv-regional-deconstructor",
+      "description": "Extract global, background or selected-region prompts and structured prompt data.",
+      "category": "🌀 BV Node Pack/regional/core",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "scope",
+            "type": "choice: global | background | region"
+          },
+          {
+            "name": "region",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "selection",
+          "type": "BV_REGIONAL_SELECTION"
+        },
+        {
+          "name": "positive_ast",
+          "type": "BV_AST"
+        },
+        {
+          "name": "positive_text",
+          "type": "STRING"
+        },
+        {
+          "name": "positive_source",
+          "type": "STRING"
+        },
+        {
+          "name": "negative_ast",
+          "type": "BV_AST"
+        },
+        {
+          "name": "negative_text",
+          "type": "STRING"
+        },
+        {
+          "name": "negative_source",
+          "type": "STRING"
+        },
+        {
+          "name": "selected_id",
+          "type": "STRING"
+        },
+        {
+          "name": "selected_name",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional FLUX.2 Klein 9B Attention",
+      "slug": "bv-regional-flux-2-klein-9b-attention",
+      "description": "Route BV Regional prompts through the exact FLUX.2 Klein 9B joint-attention architecture with a standard KSampler.",
+      "category": "🌀 BV Node Pack/regional/models/FLUX.2 Klein 9B",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": true,
+      "inputs": {
+        "required": [
+          {
+            "name": "model",
+            "type": "MODEL"
+          },
+          {
+            "name": "clip",
+            "type": "CLIP"
+          },
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "attention_strength",
+            "type": "FLOAT"
+          },
+          {
+            "name": "start_percent",
+            "type": "FLOAT"
+          },
+          {
+            "name": "end_percent",
+            "type": "FLOAT"
+          }
+        ],
+        "optional": [
+          {
+            "name": "lora_registry",
+            "type": "BV_LORA_STACK_REGISTRY"
+          },
+          {
+            "name": "lora_bindings",
+            "type": "BV_REGIONAL_LORA_BINDINGS"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "patched_model",
+          "type": "MODEL"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Image Save",
+      "slug": "bv-regional-image-save",
+      "description": "Save an image and send the saved result to a selected Regional Editor.",
+      "category": "🌀 BV Node Pack/regional/output",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "images",
+            "type": "IMAGE"
+          },
+          {
+            "name": "filename_prefix",
+            "type": "STRING"
+          },
+          {
+            "name": "document_id",
+            "type": "STRING"
+          }
+        ],
+        "hidden": [
+          {
+            "name": "prompt",
+            "type": "PROMPT"
+          },
+          {
+            "name": "extra_pnginfo",
+            "type": "EXTRA_PNGINFO"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Image Send",
+      "slug": "bv-regional-image-send",
+      "description": "Send a preview image to a selected Regional Editor without saving it.",
+      "category": "🌀 BV Node Pack/regional/output",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "images",
+            "type": "IMAGE"
+          },
+          {
+            "name": "document_id",
+            "type": "STRING"
+          }
+        ],
+        "hidden": [
+          {
+            "name": "prompt",
+            "type": "PROMPT"
+          },
+          {
+            "name": "extra_pnginfo",
+            "type": "EXTRA_PNGINFO"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Krea 2 Attention",
+      "slug": "bv-regional-krea-2-attention",
+      "description": "Experimentally route BV Regional prompts through Krea 2's 28 main joint-attention blocks with a standard KSampler.",
+      "category": "🌀 BV Node Pack/regional/models/Krea 2",
+      "section": "Regional Prompting",
+      "status": "experimental",
+      "legacyPorts": true,
+      "inputs": {
+        "required": [
+          {
+            "name": "model",
+            "type": "MODEL"
+          },
+          {
+            "name": "clip",
+            "type": "CLIP"
+          },
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "attention_strength",
+            "type": "FLOAT"
+          },
+          {
+            "name": "start_percent",
+            "type": "FLOAT"
+          },
+          {
+            "name": "end_percent",
+            "type": "FLOAT"
+          },
+          {
+            "name": "regional_lora_mode",
+            "type": "choice: multipass_legacy | token_gated_singlepass"
+          }
+        ],
+        "optional": [
+          {
+            "name": "lora_registry",
+            "type": "BV_LORA_STACK_REGISTRY"
+          },
+          {
+            "name": "lora_bindings",
+            "type": "BV_REGIONAL_LORA_BINDINGS"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "patched_model",
+          "type": "MODEL"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional LoRA",
+      "slug": "bv-regional-lora",
+      "description": "Add or replace the immutable LoRA capability in a BV Regional v3 context.",
+      "category": "🌀 BV Node Pack/regional/core",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "operation",
+            "type": "choice: replace | merge | subtract | clear"
+          },
+          {
+            "name": "config_json",
+            "type": "STRING"
+          }
+        ],
+        "optional": [
+          {
+            "name": "resource_provider",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_1",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_2",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_3",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_4",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_5",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_6",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_7",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_8",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_9",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_10",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_11",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_12",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_13",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_14",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_15",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_16",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_17",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_18",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_19",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_20",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "regional",
+          "type": "BV_REGIONAL"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Mask Render",
+      "slug": "bv-regional-mask-render",
+      "description": "Render the mask for a selected region from a BV Regional document.",
+      "category": "🌀 BV Node Pack/regional/core",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "selection",
+            "type": "BV_REGIONAL_SELECTION"
+          },
+          {
+            "name": "width",
+            "type": "INT"
+          },
+          {
+            "name": "height",
+            "type": "INT"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "mask",
+          "type": "MASK"
+        },
+        {
+          "name": "x",
+          "type": "INT"
+        },
+        {
+          "name": "y",
+          "type": "INT"
+        },
+        {
+          "name": "width",
+          "type": "INT"
+        },
+        {
+          "name": "height",
+          "type": "INT"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Native Conditioning",
+      "slug": "bv-regional-native-conditioning",
+      "description": "Compile a BV Regional document into native ComfyUI masked conditioning.",
+      "category": "🌀 BV Node Pack/regional/models/Generic",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": true,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "clip",
+            "type": "CLIP"
+          },
+          {
+            "name": "region_strength_multiplier",
+            "type": "FLOAT"
+          },
+          {
+            "name": "native_composition",
+            "type": "choice: blend | exclusive | hybrid | mask_bounds"
+          },
+          {
+            "name": "hybrid_blend_ratio",
+            "type": "FLOAT"
+          }
+        ],
+        "optional": [
+          {
+            "name": "lora_registry",
+            "type": "BV_LORA_STACK_REGISTRY"
+          },
+          {
+            "name": "lora_bindings",
+            "type": "BV_REGIONAL_LORA_BINDINGS"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Prompt",
+      "slug": "bv-regional-prompt",
+      "description": "Author named rectangle and brush regions with prompts in the visual Regional Editor.",
+      "category": "🌀 BV Node Pack/regional/core",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": true,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional_json",
+            "type": "STRING"
+          }
+        ],
+        "optional": [
+          {
+            "name": "lora_bindings_json",
+            "type": "STRING"
+          },
+          {
+            "name": "lora_v3_config_json",
+            "type": "STRING"
+          },
+          {
+            "name": "detailer_v3_config_json",
+            "type": "STRING"
+          },
+          {
+            "name": "resource_provider",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_1",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_2",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_3",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_4",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_5",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_6",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_7",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_8",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_9",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_10",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_11",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_12",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_13",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_14",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_15",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_16",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_17",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_18",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_19",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_20",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_1",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_2",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_3",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_4",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_5",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_6",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_7",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_8",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_9",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_10",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_11",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_12",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_13",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_14",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_15",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_16",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_17",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_18",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_19",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "detailer_resource_provider_20",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "regional",
+          "type": "BV_REGIONAL"
+        },
+        {
+          "name": "lora_bindings",
+          "type": "BV_REGIONAL_LORA_BINDINGS"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Prompt Enhancer",
+      "slug": "bv-regional-prompt-enhancer",
+      "description": "Generate and strictly verify regional-aware prompt improvements without mutating the source document.",
+      "category": "🌀 BV Node Pack/regional/prompt enhancement",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "provider",
+            "type": "BV_LLM_PROVIDER"
+          },
+          {
+            "name": "instruction",
+            "type": "STRING"
+          },
+          {
+            "name": "max_output_tokens",
+            "type": "INT"
+          },
+          {
+            "name": "seed",
+            "type": "INT"
+          },
+          {
+            "name": "prompt_language",
+            "type": "choice: Anima / hybrid | Natural language | Tag only / SDXL"
+          },
+          {
+            "name": "creativity",
+            "type": "FLOAT"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "enhancement",
+          "type": "BV_ENHANCEMENT_RESULT"
+        },
+        {
+          "name": "diff_json",
+          "type": "STRING"
+        },
+        {
+          "name": "diagnostics",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Prompt Extract",
+      "slug": "bv-regional-prompt-extract",
+      "description": "Extract the selected regional prompt payload for downstream processing.",
+      "category": "🌀 BV Node Pack/regional/core",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "selection",
+            "type": "BV_REGIONAL_SELECTION"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "positive_ast",
+          "type": "BV_AST"
+        },
+        {
+          "name": "positive_text",
+          "type": "STRING"
+        },
+        {
+          "name": "positive_source",
+          "type": "STRING"
+        },
+        {
+          "name": "negative_ast",
+          "type": "BV_AST"
+        },
+        {
+          "name": "negative_text",
+          "type": "STRING"
+        },
+        {
+          "name": "negative_source",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional SDXL Attention",
+      "slug": "bv-regional-sdxl-attention",
+      "description": "Route BV Regional prompts through SDXL cross-attention for Illustrious, Pony and compatible SDXL models.",
+      "category": "🌀 BV Node Pack/regional/models/SDXL",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": true,
+      "inputs": {
+        "required": [
+          {
+            "name": "model",
+            "type": "MODEL"
+          },
+          {
+            "name": "clip",
+            "type": "CLIP"
+          },
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "attention_strength",
+            "type": "FLOAT"
+          },
+          {
+            "name": "start_percent",
+            "type": "FLOAT"
+          },
+          {
+            "name": "end_percent",
+            "type": "FLOAT"
+          }
+        ],
+        "optional": [
+          {
+            "name": "lora_registry",
+            "type": "BV_LORA_STACK_REGISTRY"
+          },
+          {
+            "name": "lora_bindings",
+            "type": "BV_REGIONAL_LORA_BINDINGS"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "patched_model",
+          "type": "MODEL"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Select",
+      "slug": "bv-regional-select",
+      "description": "Select a region by its stable identity from a BV Regional document.",
+      "category": "🌀 BV Node Pack/regional/core",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "scope",
+            "type": "choice: global | background | region"
+          },
+          {
+            "name": "region",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "selection",
+          "type": "BV_REGIONAL_SELECTION"
+        },
+        {
+          "name": "selected_id",
+          "type": "STRING"
+        },
+        {
+          "name": "selected_name",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Regional Z-Image Attention",
+      "slug": "bv-regional-z-image-attention",
+      "description": "Route BV Regional prompts through Z-Image Turbo joint attention with a standard KSampler.",
+      "category": "🌀 BV Node Pack/regional/models/Z-Image",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": true,
+      "inputs": {
+        "required": [
+          {
+            "name": "model",
+            "type": "MODEL"
+          },
+          {
+            "name": "clip",
+            "type": "CLIP"
+          },
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "attention_strength",
+            "type": "FLOAT"
+          },
+          {
+            "name": "start_percent",
+            "type": "FLOAT"
+          },
+          {
+            "name": "end_percent",
+            "type": "FLOAT"
+          }
+        ],
+        "optional": [
+          {
+            "name": "lora_registry",
+            "type": "BV_LORA_STACK_REGISTRY"
+          },
+          {
+            "name": "lora_bindings",
+            "type": "BV_REGIONAL_LORA_BINDINGS"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "patched_model",
+          "type": "MODEL"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Remote LLM Provider",
+      "slug": "bv-remote-llm-provider",
+      "description": "Select an OpenAI-compatible provider and model through strict structured output without storing the API key in the workflow.",
+      "category": "🌀 BV Node Pack/regional/prompt enhancement",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "provider_profile",
+            "type": "choice: OpenAI Compatible | OpenAI | Venice | Abacus.AI | Ollama (Local) | LM Studio (Local) | llama.cpp Server (Local) | vLLM (Local) | LocalAI (Local) | Local OpenAI Compatible (Custom)"
+          },
+          {
+            "name": "custom_endpoint",
+            "type": "STRING"
+          },
+          {
+            "name": "model",
+            "type": "STRING"
+          },
+          {
+            "name": "reasoning_effort",
+            "type": "choice: none | low | medium | high"
+          },
+          {
+            "name": "timeout_seconds",
+            "type": "INT"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "provider",
+          "type": "BV_LLM_PROVIDER"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Dynamic Combo",
+      "slug": "bv-dynamic-combo",
+      "description": "Create a validated user-defined selection control with explicit options and output values.",
+      "category": "🌀 BV Node Pack/subgraph",
+      "section": "Subgraph Interface",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "value",
+            "type": "STRING"
+          },
+          {
+            "name": "options",
+            "type": "STRING"
+          }
+        ],
+        "hidden": [
+          {
+            "name": "prompt",
+            "type": "PROMPT"
+          },
+          {
+            "name": "unique_id",
+            "type": "UNIQUE_ID"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "value_str",
+          "type": "STRING"
+        },
+        {
+          "name": "value_int",
+          "type": "INT"
+        },
+        {
+          "name": "value_float",
+          "type": "FLOAT"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Subgraph Divider",
+      "slug": "bv-subgraph-divider",
+      "description": "Add a persistent visual divider to a Subgraph interface.",
+      "category": "🌀 BV Node Pack/subgraph",
+      "section": "Subgraph Interface",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "thickness",
+            "type": "INT"
+          },
+          {
+            "name": "padding",
+            "type": "INT"
+          },
+          {
+            "name": "alpha",
+            "type": "FLOAT"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "_",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Subgraph Heading",
+      "slug": "bv-subgraph-heading",
+      "description": "Add a persistent heading to a Subgraph interface.",
+      "category": "🌀 BV Node Pack/subgraph",
+      "section": "Subgraph Interface",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "value",
+            "type": "STRING"
+          },
+          {
+            "name": "font_size",
+            "type": "INT"
+          },
+          {
+            "name": "show_divider",
+            "type": "BOOLEAN"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "_",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Subgraph Spacer",
+      "slug": "bv-subgraph-spacer",
+      "description": "Add persistent spacing to a Subgraph interface.",
+      "category": "🌀 BV Node Pack/subgraph",
+      "section": "Subgraph Interface",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "height",
+            "type": "INT"
+          },
+          {
+            "name": "scale",
+            "type": "FLOAT"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "_",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Hex Color To Int",
+      "slug": "bv-hex-color-to-int",
+      "description": "Convert a validated hexadecimal color value into integer RGB channels.",
+      "category": "🌀 BV Node Pack/utils",
+      "section": "Utilities",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "hex",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "color",
+          "type": "INT"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Seed",
+      "slug": "bv-seed",
+      "description": "Resolve fixed or per-queue random seeds while reporting the effective value.",
+      "category": "🌀 BV Node Pack/utils",
+      "section": "Utilities",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "seed_bv",
+            "type": "INT"
+          }
+        ],
+        "hidden": [
+          {
+            "name": "unique_id",
+            "type": "UNIQUE_ID"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "INT"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Text Log Writer",
+      "slug": "bv-text-log-writer",
+      "description": "Preview and optionally write a text value to a safely named UTF-8 log file under the ComfyUI output directory.",
+      "category": "🌀 BV Node Pack/utils",
+      "section": "Utilities",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "text",
+            "type": "STRING"
+          },
+          {
+            "name": "log_name",
+            "type": "STRING"
+          },
+          {
+            "name": "mode",
+            "type": "choice: overwrite | append | timestamped"
+          },
+          {
+            "name": "write_enabled",
+            "type": "BOOLEAN"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING"
+        },
+        {
+          "name": "file_path",
+          "type": "STRING"
+        },
+        {
+          "name": "status",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Control Center",
+      "slug": "bv-control-center",
+      "description": "Apply reusable controls to workflow groups, including Subgraph-aware activate, mute and bypass states.",
+      "category": "🌀 BV Node Pack/control",
+      "section": "Workflow Control",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "bv_control_config_json",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [],
+      "inputError": null
+    }
+  ]
+}

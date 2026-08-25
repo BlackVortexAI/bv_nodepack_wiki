@@ -1,0 +1,37 @@
+export const meta = { slug: "/reference/glossary", title: "Glossary", documentationStatus: "under-review" };
+
+## Regional document
+
+The serializable `BV_REGIONAL` value carrying the versioned regional core document and namespaced capabilities. Runtime model objects are never stored in it.
+
+## Region
+
+A stable, identified spatial unit with prompt, geometry, enablement, and task-specific configuration. A visible label is not its executable identity.
+
+## Collector
+
+A configuration-side node that exposes identified resources through persisted typed graph links. Collectors do not execute the final model path.
+
+## Resource
+
+An item exposed by a collector and selected through a stable resource ID, such as a named LoRA stack or detector.
+
+## Capability
+
+A namespaced serializable extension of the Regional document, composed through explicit scoped operations such as Replace, Merge, Subtract, or Clear.
+
+## Executor
+
+A node that consumes resolved Regional state and applies it to conditioning, attention, detailer, mask, image, or other runtime behavior. Executors do not discover providers globally.
+
+## Graph scope
+
+The concrete root graph or Subgraph definition within which persisted provider links are valid. Resolution never searches unrelated workflows.
+
+## Legacy port
+
+A temporary deprecated port retained for automated migration and diagnosis. Newly created nodes hide it unless Legacy Debug Mode is enabled.
+
+## Visually accepted seed
+
+A fixed seed whose result has been reviewed for the purpose of a published example. It is a property of that workflow and model configuration, not a universal package default.

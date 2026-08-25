@@ -1,0 +1,37 @@
+export const meta = {title:"Design a Subgraph Interface",slug:"/node-guides/subgraph-interface",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Goal
+
+Expose a readable, intentional Subgraph interface with headings, dividers,
+spacing, and controlled values while keeping presentation separate from runtime
+data flow.
+
+## Start from the contract
+
+List the values a caller must provide and the outputs it receives before adding
+layout nodes. Keep the public surface small; implementation-only values belong
+inside the Subgraph.
+
+## Add structure
+
+1. Use **BV Subgraph Heading** to name the interface or a coherent section.
+2. Use **BV Subgraph Divider** between unrelated groups of controls.
+3. Use **BV Subgraph Spacer** only where spacing improves scanning.
+4. Add the appropriate BV Subgraph value nodes for user-configurable inputs.
+5. Reopen the parent graph and check the projected interface at its normal size.
+
+Headings and separators explain a contract; they must not be used as the only
+signal for required inputs, valid ranges, or dangerous behavior.
+
+## Identity and copying
+
+A Subgraph definition is its own graph scope. Provider links may resolve within
+that definition, but must never discover a similarly titled node in the parent
+workflow or another open workflow. After duplicating a Subgraph definition,
+verify each projected control against the copied internal node.
+
+## Verify
+
+Test defaults, changed values, save and reload, definition duplication, and use
+from two instances in the same parent workflow. Both instances must retain their
+own values while sharing only the intended definition behavior.

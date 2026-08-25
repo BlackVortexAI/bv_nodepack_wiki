@@ -1,0 +1,957 @@
+{
+  "generated": "2026-08-25",
+  "assets": [
+    {
+      "id": "bv-latent-random-aspect-ratio--node--default",
+      "page": "/node-reference/bv-latent-random-aspect-ratio",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Latent Random Aspect Ratio in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-latent-random-aspect-ratio--connection--minimal",
+      "page": "/node-reference/bv-latent-random-aspect-ratio",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Latent Random Aspect Ratio. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-pipe--node--default",
+      "page": "/node-reference/bv-pipe",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Pipe in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-pipe--connection--minimal",
+      "page": "/node-reference/bv-pipe",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Pipe. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-pipe-config--node--default",
+      "page": "/node-reference/bv-pipe-config",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Pipe Config in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-pipe-config--connection--minimal",
+      "page": "/node-reference/bv-pipe-config",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Pipe Config. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-detailer-loop-detect-to-segs-impact--node--default",
+      "page": "/node-reference/bv-detailer-loop-detect-to-segs-impact",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Detailer Loop Detect to SEGS (Impact) in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-detailer-loop-detect-to-segs-impact--connection--minimal",
+      "page": "/node-reference/bv-detailer-loop-detect-to-segs-impact",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detailer Loop Detect to SEGS (Impact). Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-detailer-loop-end--node--default",
+      "page": "/node-reference/bv-detailer-loop-end",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Detailer Loop End in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-detailer-loop-end--connection--minimal",
+      "page": "/node-reference/bv-detailer-loop-end",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detailer Loop End. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-detailer-loop-job-resolver--node--default",
+      "page": "/node-reference/bv-detailer-loop-job-resolver",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Detailer Loop Job Resolver in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-detailer-loop-job-resolver--connection--minimal",
+      "page": "/node-reference/bv-detailer-loop-job-resolver",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detailer Loop Job Resolver. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-detailer-loop-start--node--default",
+      "page": "/node-reference/bv-detailer-loop-start",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Detailer Loop Start in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-detailer-loop-start--connection--minimal",
+      "page": "/node-reference/bv-detailer-loop-start",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detailer Loop Start. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-detector-binding--node--default",
+      "page": "/node-reference/bv-detector-binding",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Detector Binding in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-detector-binding--connection--minimal",
+      "page": "/node-reference/bv-detector-binding",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detector Binding. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-detector-registry--node--default",
+      "page": "/node-reference/bv-detector-registry",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Detector Registry in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-detector-registry--connection--minimal",
+      "page": "/node-reference/bv-detector-registry",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detector Registry. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-detailer-mask--node--default",
+      "page": "/node-reference/bv-regional-detailer-mask",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Detailer Mask in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-detailer-mask--connection--minimal",
+      "page": "/node-reference/bv-regional-detailer-mask",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Detailer Mask. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-detailer-plan--node--default",
+      "page": "/node-reference/bv-regional-detailer-plan",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Detailer Plan in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-detailer-plan--connection--minimal",
+      "page": "/node-reference/bv-regional-detailer-plan",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Detailer Plan. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-detailer-plan--legacy--debug-visible",
+      "page": "/node-reference/bv-regional-detailer-plan",
+      "type": "legacy",
+      "status": "missing",
+      "instructions": "Second screenshot of BV Regional Detailer Plan with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
+    },
+    {
+      "id": "bv-empty-latent-random-ratio--node--default",
+      "page": "/node-reference/bv-empty-latent-random-ratio",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Empty Latent Random Ratio in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-empty-latent-random-ratio--connection--minimal",
+      "page": "/node-reference/bv-empty-latent-random-ratio",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Empty Latent Random Ratio. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-latent-random-rotate-90--node--default",
+      "page": "/node-reference/bv-latent-random-rotate-90",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Latent Random Rotate 90 in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-latent-random-rotate-90--connection--minimal",
+      "page": "/node-reference/bv-latent-random-rotate-90",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Latent Random Rotate 90. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-smart-pipe--node--default",
+      "page": "/node-reference/bv-smart-pipe",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Smart Pipe in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-smart-pipe--connection--minimal",
+      "page": "/node-reference/bv-smart-pipe",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Smart Pipe. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-smart-pipe-merge--node--default",
+      "page": "/node-reference/bv-smart-pipe-merge",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Smart Pipe Merge in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-smart-pipe-merge--connection--minimal",
+      "page": "/node-reference/bv-smart-pipe-merge",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Smart Pipe Merge. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-prompt-ast-debug--node--default",
+      "page": "/node-reference/bv-prompt-ast-debug",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Prompt AST Debug in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-prompt-ast-debug--connection--minimal",
+      "page": "/node-reference/bv-prompt-ast-debug",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Prompt AST Debug. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-prompt-category-switch--node--default",
+      "page": "/node-reference/bv-prompt-category-switch",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Prompt Category Switch in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-prompt-category-switch--connection--minimal",
+      "page": "/node-reference/bv-prompt-category-switch",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Prompt Category Switch. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-prompt-decode--node--default",
+      "page": "/node-reference/bv-prompt-decode",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Prompt Decode in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-prompt-decode--connection--minimal",
+      "page": "/node-reference/bv-prompt-decode",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Prompt Decode. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-prompt-encode--node--default",
+      "page": "/node-reference/bv-prompt-encode",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Prompt Encode in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-prompt-encode--connection--minimal",
+      "page": "/node-reference/bv-prompt-encode",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Prompt Encode. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-apply-regional-enhancement--node--default",
+      "page": "/node-reference/bv-apply-regional-enhancement",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Apply Regional Enhancement in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-apply-regional-enhancement--connection--minimal",
+      "page": "/node-reference/bv-apply-regional-enhancement",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Apply Regional Enhancement. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-comfy-clip-llm-provider--node--default",
+      "page": "/node-reference/bv-comfy-clip-llm-provider",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Comfy CLIP LLM Provider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-comfy-clip-llm-provider--connection--minimal",
+      "page": "/node-reference/bv-comfy-clip-llm-provider",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Comfy CLIP LLM Provider. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-lora-stack-collector--node--default",
+      "page": "/node-reference/bv-lora-stack-collector",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV LoRA Stack Collector in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-lora-stack-collector--connection--minimal",
+      "page": "/node-reference/bv-lora-stack-collector",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LoRA Stack Collector. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-named-lora-stack--node--default",
+      "page": "/node-reference/bv-named-lora-stack",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Named LoRA Stack in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-named-lora-stack--connection--minimal",
+      "page": "/node-reference/bv-named-lora-stack",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Named LoRA Stack. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-anima-adapter--node--default",
+      "page": "/node-reference/bv-regional-anima-adapter",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Anima Adapter in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-anima-adapter--connection--minimal",
+      "page": "/node-reference/bv-regional-anima-adapter",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Anima Adapter. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-anima-conditioning--node--default",
+      "page": "/node-reference/bv-regional-anima-conditioning",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Anima Conditioning in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-anima-conditioning--connection--minimal",
+      "page": "/node-reference/bv-regional-anima-conditioning",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Anima Conditioning. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-anima-conditioning--legacy--debug-visible",
+      "page": "/node-reference/bv-regional-anima-conditioning",
+      "type": "legacy",
+      "status": "missing",
+      "instructions": "Second screenshot of BV Regional Anima Conditioning with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
+    },
+    {
+      "id": "bv-regional-anima-lllite--node--default",
+      "page": "/node-reference/bv-regional-anima-lllite",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Anima LLLite in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-anima-lllite--connection--minimal",
+      "page": "/node-reference/bv-regional-anima-lllite",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Anima LLLite. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-color-control-image--node--default",
+      "page": "/node-reference/bv-regional-color-control-image",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Color Control Image in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-color-control-image--connection--minimal",
+      "page": "/node-reference/bv-regional-color-control-image",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Color Control Image. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-debug--node--default",
+      "page": "/node-reference/bv-regional-debug",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Debug in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-debug--connection--minimal",
+      "page": "/node-reference/bv-regional-debug",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Debug. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-deconstructor--node--default",
+      "page": "/node-reference/bv-regional-deconstructor",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Deconstructor in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-deconstructor--connection--minimal",
+      "page": "/node-reference/bv-regional-deconstructor",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Deconstructor. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-flux-2-klein-9b-attention--node--default",
+      "page": "/node-reference/bv-regional-flux-2-klein-9b-attention",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional FLUX.2 Klein 9B Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-flux-2-klein-9b-attention--connection--minimal",
+      "page": "/node-reference/bv-regional-flux-2-klein-9b-attention",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional FLUX.2 Klein 9B Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-flux-2-klein-9b-attention--legacy--debug-visible",
+      "page": "/node-reference/bv-regional-flux-2-klein-9b-attention",
+      "type": "legacy",
+      "status": "missing",
+      "instructions": "Second screenshot of BV Regional FLUX.2 Klein 9B Attention with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
+    },
+    {
+      "id": "bv-regional-image-save--node--default",
+      "page": "/node-reference/bv-regional-image-save",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Image Save in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-image-save--connection--minimal",
+      "page": "/node-reference/bv-regional-image-save",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Image Save. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-image-send--node--default",
+      "page": "/node-reference/bv-regional-image-send",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Image Send in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-image-send--connection--minimal",
+      "page": "/node-reference/bv-regional-image-send",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Image Send. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-krea-2-attention--node--default",
+      "page": "/node-reference/bv-regional-krea-2-attention",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Krea 2 Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-krea-2-attention--connection--minimal",
+      "page": "/node-reference/bv-regional-krea-2-attention",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Krea 2 Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-krea-2-attention--legacy--debug-visible",
+      "page": "/node-reference/bv-regional-krea-2-attention",
+      "type": "legacy",
+      "status": "missing",
+      "instructions": "Second screenshot of BV Regional Krea 2 Attention with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
+    },
+    {
+      "id": "bv-regional-lora--node--default",
+      "page": "/node-reference/bv-regional-lora",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional LoRA in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-lora--connection--minimal",
+      "page": "/node-reference/bv-regional-lora",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional LoRA. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-mask-render--node--default",
+      "page": "/node-reference/bv-regional-mask-render",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Mask Render in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-mask-render--connection--minimal",
+      "page": "/node-reference/bv-regional-mask-render",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Mask Render. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-native-conditioning--node--default",
+      "page": "/node-reference/bv-regional-native-conditioning",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Native Conditioning in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-native-conditioning--connection--minimal",
+      "page": "/node-reference/bv-regional-native-conditioning",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Native Conditioning. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-native-conditioning--legacy--debug-visible",
+      "page": "/node-reference/bv-regional-native-conditioning",
+      "type": "legacy",
+      "status": "missing",
+      "instructions": "Second screenshot of BV Regional Native Conditioning with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
+    },
+    {
+      "id": "bv-regional-prompt--node--default",
+      "page": "/node-reference/bv-regional-prompt",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Prompt in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-prompt--connection--minimal",
+      "page": "/node-reference/bv-regional-prompt",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Prompt. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-prompt--legacy--debug-visible",
+      "page": "/node-reference/bv-regional-prompt",
+      "type": "legacy",
+      "status": "missing",
+      "instructions": "Second screenshot of BV Regional Prompt with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
+    },
+    {
+      "id": "bv-regional-prompt-enhancer--node--default",
+      "page": "/node-reference/bv-regional-prompt-enhancer",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Prompt Enhancer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-prompt-enhancer--connection--minimal",
+      "page": "/node-reference/bv-regional-prompt-enhancer",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Prompt Enhancer. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-prompt-extract--node--default",
+      "page": "/node-reference/bv-regional-prompt-extract",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Prompt Extract in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-prompt-extract--connection--minimal",
+      "page": "/node-reference/bv-regional-prompt-extract",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Prompt Extract. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-sdxl-attention--node--default",
+      "page": "/node-reference/bv-regional-sdxl-attention",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional SDXL Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-sdxl-attention--connection--minimal",
+      "page": "/node-reference/bv-regional-sdxl-attention",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional SDXL Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-sdxl-attention--legacy--debug-visible",
+      "page": "/node-reference/bv-regional-sdxl-attention",
+      "type": "legacy",
+      "status": "missing",
+      "instructions": "Second screenshot of BV Regional SDXL Attention with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
+    },
+    {
+      "id": "bv-regional-select--node--default",
+      "page": "/node-reference/bv-regional-select",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Select in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-select--connection--minimal",
+      "page": "/node-reference/bv-regional-select",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Select. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-z-image-attention--node--default",
+      "page": "/node-reference/bv-regional-z-image-attention",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional Z-Image Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-regional-z-image-attention--connection--minimal",
+      "page": "/node-reference/bv-regional-z-image-attention",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Z-Image Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-regional-z-image-attention--legacy--debug-visible",
+      "page": "/node-reference/bv-regional-z-image-attention",
+      "type": "legacy",
+      "status": "missing",
+      "instructions": "Second screenshot of BV Regional Z-Image Attention with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
+    },
+    {
+      "id": "bv-remote-llm-provider--node--default",
+      "page": "/node-reference/bv-remote-llm-provider",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Remote LLM Provider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-remote-llm-provider--connection--minimal",
+      "page": "/node-reference/bv-remote-llm-provider",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Remote LLM Provider. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-dynamic-combo--node--default",
+      "page": "/node-reference/bv-dynamic-combo",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Dynamic Combo in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-dynamic-combo--connection--minimal",
+      "page": "/node-reference/bv-dynamic-combo",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Dynamic Combo. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-subgraph-divider--node--default",
+      "page": "/node-reference/bv-subgraph-divider",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Subgraph Divider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-subgraph-divider--connection--minimal",
+      "page": "/node-reference/bv-subgraph-divider",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Subgraph Divider. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-subgraph-heading--node--default",
+      "page": "/node-reference/bv-subgraph-heading",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Subgraph Heading in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-subgraph-heading--connection--minimal",
+      "page": "/node-reference/bv-subgraph-heading",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Subgraph Heading. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-subgraph-spacer--node--default",
+      "page": "/node-reference/bv-subgraph-spacer",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Subgraph Spacer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-subgraph-spacer--connection--minimal",
+      "page": "/node-reference/bv-subgraph-spacer",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Subgraph Spacer. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-hex-color-to-int--node--default",
+      "page": "/node-reference/bv-hex-color-to-int",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Hex Color To Int in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-hex-color-to-int--connection--minimal",
+      "page": "/node-reference/bv-hex-color-to-int",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Hex Color To Int. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-seed--node--default",
+      "page": "/node-reference/bv-seed",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Seed in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-seed--connection--minimal",
+      "page": "/node-reference/bv-seed",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Seed. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-text-log-writer--node--default",
+      "page": "/node-reference/bv-text-log-writer",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Text Log Writer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-text-log-writer--connection--minimal",
+      "page": "/node-reference/bv-text-log-writer",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Text Log Writer. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "bv-control-center--node--default",
+      "page": "/node-reference/bv-control-center",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Control Center in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+    },
+    {
+      "id": "bv-control-center--connection--minimal",
+      "page": "/node-reference/bv-control-center",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Control Center. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+    },
+    {
+      "id": "installation--configuration--manager-search",
+      "page": "/getting-started/installation",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "ConfigUI Manager search result for BV Node Pack, showing the installed package identity without unrelated personal paths."
+    },
+    {
+      "id": "quick-start--connection--seed-latent",
+      "page": "/getting-started/quick-start",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Neutral canvas showing BV Seed connected to the smallest meaningful deterministic starter path and BV Empty Latent Random Ratio configured to 1024x1024 with only 1:1 enabled."
+    },
+    {
+      "id": "regional-v3-concept--configuration--architecture",
+      "page": "/concepts/regional-v3",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "Documentation-native architecture graphic: authoring document -> typed provider links -> scoped capability composition -> executor. Distinguish collector, configuration owner, and executor."
+    },
+    {
+      "id": "workflow-identity--configuration--scope",
+      "page": "/concepts/workflow-identity",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "Documentation-native graph-scope graphic comparing a valid same-root provider link, a valid same-Subgraph-definition link, and a rejected cross-workflow lookup."
+    },
+    {
+      "id": "regional-v3-guide--configuration--editor",
+      "page": "/node-guides/regional-v3",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "Regional Editor with Global, Background, and two named regions. English UI, 1024x1024 canvas, simple non-sensitive prompts, no Legacy Debug ports."
+    },
+    {
+      "id": "regional-v3-guide--connection--minimal",
+      "page": "/node-guides/regional-v3",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal Regional V3 authoring-to-executor graph using BV Regional Prompt and one compatible consumer; persisted provider links visible where applicable."
+    },
+    {
+      "id": "detailer-loop-guide--connection--minimal",
+      "page": "/node-guides/detailer-loop",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal two-job Detailer loop graph from BV Regional Detailer Plan through Start, Job Resolver, one processing placeholder, and End. Hidden expansion nodes must not be manually placed."
+    },
+    {
+      "id": "detailer-loop-guide--configuration--detectors",
+      "page": "/node-guides/detailer-loop",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "BV Detector Registry and Regional Detailer configuration showing two stable detector resources without exposing private model paths."
+    },
+    {
+      "id": "smart-pipes-guide--configuration--slots",
+      "page": "/node-guides/smart-pipes",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "BV Smart Pipe editor with a small set of clearly named typed slots and stable identity; avoid project-specific names."
+    },
+    {
+      "id": "smart-pipes-guide--connection--merge",
+      "page": "/node-guides/smart-pipes",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Two Smart Pipe branches merging in explicit order, with one deliberate conflict explained by the surrounding guide."
+    },
+    {
+      "id": "prompt-processing-guide--connection--pipeline",
+      "page": "/node-guides/prompt-processing",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal structured prompt graph from BV Prompt Encode through category filtering and AST display to BV Prompt Decode. Use distinct neutral marker text per category."
+    },
+    {
+      "id": "workflow-control-guide--configuration--matrix",
+      "page": "/node-guides/workflow-control",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "BV Control Center configured for two clearly named stages, showing active, bypass, and mute choices without unrelated workflow content."
+    },
+    {
+      "id": "workflow-control-guide--connection--stages",
+      "page": "/node-guides/workflow-control",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Small graph with two controlled stages and an observable output path. Make target association and safe bypass behavior visually clear."
+    },
+    {
+      "id": "subgraph-interface-guide--configuration--surface",
+      "page": "/node-guides/subgraph-interface",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "Parent graph showing two instances of one Subgraph definition with headings, divider, spacer, and a small set of projected controls. Use distinct values per instance."
+    },
+    {
+      "id": "latent-utilities-guide--configuration--fixed",
+      "page": "/node-guides/latent-utilities",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "BV Seed with one workflow-specific fixed value and BV Empty Latent Random Ratio constrained to 1024x1024 and 1:1. Do not present the seed as a global recommendation."
+    },
+    {
+      "id": "workflow-verification--configuration--gates",
+      "page": "/workflow-recipes/verification",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "Documentation-native checklist graphic separating structural verification from optional visual approval, converging on publication approval."
+    },
+    {
+      "id": "prompt-processing--workflow--embedded",
+      "page": "/node-guides/prompt-processing",
+      "type": "workflow",
+      "status": "missing",
+      "instructions": "Prompt AST workflow with distinct category markers and two filtering branches. Export matching JSON and lossless embedded-workflow PNG after structural verification."
+    },
+    {
+      "id": "workflow-control--workflow--embedded",
+      "page": "/node-guides/workflow-control",
+      "type": "workflow",
+      "status": "missing",
+      "instructions": "Two-stage workflow demonstrating active, safe bypass, and mute states with an observable deterministic output. Verify copying and reload behavior."
+    },
+    {
+      "id": "subgraph-interface--workflow--embedded",
+      "page": "/node-guides/subgraph-interface",
+      "type": "workflow",
+      "status": "missing",
+      "instructions": "One Subgraph definition used by two parent instances with distinct projected values. Export only after identity and persistence checks pass."
+    },
+    {
+      "id": "latent-utilities--workflow--embedded",
+      "page": "/node-guides/latent-utilities",
+      "type": "workflow",
+      "status": "missing",
+      "instructions": "Deterministic BV Seed and BV Empty Latent Random Ratio example. Use 1024x1024 and 1:1 unless a documented model constraint requires an approved exception."
+    },
+    {
+      "id": "ui-guide--configuration--window-states",
+      "page": "/ui-guide",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "BV-owned editor demonstrated in workspace, floating, minimized, and switching states. Use one neutral example workflow and default interface size."
+    },
+    {
+      "id": "ui-guide--configuration--notifications",
+      "page": "/ui-guide",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "Tightly cropped BV notification examples for migration summary, unresolved provider, and Legacy Debug state. Compose from real UI captures only."
+    },
+    {
+      "id": "regional-v3-quick-start--workflow--embedded",
+      "page": "/node-guides/regional-v3",
+      "type": "workflow",
+      "status": "missing",
+      "instructions": "Verified 1024x1024 Regional V3 starter workflow. Freeze a visually accepted per-workflow seed; export lossless PNG with embedded workflow JSON and matching extracted JSON."
+    },
+    {
+      "id": "detailer-loop--workflow--embedded",
+      "page": "/node-guides/detailer-loop",
+      "type": "workflow",
+      "status": "missing",
+      "instructions": "Two-job Regional Detailer workflow using BV Detector Registry and Impact SEGS. Requires successful execution and output review before embedded PNG export."
+    },
+    {
+      "id": "upgrading-to-1-0--configuration--legacy-debug",
+      "page": "/migration/upgrading-to-1-0",
+      "type": "configuration",
+      "status": "missing",
+      "instructions": "ConfigUI Settings screenshot showing Enable BV Regional Legacy Debug Mode and the Ctrl+Alt+B shortcut. English UI, dark theme, tightly cropped."
+    },
+    {
+      "id": "documentation-home--result--regional",
+      "page": "/",
+      "type": "result",
+      "status": "missing",
+      "instructions": "Approved representative BV Regional result for the documentation home hero. No embedded workflow required; confirm provenance and model attribution."
+    }
+  ]
+}

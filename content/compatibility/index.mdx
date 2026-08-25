@@ -1,0 +1,44 @@
+export const meta = {title:"Compatibility",slug:"/compatibility",category:"Compatibility",documentationStatus:"under-review",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Status vocabulary
+
+- **Verified:** reproduced against the named release and environment.
+- **Experimental:** available, but behavior or results may change.
+- **Known Issue:** supported path with a documented limitation or workaround.
+- **Unsupported:** outside the validated architecture.
+
+## Model-specific attention
+
+Attention nodes require the exact compatible architecture. A matching name is
+not enough. Quantization, model revisions, scheduler behavior, and upstream
+ConfigUI changes can affect compatibility and output quality.
+
+## External dependencies
+
+Impact Pack is required for detector loading and the documented SEGS path. The
+core Regional document, mask, context, and resource contracts remain
+package-neutral.
+
+Dependency presence is not compatibility evidence. Record the exact extension
+version and confirm that its registered node and data contracts match the recipe.
+Optional integrations must not become hidden requirements for unrelated core
+Regional workflows.
+
+## Experimental Krea 2 path
+
+Krea 2 Regional Attention is documented as Experimental. Compare output with an
+unchanged model, workflow, seed, sampler, scheduler, resolution, and prompts.
+
+## Environment matrix
+
+Compatibility claims are scoped to the named BV Node Pack, ComfyUI backend,
+frontend, model architecture and revision, device/backend, and external node
+versions. A successful import proves only that the graph can be deserialized.
+Execute the documented output and reload the saved workflow before marking a
+combination Verified.
+
+## Report an unlisted combination
+
+Treat an unlisted model or extension version as unverified, not automatically
+unsupported. Submit the version matrix, minimal workflow, startup log, execution
+result, and whether the failure occurs during load, validation, or execution.

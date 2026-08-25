@@ -1,0 +1,25 @@
+export const meta = { slug: "/troubleshooting/known-issues", title: "Known Issues", documentationStatus: "under-review" };
+
+## Scope
+
+This page lists limitations that have a confirmed boundary or workaround. It is not a substitute for the issue tracker, and an entry does not mean every workflow using the affected component is broken.
+
+## Legacy Regional ports
+
+Legacy ports remain available temporarily for migrated workflows. Newly created nodes hide them. Enable **BV Regional Legacy Debug Mode** only to inspect or repair an existing connection, then disable it again. The compatibility surface is scheduled for removal after **25 October 2026**.
+
+## Experimental Krea 2 path
+
+**BV Regional Krea 2 Attention** is experimental. Model behavior and visual quality can vary even when graph identity, seed, sampler, resolution, and prompts are fixed. Treat a structurally valid run as technical evidence, not visual acceptance.
+
+## Provider resolution is graph-local
+
+Regional collectors and consumers resolve only through persisted typed links in the same root graph or Subgraph definition. Copying only a consumer leaves its provider unresolved by design. Copy the complete provider-consumer group or reconnect it explicitly.
+
+## Third-party startup failures
+
+An unrelated custom-node import failure may remove nodes required by a recipe. Confirm the failing package in the ConfigUI startup log. Do not modify BV workflow wiring to compensate for an unavailable dependency.
+
+## Reporting a new issue
+
+If none of the documented boundaries explains the problem, prepare a minimal reproduction using the [issue-reporting checklist](/bv_nodepack_wiki/support/reporting-issues).

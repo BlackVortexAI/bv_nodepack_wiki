@@ -1,0 +1,28 @@
+export const meta = {title:"Build a Regional Detailer Loop",slug:"/node-guides/detailer-loop",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## Goal
+
+Process every enabled `detailer` or `both` region sequentially while retaining
+the changes produced by earlier jobs.
+
+## Minimal wiring
+
+1. Connect **BV Regional Prompt** to **BV Regional Detailer Plan**.
+2. Optionally connect **BV Detector Registry** through the V3 resource path.
+3. Connect the plan and initial image to **BV Detailer Loop Start**.
+4. Resolve each job with **BV Detailer Loop Job Resolver**.
+5. Use the composed region mask directly or refine it through
+   **BV Detailer Loop Detect to SEGS (Impact)**.
+6. Process the image with the selected detailer.
+7. Send the processed image to **BV Detailer Loop End**.
+
+## Detector boundary
+
+The registry owns configured detectors. Detection runs against a padded regional
+crop, returned coordinates are rebased to the full image, and the result is gated
+by the exact region mask.
+
+## Internal nodes
+
+The four hidden While, Advance, and Result nodes are created during graph
+expansion. Users must not place, remove, or rewire them manually.

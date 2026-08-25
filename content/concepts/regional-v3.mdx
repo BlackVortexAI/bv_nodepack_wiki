@@ -1,0 +1,28 @@
+export const meta = {title:"Regional V3",slug:"/concepts/regional-v3",category:"Core Concepts",documentationStatus:"under-review",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+
+## One context, explicit capabilities
+
+`BV_REGIONAL` V3 carries a versioned core document plus namespaced,
+JSON-compatible capabilities. Runtime models, LoRA stacks, detectors, images,
+latents, and provider objects are never serialized into the context.
+
+## Graph truth
+
+Collectors expose resources through ordinary persisted typed ConfigUI links.
+Every external selection stores `collector_id` and `resource_id`. Resolution is
+restricted to the same root graph or the same Subgraph definition and fails
+closed when the required provider is missing.
+
+Titles, labels, node order, and slot position are never executable fallbacks.
+
+## Ownership
+
+- Collectors expose live resources.
+- Configuration owners materialize scoped serializable capabilities.
+- Executors consume resolved context and do not discover providers globally.
+
+## Scoped operations
+
+Capability transformers apply `Replace`, `Merge`, `Subtract`, or `Clear` to an
+explicit scope. Repeating an executor intentionally repeats its behavior; V3
+does not store an execution-history registry.
