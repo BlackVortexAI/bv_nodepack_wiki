@@ -1,0 +1,71 @@
+export const meta = {
+  title: "Migrate Regional workflows to V3",
+  slug: "/migration/regional-v3",
+  category: "Compatibility",
+  productStatus: "development",
+  documentationStatus: "draft",
+  audience: "advanced",
+  appliesTo: "codex/regional-context-v3@7166aa1",
+  lastVerified: "2026-08-25"
+}
+
+# Migrate Regional workflows to V3
+
+Compatible Regional nodes retain their existing class IDs and visible names.
+Loading a v1 or v2 workflow migrates supported configuration in memory, per node.
+Opening a workflow never writes its file; saving persists the migrated state.
+
+## Before migration
+
+1. Keep an unchanged copy of the original workflow.
+2. Restart ComfyUI and hard-refresh the browser after installing the V3 build.
+3. Load the original workflow without saving it first.
+4. Record any migration summary and Legacy wiring warning.
+
+## Compatible schema migration
+
+Each node validates its complete candidate before replacing its configuration.
+A successful migration marks the workflow unsaved and reports any assumed defaults,
+such as `region usage = generation`. A failed node remains unchanged while other
+independent nodes may migrate successfully.
+
+To verify rollback, reload without saving: the original file state must return and
+the migration runs again. After saving, reload once more: no repeated migration
+message should appear.
+
+## Legacy ports
+
+Existing Legacy links remain functional and reveal their ports automatically.
+Dragging a compatible Legacy datatype temporarily reveals a hidden port. When V3
+context and Legacy sidecars are both connected, Legacy wins initially and emits a
+deprecation warning.
+
+Replace incompatible or deprecated wiring manually:
+
+1. Add the appropriate V3 collector or context transformer.
+2. Select resources through the V3 Resource Picker.
+3. Verify the real typed provider links were created.
+4. Connect the resulting `BV_REGIONAL` context to the consumer.
+5. Queue an uncached comparison before removing the Legacy link.
+
+There is no universal structural migration assistant. Nodes whose graph shape is
+incompatible remain Legacy implementations until they are manually replaced.
+
+## Failure behavior
+
+- Missing collectors, resources, documents, or regions fail closed.
+- Names and titles are never executable fallbacks.
+- Unsupported newer capability versions remain preserved and read-only; only
+  consumers requiring that capability are blocked.
+- Invalid editor drafts remain visible while canonical fallback values continue
+  to execute where the field contract permits it.
+
+## Verification checklist
+
+- migration summary matches the affected nodes;
+- workflow becomes dirty only after a successful in-memory migration;
+- failed nodes are byte-for-byte unchanged;
+- save and reload do not repeat an already persisted migration;
+- Legacy execution remains unchanged until its links are deliberately replaced;
+- copied groups retain their native links and stable identity relationships;
+- isolated consumers remain visibly unresolved.

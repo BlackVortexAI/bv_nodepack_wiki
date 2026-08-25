@@ -1,0 +1,88 @@
+export const meta = {
+  title: "Build a Regional Detailer and Detector workflow",
+  slug: "/node-guides/regional-prompting/regional-detailer-detector-workflow",
+  category: "Regional Prompting",
+  productStatus: "development",
+  documentationStatus: "draft",
+  audience: "advanced",
+  appliesTo: "codex/regional-context-v3@7166aa1",
+  lastVerified: "2026-08-25"
+}
+
+# Build a Regional Detailer and Detector workflow
+
+This workflow assigns detectors to named Regional Prompt regions and executes the
+resulting jobs in a deterministic loop. Persisted typed ComfyUI links and stable
+collector/resource IDs remain the only resource truth.
+
+## Prerequisites
+
+- a **BV Regional Prompt** document with regions whose usage is `detailer` or
+  `both`;
+- one or more compatible detector providers;
+- the image, model, CLIP, VAE, conditioning, and Detailer nodes required by the
+  selected backend.
+
+## 1. Create the plan
+
+1. Add **BV Regional Detailer Plan** downstream of **BV Regional Prompt**.
+2. Open its Detailer Plan editor.
+3. Create one job for each intended region and select its primary region.
+4. Configure job order, grouping, feathering, cycle count, guide size, and other
+   bounded settings required by the backend.
+
+Only regions enabled for Detailer usage are eligible. A missing or deleted region
+remains visible as an invalid assignment and does not silently retarget by name.
+
+## 2. Register detector resources
+
+1. Add **BV Detector Registry** and connect its detector inputs.
+2. Give each resource a stable, descriptive ID.
+3. In the plan, assign a collector and resource to each job.
+4. For multiple registries, repeat the selection per assignment.
+
+Every selected collector creates an ordinary persisted
+`BV_RUNTIME_RESOURCE_PROVIDER` link. Collector and resource IDs are stored
+separately. Duplicate display names are allowed; titles and input positions are
+not resolution fallbacks.
+
+## 3. Execute the loop
+
+Connect the plan through the supported Detailer loop nodes. Keep the plan, its
+registries, and all consumers in the same root graph or the same Subgraph
+definition. Queue an uncached execution and verify jobs run in the displayed order
+with the intended region masks and detector resources.
+
+## Verification
+
+- save and reload the workflow;
+- reopen the plan and verify every region and detector assignment is resolved;
+- change one detector resource and confirm only its assignment changes;
+- test two jobs with two resources and confirm their order is stable;
+- copy the complete provider/plan group and verify its native links survive;
+- copy only the plan and confirm it stays unresolved until explicitly reconnected.
+
+## Typical errors
+
+### Region is unavailable
+
+Set the source region usage to `detailer` or `both`, or select another region by
+its stable identity. Renaming an existing region is safe.
+
+### Detector is unresolved
+
+Confirm the registry link exists in the same concrete graph and reselect the
+collector/resource pair. Do not repair it by renaming a node to match an old title.
+
+### A Subgraph conversion loses assignments
+
+Do not save over the only workflow copy. Reopen the source workflow and convert
+the complete provider/consumer group. Current V3 builds preserve the native
+provider links during ComfyUI's two-phase Subgraph conversion.
+
+## Removal or rollback
+
+Keep a saved workflow copy before replacing Legacy Detailer wiring. To remove one
+job, delete it from the plan before disconnecting its detector provider. Removing
+a registry first deliberately leaves unresolved assignments so that the graph
+cannot execute against a different detector by accident.
