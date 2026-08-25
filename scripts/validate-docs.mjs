@@ -23,8 +23,11 @@ for (const node of contracts.nodes) {
   for (const type of ["node", "connection"]) {
     if (!manifest.assets.some(asset => asset.page === page && asset.type === type)) errors.push(`${page} is missing a ${type} asset`);
   }
-  if (node.legacy && !manifest.assets.some(asset => asset.page === page && asset.type === "legacy")) errors.push(`${page} is missing a legacy asset`);
+  const ports = [...Object.values(node.inputs).flat(), ...node.outputs];
+  if (node.legacyPorts && !ports.some(port => port.legacy)) errors.push(`${page} declares legacy ports without marking the affected ports`);
+  if (ports.some(port => port.dynamic && !port.initiallyHidden)) errors.push(`${page} has a dynamic port family without its initial visibility state`);
 }
+if (manifest.assets.some(asset => asset.type === "legacy")) errors.push("Legacy-only screenshot assets are redundant with the full technical node exports");
 const fixedRoutes = ["", "getting-started/installation", "getting-started/quick-start", "concepts/regional-v3", "concepts/workflow-identity", "node-reference", "node-guides/regional-v3", "node-guides/detailer-loop", "node-guides/smart-pipes", "node-guides/prompt-processing", "node-guides/workflow-control", "node-guides/subgraph-interface", "node-guides/latent-utilities", "workflow-recipes", "workflow-recipes/verification", "ui-guide", "compatibility", "migration/upgrading-to-1-0", "migration/deprecated-nodes", "troubleshooting", "troubleshooting/known-issues", "support/reporting-issues", "reference/glossary", "reference/changelog", "reference/acknowledgements"];
 const routes = [...fixedRoutes, ...contracts.nodes.map(node => `node-reference/${node.slug}`)];
 const routeSet = new Set(routes.map(route => `/${route}`.replace(/\/$/, "") || "/"));

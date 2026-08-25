@@ -135,7 +135,13 @@ function Home({go}: {go: (path: string) => void}) {
 
 function PortTable({ports, group}: {ports: Port[]; group: string}) {
   if (!ports.length) return <p className="empty-state">No {group.toLowerCase()} ports.</p>;
-  return <div className="port-table"><div><b>Name</b><b>Type</b><b>Availability</b></div>{ports.map(port => <div key={`${group}-${port.name}`}><code>{port.name}</code><code>{port.type}</code><span>{port.dynamic ? "Dynamic range" : group}</span></div>)}</div>;
+  const availability = (port: Port) => {
+    if (port.legacy) return <span className="port-availability legacy"><b>Legacy compatibility</b><small>{port.legacyGuidance}</small></span>;
+    if (port.initiallyHidden) return <span className="port-availability dynamic"><b>Dynamic range</b><small>Technically present, but hidden until configured or connected.</small></span>;
+    if (group.toLowerCase() === "hidden") return <span className="port-availability hidden"><b>System-injected</b><small>Used internally during execution and not shown as a connectable canvas port.</small></span>;
+    return <span>{group}</span>;
+  };
+  return <div className="port-table"><div><b>Name</b><b>Type</b><b>Availability</b></div>{ports.map(port => <div key={`${group}-${port.name}`}><code>{port.name}</code><code>{port.type}</code>{availability(port)}</div>)}</div>;
 }
 
 function NodePage({node}: {node: NodeContract}) {
@@ -153,7 +159,7 @@ function NodePage({node}: {node: NodeContract}) {
     <section id="outputs"><h2>Outputs</h2><PortTable ports={node.outputs} group="Output"/></section>
     <section id="behavior"><h2>Behavior</h2><p>{behaviorFor(node)}</p></section>
     <section id="minimal-connections"><h2>Minimal connections</h2><p>Connect only the required upstream values and the downstream consumer needed for the task. Add optional providers or advanced controls after the minimal path executes successfully.</p>{pageAssets.filter(asset => asset.type === "connection").map(asset => <AssetPlaceholder key={asset.id} asset={asset}/>)}</section>
-    {node.legacyPorts && <details className="legacy-block"><summary>Show legacy debug view</summary><div><h2>Deprecated Regional ports</h2><p>Newly created nodes hide these compatibility ports. Existing connected ports remain visible. Enable <b>BV Regional Legacy Debug Mode</b> in ConfigUI Settings or press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>B</kbd> to inspect them.</p><p>The compatibility surface is scheduled for removal after <b>25 October 2026</b>. Open, save, reload, and execute important 0.x workflows before that date.</p>{pageAssets.filter(asset => asset.type === "legacy").map(asset => <AssetPlaceholder key={asset.id} asset={asset}/>)}</div></details>}
+    {node.legacyPorts && <details className="legacy-block"><summary>Legacy compatibility ports</summary><div><h2>Deprecated Regional ports</h2><p>Every affected port is marked <b>Legacy compatibility</b> in the input or output table above. The exported node image may show these ports because the export extension includes the complete technical port surface.</p><p>In normal ComfyUI use, newly created nodes hide them. Existing connected ports remain visible, and <b>BV Regional Legacy Debug Mode</b> or <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>B</kbd> reveals them for diagnosis.</p><p>The compatibility surface is scheduled for removal after <b>25 October 2026</b>. Open, save, reload, and execute important 0.x workflows before that date.</p></div></details>}
     {node.status === "deprecated" && <section id="replacement"><h2>Replacement</h2><p>{replacementFor(node.name)}</p></section>}
     <section id="limitations"><h2>Known limitations</h2><p>{limitationsFor(node)}</p></section>
     <section id="related"><h2>Related documentation</h2><ul><li><a href={hrefFor("/getting-started/quick-start")}>Quick Start</a></li><li><a href={hrefFor("/compatibility")}>Compatibility</a></li>{node.section.includes("Regional") && <li><a href={hrefFor("/concepts/regional-v3")}>Regional V3 concept</a></li>}</ul></section>

@@ -167,13 +167,6 @@
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Detailer Plan. Use a neutral dark canvas and only the smallest required upstream/downstream context."
     },
     {
-      "id": "bv-regional-detailer-plan--legacy--debug-visible",
-      "page": "/node-reference/bv-regional-detailer-plan",
-      "type": "legacy",
-      "status": "missing",
-      "instructions": "Second screenshot of BV Regional Detailer Plan with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
-    },
-    {
       "id": "bv-empty-latent-random-ratio--node--default",
       "page": "/node-reference/bv-empty-latent-random-ratio",
       "type": "node",
@@ -185,8 +178,9 @@
       "id": "bv-empty-latent-random-ratio--connection--minimal",
       "page": "/node-reference/bv-empty-latent-random-ratio",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Empty Latent Random Ratio. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+      "status": "captured",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Empty Latent Random Ratio. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "path": "/assets/connections/bv-empty-latent-random-ratio.png"
     },
     {
       "id": "bv-latent-random-rotate-90--node--default",
@@ -200,8 +194,9 @@
       "id": "bv-latent-random-rotate-90--connection--minimal",
       "page": "/node-reference/bv-latent-random-rotate-90",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Latent Random Rotate 90. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+      "status": "captured",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Latent Random Rotate 90. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "path": "/assets/connections/bv-latent-random-rotate-90.png"
     },
     {
       "id": "bv-smart-pipe--node--default",
@@ -384,13 +379,6 @@
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Anima Conditioning. Use a neutral dark canvas and only the smallest required upstream/downstream context."
     },
     {
-      "id": "bv-regional-anima-conditioning--legacy--debug-visible",
-      "page": "/node-reference/bv-regional-anima-conditioning",
-      "type": "legacy",
-      "status": "missing",
-      "instructions": "Second screenshot of BV Regional Anima Conditioning with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
-    },
-    {
       "id": "bv-regional-anima-lllite--node--default",
       "page": "/node-reference/bv-regional-anima-lllite",
       "type": "node",
@@ -466,13 +454,6 @@
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional FLUX.2 Klein 9B Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context."
     },
     {
-      "id": "bv-regional-flux-2-klein-9b-attention--legacy--debug-visible",
-      "page": "/node-reference/bv-regional-flux-2-klein-9b-attention",
-      "type": "legacy",
-      "status": "missing",
-      "instructions": "Second screenshot of BV Regional FLUX.2 Klein 9B Attention with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
-    },
-    {
       "id": "bv-regional-image-save--node--default",
       "page": "/node-reference/bv-regional-image-save",
       "type": "node",
@@ -516,13 +497,6 @@
       "type": "connection",
       "status": "missing",
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Krea 2 Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context."
-    },
-    {
-      "id": "bv-regional-krea-2-attention--legacy--debug-visible",
-      "page": "/node-reference/bv-regional-krea-2-attention",
-      "type": "legacy",
-      "status": "missing",
-      "instructions": "Second screenshot of BV Regional Krea 2 Attention with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
     },
     {
       "id": "bv-regional-lora--node--default",
@@ -570,13 +544,6 @@
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Native Conditioning. Use a neutral dark canvas and only the smallest required upstream/downstream context."
     },
     {
-      "id": "bv-regional-native-conditioning--legacy--debug-visible",
-      "page": "/node-reference/bv-regional-native-conditioning",
-      "type": "legacy",
-      "status": "missing",
-      "instructions": "Second screenshot of BV Regional Native Conditioning with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
-    },
-    {
       "id": "bv-regional-prompt--node--default",
       "page": "/node-reference/bv-regional-prompt",
       "type": "node",
@@ -590,13 +557,6 @@
       "type": "connection",
       "status": "missing",
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Prompt. Use a neutral dark canvas and only the smallest required upstream/downstream context."
-    },
-    {
-      "id": "bv-regional-prompt--legacy--debug-visible",
-      "page": "/node-reference/bv-regional-prompt",
-      "type": "legacy",
-      "status": "missing",
-      "instructions": "Second screenshot of BV Regional Prompt with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
     },
     {
       "id": "bv-regional-prompt-enhancer--node--default",
@@ -644,13 +604,6 @@
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional SDXL Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context."
     },
     {
-      "id": "bv-regional-sdxl-attention--legacy--debug-visible",
-      "page": "/node-reference/bv-regional-sdxl-attention",
-      "type": "legacy",
-      "status": "missing",
-      "instructions": "Second screenshot of BV Regional SDXL Attention with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
-    },
-    {
       "id": "bv-regional-select--node--default",
       "page": "/node-reference/bv-regional-select",
       "type": "node",
@@ -681,13 +634,6 @@
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Z-Image Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context."
     },
     {
-      "id": "bv-regional-z-image-attention--legacy--debug-visible",
-      "page": "/node-reference/bv-regional-z-image-attention",
-      "type": "legacy",
-      "status": "missing",
-      "instructions": "Second screenshot of BV Regional Z-Image Attention with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports."
-    },
-    {
       "id": "bv-remote-llm-provider--node--default",
       "page": "/node-reference/bv-remote-llm-provider",
       "type": "node",
@@ -714,8 +660,9 @@
       "id": "bv-dynamic-combo--connection--minimal",
       "page": "/node-reference/bv-dynamic-combo",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Dynamic Combo. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+      "status": "captured",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Dynamic Combo. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "path": "/assets/connections/bv-dynamic-combo.png"
     },
     {
       "id": "bv-subgraph-divider--node--default",
@@ -774,8 +721,9 @@
       "id": "bv-hex-color-to-int--connection--minimal",
       "page": "/node-reference/bv-hex-color-to-int",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Hex Color To Int. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+      "status": "captured",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Hex Color To Int. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "path": "/assets/connections/bv-hex-color-to-int.png"
     },
     {
       "id": "bv-seed--node--default",
@@ -789,8 +737,9 @@
       "id": "bv-seed--connection--minimal",
       "page": "/node-reference/bv-seed",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Seed. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+      "status": "captured",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Seed. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "path": "/assets/connections/bv-seed.png"
     },
     {
       "id": "bv-text-log-writer--node--default",
@@ -804,8 +753,9 @@
       "id": "bv-text-log-writer--connection--minimal",
       "page": "/node-reference/bv-text-log-writer",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Text Log Writer. Use a neutral dark canvas and only the smallest required upstream/downstream context."
+      "status": "captured",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Text Log Writer. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "path": "/assets/connections/bv-text-log-writer.png"
     },
     {
       "id": "bv-control-center--node--default",

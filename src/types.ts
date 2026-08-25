@@ -1,4 +1,11 @@
-export type Port = {name: string; type: string; dynamic?: boolean};
+export type Port = {
+  name: string;
+  type: string;
+  dynamic?: boolean;
+  initiallyHidden?: boolean;
+  legacy?: boolean;
+  legacyGuidance?: string;
+};
 export type NodeContract = {
   name: string;
   slug: string;
@@ -11,7 +18,7 @@ export type NodeContract = {
   outputs: Port[];
   inputError?: string | null;
 };
-export type AssetType = "node" | "connection" | "configuration" | "legacy" | "workflow" | "result";
+export type AssetType = "node" | "connection" | "configuration" | "workflow" | "result";
 export type AssetEntry = {
   id: string;
   page: string;

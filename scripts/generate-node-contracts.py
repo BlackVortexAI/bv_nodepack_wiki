@@ -21,7 +21,7 @@ def value_type(value: object) -> str:
     return str(value)
 
 
-def collapse_ports(ports: list[dict[str, str]]) -> list[dict[str, str]]:
+def collapse_ports(ports: list[dict[str, str]]) -> list[dict[str, object]]:
     families: dict[tuple[str, str], list[int]] = {}
     plain: list[dict[str, str]] = []
     for port in ports:
@@ -34,7 +34,12 @@ def collapse_ports(ports: list[dict[str, str]]) -> list[dict[str, str]]:
     for (prefix, type_name), numbers in families.items():
         numbers.sort()
         if len(numbers) >= 4:
-            plain.append({"name": f"{prefix}{numbers[0]:03d} … {prefix}{numbers[-1]:03d}", "type": type_name, "dynamic": True})
+            plain.append({
+                "name": f"{prefix}{numbers[0]:03d} … {prefix}{numbers[-1]:03d}",
+                "type": type_name,
+                "dynamic": True,
+                "initiallyHidden": True,
+            })
         else:
             plain.extend({"name": f"{prefix}{number:03d}", "type": type_name} for number in numbers)
     return plain
@@ -60,6 +65,14 @@ def section(category: str, name: str) -> str:
     if "/control" in category:
         return "Workflow Control"
     return "Utilities"
+
+
+def mark_legacy_port(ports: list[dict[str, object]], name: str, guidance: str) -> None:
+    for port in ports:
+        if port["name"] == name:
+            port["legacy"] = True
+            port["legacyGuidance"] = guidance
+            return
 
 
 def main() -> None:
@@ -106,6 +119,13 @@ def main() -> None:
             {"name": str(output_names[index] if index < len(output_names) else output_type), "type": str(output_type)}
             for index, output_type in enumerate(output_types)
         ])
+        if name in legacy_consumers:
+            mark_legacy_port(inputs.get("optional", []), "lora_registry", "Use Regional V3 resource providers.")
+            mark_legacy_port(inputs.get("optional", []), "lora_bindings", "Use the BV_REGIONAL context input.")
+        elif name == "BV Regional Detailer Plan":
+            mark_legacy_port(inputs.get("optional", []), "detector_registry", "Use Regional V3 detector resource providers.")
+        elif name == "BV Regional Prompt":
+            mark_legacy_port(outputs, "lora_bindings", "Use the BV_REGIONAL context output and V3 capability editors.")
         internal = category == "__hidden__" or name.endswith("(internal)")
         deprecated = "Deprecated" in category
         experimental = bool(getattr(cls, "EXPERIMENTAL", False))
@@ -145,15 +165,6 @@ def main() -> None:
                 "instructions": f"Minimal meaningful ConfigUI wiring centered on {node['name']}. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
             },
         ])
-        if node["legacyPorts"]:
-            assets.append({
-                "id": f"{base}--legacy--debug-visible",
-                "page": f"/node-reference/{base}",
-                "type": "legacy",
-                "status": "missing",
-                "instructions": f"Second screenshot of {node['name']} with Enable BV Regional Legacy Debug Mode active. Match the default screenshot framing and expose only the deprecated ports.",
-            })
-
     assets.extend([
         {"id": "installation--configuration--manager-search", "page": "/getting-started/installation", "type": "configuration", "status": "missing", "instructions": "ConfigUI Manager search result for BV Node Pack, showing the installed package identity without unrelated personal paths."},
         {"id": "quick-start--connection--seed-latent", "page": "/getting-started/quick-start", "type": "connection", "status": "missing", "instructions": "Neutral canvas showing BV Seed connected to the smallest meaningful deterministic starter path and BV Empty Latent Random Ratio configured to 1024x1024 with only 1:1 enabled."},
@@ -188,7 +199,6 @@ def main() -> None:
         "node": "nodes",
         "connection": "connections",
         "configuration": "configuration",
-        "legacy": "legacy",
         "workflow": "workflows",
         "result": "results",
     }

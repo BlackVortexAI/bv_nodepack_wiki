@@ -1,13 +1,79 @@
 export const meta = { slug: "/reference/acknowledgements", title: "Acknowledgements", documentationStatus: "under-review" };
 
-## Ecosystem
+## Human direction and AI assistance
 
-BV Node Pack is built for the ComfyUI ecosystem and integrates with its graph, execution, persistence, and frontend extension contracts.
+Generative AI systems served as collaborative development tools throughout this
+project, supporting research, code generation, refactoring, test design and
+documentation. Their contribution is acknowledged openly alongside the human
+architecture, creative direction, review and practical validation behind the pack.
 
-Some documented recipes optionally use third-party projects such as Impact Pack for detector and SEGS workflows. Those dependencies retain their own licenses, compatibility boundaries, and support channels.
+## Ecosystem and inspiration
 
-Workflow-image exports used during documentation production may be created with **ComfyUI Workflow Image Export**. The export tool is documentation tooling; it is not a runtime dependency of BV Node Pack.
+BV Node Pack is built on ComfyUI's extension ecosystem. Several open-source
+projects helped shape its product ideas, interaction patterns and technical research:
+
+- [ComfyUI](https://github.com/Comfy-Org/ComfyUI) and
+  [ComfyUI Frontend](https://github.com/Comfy-Org/ComfyUI_frontend) provide the
+  runtime, graph, Subgraph and extension foundations this pack integrates with.
+- [ComfyUI Impact Pack](https://github.com/ltdrdata/ComfyUI-Impact-Pack) provides
+  the detector providers, `SEGS` contract and Detailer consumer used by the optional
+  detector-aware Regional Detailer Loop integration. BV owns its plan, registry,
+  regional crop/mask gating and loop control rather than vendoring Impact internals.
+- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy) influenced the focus on
+  fast workflow controls, compact graph tooling and practical seed/control UX.
+- [ComfyUI_agilly1989_motorway](https://github.com/agilly1989/ComfyUI_agilly1989_motorway)
+  was the original inspiration for configurable BV Pipes. Motorway demonstrated
+  that a pipe could carry user-named values through a workflow and overwrite an
+  existing key downstream instead of relying only on a permanently fixed port set.
+  BV Smart Pipe developed that idea further with incremental slot inheritance,
+  stable slot identities, independent branches, wireless routing and explicit merges.
+- [cg-use-everywhere](https://github.com/chrisgoringe/cg-use-everywhere), commonly
+  known as Use Everywhere, inspired the wireless-routing direction. Its approach
+  demonstrated how values can be broadcast without visible graph links and how
+  routing rules can disambiguate targets in complex workflows. BV Smart Pipe uses
+  its own explicit predecessor, stable-address and branch/merge semantics.
+- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes), especially the
+  Ideogram regional prompt-builder workflow, inspired the idea of a dedicated
+  editor surface that can remain available while navigating the graph.
+- [ComfyUI_LC123_nodes](https://github.com/lonecatone23/ComfyUI_LC123_nodes)
+  demonstrated painted regional authoring and provided useful Krea 2 and Anima
+  workflow references.
+- [ComfyUI-Krea2-Regional](https://github.com/januspluto/ComfyUI-Krea2-Regional)
+  by januspluto provided the reference implementation and core activation-space
+  approach for token-gated single-pass regional LoRA and LoKr execution on Krea 2.
+  BV adapts those techniques to its regional document, named LoRA-stack and
+  compatibility architecture; the upstream MIT attribution is reproduced in the
+  [Third-Party Notices](https://github.com/BlackVortexAI/bv_nodepack/blob/main/THIRD_PARTY_NOTICES.md).
+- [Comfyui-Anima-Regional-Conditioning](https://github.com/Sen-sou/Comfyui-Anima-Regional-Conditioning)
+  provided the technical basis for the built-in Anima patch. Its MIT attribution
+  is reproduced in the
+  [Third-Party Notices](https://github.com/BlackVortexAI/bv_nodepack/blob/main/THIRD_PARTY_NOTICES.md).
+- [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF) was studied as an
+  architectural reference for regional attention, overlap and model-specific
+  backends. BV does not copy its implementation.
+- [comfy-ex-tagcomplete](https://github.com/jupo-ai/comfy-ex-tagcomplete) informed
+  completion behavior and supplied the baseline public tag-data snapshot. BV uses
+  its own completion implementation; dataset provenance is documented separately.
+
+> **Thank you.** BV Node Pack would not have grown into its current form without
+> the maintainers, researchers and workflow creators who share their code, ideas,
+> experiments and hard-earned findings with the ComfyUI community. Their openness
+> made it possible to study different approaches, learn from them and build something
+> new on top of that collective knowledge. We sincerely appreciate the time and care
+> behind every project acknowledged above.
+
+Inspiration acknowledgements do not imply endorsement, affiliation or a runtime
+dependency unless explicitly stated.
+
+## Documentation tooling
+
+Workflow-image exports used during documentation production may be created with
+**ComfyUI Workflow Image Export**. The export tool is documentation tooling; it is
+not a runtime dependency of BV Node Pack.
 
 ## Attribution review
 
-Final publication requires a license and attribution review against the exact dependency versions used by approved example workflows. Until that review is complete, this page remains under review and avoids implying endorsement by third-party maintainers.
+Final publication requires a license and attribution review against the exact
+dependency versions used by approved example workflows. Until that review is
+complete, this page remains under review and avoids implying endorsement by
+third-party maintainers.

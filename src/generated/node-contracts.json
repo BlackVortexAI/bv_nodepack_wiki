@@ -107,7 +107,8 @@
           {
             "name": "v_001 … v_100",
             "type": "*",
-            "dynamic": true
+            "dynamic": true,
+            "initiallyHidden": true
           }
         ]
       },
@@ -119,7 +120,8 @@
         {
           "name": "out_001 … out_100",
           "type": "*",
-          "dynamic": true
+          "dynamic": true,
+          "initiallyHidden": true
         }
       ],
       "inputError": null
@@ -614,7 +616,9 @@
         "optional": [
           {
             "name": "detector_registry",
-            "type": "BV_DETECTOR_REGISTRY"
+            "type": "BV_DETECTOR_REGISTRY",
+            "legacy": true,
+            "legacyGuidance": "Use Regional V3 detector resource providers."
           },
           {
             "name": "resource_provider",
@@ -877,7 +881,8 @@
           {
             "name": "v_001 … v_100",
             "type": "*",
-            "dynamic": true
+            "dynamic": true,
+            "initiallyHidden": true
           }
         ]
       },
@@ -889,7 +894,8 @@
         {
           "name": "out_001 … out_100",
           "type": "*",
-          "dynamic": true
+          "dynamic": true,
+          "initiallyHidden": true
         }
       ],
       "inputError": null
@@ -913,7 +919,8 @@
           {
             "name": "pipe_001 … pipe_016",
             "type": "BV_SMART_PIPE",
-            "dynamic": true
+            "dynamic": true,
+            "initiallyHidden": true
           }
         ]
       },
@@ -1307,11 +1314,15 @@
         "optional": [
           {
             "name": "lora_registry",
-            "type": "BV_LORA_STACK_REGISTRY"
+            "type": "BV_LORA_STACK_REGISTRY",
+            "legacy": true,
+            "legacyGuidance": "Use Regional V3 resource providers."
           },
           {
             "name": "lora_bindings",
-            "type": "BV_REGIONAL_LORA_BINDINGS"
+            "type": "BV_REGIONAL_LORA_BINDINGS",
+            "legacy": true,
+            "legacyGuidance": "Use the BV_REGIONAL context input."
           }
         ]
       },
@@ -1551,11 +1562,15 @@
         "optional": [
           {
             "name": "lora_registry",
-            "type": "BV_LORA_STACK_REGISTRY"
+            "type": "BV_LORA_STACK_REGISTRY",
+            "legacy": true,
+            "legacyGuidance": "Use Regional V3 resource providers."
           },
           {
             "name": "lora_bindings",
-            "type": "BV_REGIONAL_LORA_BINDINGS"
+            "type": "BV_REGIONAL_LORA_BINDINGS",
+            "legacy": true,
+            "legacyGuidance": "Use the BV_REGIONAL context input."
           }
         ]
       },
@@ -1697,11 +1712,15 @@
         "optional": [
           {
             "name": "lora_registry",
-            "type": "BV_LORA_STACK_REGISTRY"
+            "type": "BV_LORA_STACK_REGISTRY",
+            "legacy": true,
+            "legacyGuidance": "Use Regional V3 resource providers."
           },
           {
             "name": "lora_bindings",
-            "type": "BV_REGIONAL_LORA_BINDINGS"
+            "type": "BV_REGIONAL_LORA_BINDINGS",
+            "legacy": true,
+            "legacyGuidance": "Use the BV_REGIONAL context input."
           }
         ]
       },
@@ -1921,11 +1940,15 @@
         "optional": [
           {
             "name": "lora_registry",
-            "type": "BV_LORA_STACK_REGISTRY"
+            "type": "BV_LORA_STACK_REGISTRY",
+            "legacy": true,
+            "legacyGuidance": "Use Regional V3 resource providers."
           },
           {
             "name": "lora_bindings",
-            "type": "BV_REGIONAL_LORA_BINDINGS"
+            "type": "BV_REGIONAL_LORA_BINDINGS",
+            "legacy": true,
+            "legacyGuidance": "Use the BV_REGIONAL context input."
           }
         ]
       },
@@ -2142,7 +2165,9 @@
         },
         {
           "name": "lora_bindings",
-          "type": "BV_REGIONAL_LORA_BINDINGS"
+          "type": "BV_REGIONAL_LORA_BINDINGS",
+          "legacy": true,
+          "legacyGuidance": "Use the BV_REGIONAL context output and V3 capability editors."
         }
       ],
       "inputError": null
@@ -2285,11 +2310,15 @@
         "optional": [
           {
             "name": "lora_registry",
-            "type": "BV_LORA_STACK_REGISTRY"
+            "type": "BV_LORA_STACK_REGISTRY",
+            "legacy": true,
+            "legacyGuidance": "Use Regional V3 resource providers."
           },
           {
             "name": "lora_bindings",
-            "type": "BV_REGIONAL_LORA_BINDINGS"
+            "type": "BV_REGIONAL_LORA_BINDINGS",
+            "legacy": true,
+            "legacyGuidance": "Use the BV_REGIONAL context input."
           }
         ]
       },
@@ -2387,11 +2416,15 @@
         "optional": [
           {
             "name": "lora_registry",
-            "type": "BV_LORA_STACK_REGISTRY"
+            "type": "BV_LORA_STACK_REGISTRY",
+            "legacy": true,
+            "legacyGuidance": "Use Regional V3 resource providers."
           },
           {
             "name": "lora_bindings",
-            "type": "BV_REGIONAL_LORA_BINDINGS"
+            "type": "BV_REGIONAL_LORA_BINDINGS",
+            "legacy": true,
+            "legacyGuidance": "Use the BV_REGIONAL context input."
           }
         ]
       },
