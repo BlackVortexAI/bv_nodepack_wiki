@@ -202,7 +202,6 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps({"targetVersion": "1.0.0", "generated": "2026-08-25", "nodes": nodes}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     args.assets.parent.mkdir(parents=True, exist_ok=True)
-    for asset in assets:
     args.assets.write_text(json.dumps({"generated": "2026-08-25", "assets": assets}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 

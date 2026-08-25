@@ -5,8 +5,9 @@
       "id": "bv-latent-random-aspect-ratio--node--default",
       "page": "/node-reference/bv-latent-random-aspect-ratio",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Latent Random Aspect Ratio in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Latent Random Aspect Ratio in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-latent-random-aspect-ratio.png"
     },
     {
       "id": "bv-latent-random-aspect-ratio--connection--minimal",
@@ -19,8 +20,9 @@
       "id": "bv-pipe--node--default",
       "page": "/node-reference/bv-pipe",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Pipe in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Pipe in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-pipe.png"
     },
     {
       "id": "bv-pipe--connection--minimal",
@@ -33,8 +35,9 @@
       "id": "bv-pipe-config--node--default",
       "page": "/node-reference/bv-pipe-config",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Pipe Config in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Pipe Config in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-pipe-config.png"
     },
     {
       "id": "bv-pipe-config--connection--minimal",
@@ -47,8 +50,9 @@
       "id": "bv-detailer-loop-detect-to-segs-impact--node--default",
       "page": "/node-reference/bv-detailer-loop-detect-to-segs-impact",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Detailer Loop Detect to SEGS (Impact) in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Detailer Loop Detect to SEGS (Impact) in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-detailer-loop-detect-to-segs-impact.png"
     },
     {
       "id": "bv-detailer-loop-detect-to-segs-impact--connection--minimal",
@@ -61,8 +65,9 @@
       "id": "bv-detailer-loop-end--node--default",
       "page": "/node-reference/bv-detailer-loop-end",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Detailer Loop End in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Detailer Loop End in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-detailer-loop-end.png"
     },
     {
       "id": "bv-detailer-loop-end--connection--minimal",
@@ -75,8 +80,9 @@
       "id": "bv-detailer-loop-job-resolver--node--default",
       "page": "/node-reference/bv-detailer-loop-job-resolver",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Detailer Loop Job Resolver in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Detailer Loop Job Resolver in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-detailer-loop-job-resolver.png"
     },
     {
       "id": "bv-detailer-loop-job-resolver--connection--minimal",
@@ -89,8 +95,9 @@
       "id": "bv-detailer-loop-start--node--default",
       "page": "/node-reference/bv-detailer-loop-start",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Detailer Loop Start in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Detailer Loop Start in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-detailer-loop-start.png"
     },
     {
       "id": "bv-detailer-loop-start--connection--minimal",
@@ -103,8 +110,9 @@
       "id": "bv-detector-binding--node--default",
       "page": "/node-reference/bv-detector-binding",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Detector Binding in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Detector Binding in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-detector-binding.png"
     },
     {
       "id": "bv-detector-binding--connection--minimal",
@@ -117,8 +125,9 @@
       "id": "bv-detector-registry--node--default",
       "page": "/node-reference/bv-detector-registry",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Detector Registry in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Detector Registry in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-detector-registry.png"
     },
     {
       "id": "bv-detector-registry--connection--minimal",
@@ -131,8 +140,9 @@
       "id": "bv-regional-detailer-mask--node--default",
       "page": "/node-reference/bv-regional-detailer-mask",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Detailer Mask in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Detailer Mask in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-detailer-mask.png"
     },
     {
       "id": "bv-regional-detailer-mask--connection--minimal",
@@ -145,8 +155,9 @@
       "id": "bv-regional-detailer-plan--node--default",
       "page": "/node-reference/bv-regional-detailer-plan",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Detailer Plan in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Detailer Plan in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-detailer-plan.png"
     },
     {
       "id": "bv-regional-detailer-plan--connection--minimal",
@@ -166,8 +177,9 @@
       "id": "bv-empty-latent-random-ratio--node--default",
       "page": "/node-reference/bv-empty-latent-random-ratio",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Empty Latent Random Ratio in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Empty Latent Random Ratio in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-empty-latent-random-ratio.png"
     },
     {
       "id": "bv-empty-latent-random-ratio--connection--minimal",
@@ -180,8 +192,9 @@
       "id": "bv-latent-random-rotate-90--node--default",
       "page": "/node-reference/bv-latent-random-rotate-90",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Latent Random Rotate 90 in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Latent Random Rotate 90 in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-latent-random-rotate-90.png"
     },
     {
       "id": "bv-latent-random-rotate-90--connection--minimal",
@@ -194,8 +207,9 @@
       "id": "bv-smart-pipe--node--default",
       "page": "/node-reference/bv-smart-pipe",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Smart Pipe in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Smart Pipe in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-smart-pipe.png"
     },
     {
       "id": "bv-smart-pipe--connection--minimal",
@@ -208,8 +222,9 @@
       "id": "bv-smart-pipe-merge--node--default",
       "page": "/node-reference/bv-smart-pipe-merge",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Smart Pipe Merge in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Smart Pipe Merge in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-smart-pipe-merge.png"
     },
     {
       "id": "bv-smart-pipe-merge--connection--minimal",
@@ -222,8 +237,9 @@
       "id": "bv-prompt-ast-debug--node--default",
       "page": "/node-reference/bv-prompt-ast-debug",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Prompt AST Debug in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Prompt AST Debug in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-prompt-ast-debug.png"
     },
     {
       "id": "bv-prompt-ast-debug--connection--minimal",
@@ -236,8 +252,9 @@
       "id": "bv-prompt-category-switch--node--default",
       "page": "/node-reference/bv-prompt-category-switch",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Prompt Category Switch in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Prompt Category Switch in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-prompt-category-switch.png"
     },
     {
       "id": "bv-prompt-category-switch--connection--minimal",
@@ -250,8 +267,9 @@
       "id": "bv-prompt-decode--node--default",
       "page": "/node-reference/bv-prompt-decode",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Prompt Decode in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Prompt Decode in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-prompt-decode.png"
     },
     {
       "id": "bv-prompt-decode--connection--minimal",
@@ -264,8 +282,9 @@
       "id": "bv-prompt-encode--node--default",
       "page": "/node-reference/bv-prompt-encode",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Prompt Encode in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Prompt Encode in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-prompt-encode.png"
     },
     {
       "id": "bv-prompt-encode--connection--minimal",
@@ -278,8 +297,9 @@
       "id": "bv-apply-regional-enhancement--node--default",
       "page": "/node-reference/bv-apply-regional-enhancement",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Apply Regional Enhancement in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Apply Regional Enhancement in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-apply-regional-enhancement.png"
     },
     {
       "id": "bv-apply-regional-enhancement--connection--minimal",
@@ -292,8 +312,9 @@
       "id": "bv-comfy-clip-llm-provider--node--default",
       "page": "/node-reference/bv-comfy-clip-llm-provider",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Comfy CLIP LLM Provider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Comfy CLIP LLM Provider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-comfy-clip-llm-provider.png"
     },
     {
       "id": "bv-comfy-clip-llm-provider--connection--minimal",
@@ -306,8 +327,9 @@
       "id": "bv-lora-stack-collector--node--default",
       "page": "/node-reference/bv-lora-stack-collector",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV LoRA Stack Collector in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV LoRA Stack Collector in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-lora-stack-collector.png"
     },
     {
       "id": "bv-lora-stack-collector--connection--minimal",
@@ -320,8 +342,9 @@
       "id": "bv-named-lora-stack--node--default",
       "page": "/node-reference/bv-named-lora-stack",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Named LoRA Stack in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Named LoRA Stack in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-named-lora-stack.png"
     },
     {
       "id": "bv-named-lora-stack--connection--minimal",
@@ -334,8 +357,9 @@
       "id": "bv-regional-anima-adapter--node--default",
       "page": "/node-reference/bv-regional-anima-adapter",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Anima Adapter in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Anima Adapter in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-anima-adapter.png"
     },
     {
       "id": "bv-regional-anima-adapter--connection--minimal",
@@ -348,8 +372,9 @@
       "id": "bv-regional-anima-conditioning--node--default",
       "page": "/node-reference/bv-regional-anima-conditioning",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Anima Conditioning in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Anima Conditioning in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-anima-conditioning.png"
     },
     {
       "id": "bv-regional-anima-conditioning--connection--minimal",
@@ -369,8 +394,9 @@
       "id": "bv-regional-anima-lllite--node--default",
       "page": "/node-reference/bv-regional-anima-lllite",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Anima LLLite in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Anima LLLite in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-anima-lllite.png"
     },
     {
       "id": "bv-regional-anima-lllite--connection--minimal",
@@ -383,8 +409,9 @@
       "id": "bv-regional-color-control-image--node--default",
       "page": "/node-reference/bv-regional-color-control-image",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Color Control Image in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Color Control Image in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-color-control-image.png"
     },
     {
       "id": "bv-regional-color-control-image--connection--minimal",
@@ -397,8 +424,9 @@
       "id": "bv-regional-debug--node--default",
       "page": "/node-reference/bv-regional-debug",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Debug in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Debug in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-debug.png"
     },
     {
       "id": "bv-regional-debug--connection--minimal",
@@ -411,8 +439,9 @@
       "id": "bv-regional-deconstructor--node--default",
       "page": "/node-reference/bv-regional-deconstructor",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Deconstructor in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Deconstructor in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-deconstructor.png"
     },
     {
       "id": "bv-regional-deconstructor--connection--minimal",
@@ -425,8 +454,9 @@
       "id": "bv-regional-flux-2-klein-9b-attention--node--default",
       "page": "/node-reference/bv-regional-flux-2-klein-9b-attention",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional FLUX.2 Klein 9B Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional FLUX.2 Klein 9B Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-flux-2-klein-9b-attention.png"
     },
     {
       "id": "bv-regional-flux-2-klein-9b-attention--connection--minimal",
@@ -446,8 +476,9 @@
       "id": "bv-regional-image-save--node--default",
       "page": "/node-reference/bv-regional-image-save",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Image Save in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Image Save in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-image-save.png"
     },
     {
       "id": "bv-regional-image-save--connection--minimal",
@@ -460,8 +491,9 @@
       "id": "bv-regional-image-send--node--default",
       "page": "/node-reference/bv-regional-image-send",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Image Send in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Image Send in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-image-send.png"
     },
     {
       "id": "bv-regional-image-send--connection--minimal",
@@ -474,8 +506,9 @@
       "id": "bv-regional-krea-2-attention--node--default",
       "page": "/node-reference/bv-regional-krea-2-attention",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Krea 2 Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Krea 2 Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-krea-2-attention.png"
     },
     {
       "id": "bv-regional-krea-2-attention--connection--minimal",
@@ -495,8 +528,9 @@
       "id": "bv-regional-lora--node--default",
       "page": "/node-reference/bv-regional-lora",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional LoRA in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional LoRA in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-lora.png"
     },
     {
       "id": "bv-regional-lora--connection--minimal",
@@ -509,8 +543,9 @@
       "id": "bv-regional-mask-render--node--default",
       "page": "/node-reference/bv-regional-mask-render",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Mask Render in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Mask Render in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-mask-render.png"
     },
     {
       "id": "bv-regional-mask-render--connection--minimal",
@@ -523,8 +558,9 @@
       "id": "bv-regional-native-conditioning--node--default",
       "page": "/node-reference/bv-regional-native-conditioning",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Native Conditioning in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Native Conditioning in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-native-conditioning.png"
     },
     {
       "id": "bv-regional-native-conditioning--connection--minimal",
@@ -544,8 +580,9 @@
       "id": "bv-regional-prompt--node--default",
       "page": "/node-reference/bv-regional-prompt",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Prompt in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Prompt in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-prompt.png"
     },
     {
       "id": "bv-regional-prompt--connection--minimal",
@@ -565,8 +602,9 @@
       "id": "bv-regional-prompt-enhancer--node--default",
       "page": "/node-reference/bv-regional-prompt-enhancer",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Prompt Enhancer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Prompt Enhancer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-prompt-enhancer.png"
     },
     {
       "id": "bv-regional-prompt-enhancer--connection--minimal",
@@ -579,8 +617,9 @@
       "id": "bv-regional-prompt-extract--node--default",
       "page": "/node-reference/bv-regional-prompt-extract",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Prompt Extract in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Prompt Extract in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-prompt-extract.png"
     },
     {
       "id": "bv-regional-prompt-extract--connection--minimal",
@@ -593,8 +632,9 @@
       "id": "bv-regional-sdxl-attention--node--default",
       "page": "/node-reference/bv-regional-sdxl-attention",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional SDXL Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional SDXL Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-sdxl-attention.png"
     },
     {
       "id": "bv-regional-sdxl-attention--connection--minimal",
@@ -614,8 +654,9 @@
       "id": "bv-regional-select--node--default",
       "page": "/node-reference/bv-regional-select",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Select in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Select in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-select.png"
     },
     {
       "id": "bv-regional-select--connection--minimal",
@@ -628,8 +669,9 @@
       "id": "bv-regional-z-image-attention--node--default",
       "page": "/node-reference/bv-regional-z-image-attention",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional Z-Image Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Regional Z-Image Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-regional-z-image-attention.png"
     },
     {
       "id": "bv-regional-z-image-attention--connection--minimal",
@@ -649,8 +691,9 @@
       "id": "bv-remote-llm-provider--node--default",
       "page": "/node-reference/bv-remote-llm-provider",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Remote LLM Provider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Remote LLM Provider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-remote-llm-provider.png"
     },
     {
       "id": "bv-remote-llm-provider--connection--minimal",
@@ -663,8 +706,9 @@
       "id": "bv-dynamic-combo--node--default",
       "page": "/node-reference/bv-dynamic-combo",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Dynamic Combo in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Dynamic Combo in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-dynamic-combo.png"
     },
     {
       "id": "bv-dynamic-combo--connection--minimal",
@@ -677,8 +721,9 @@
       "id": "bv-subgraph-divider--node--default",
       "page": "/node-reference/bv-subgraph-divider",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Subgraph Divider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Subgraph Divider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-subgraph-divider.png"
     },
     {
       "id": "bv-subgraph-divider--connection--minimal",
@@ -691,8 +736,9 @@
       "id": "bv-subgraph-heading--node--default",
       "page": "/node-reference/bv-subgraph-heading",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Subgraph Heading in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Subgraph Heading in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-subgraph-heading.png"
     },
     {
       "id": "bv-subgraph-heading--connection--minimal",
@@ -705,8 +751,9 @@
       "id": "bv-subgraph-spacer--node--default",
       "page": "/node-reference/bv-subgraph-spacer",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Subgraph Spacer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Subgraph Spacer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-subgraph-spacer.png"
     },
     {
       "id": "bv-subgraph-spacer--connection--minimal",
@@ -719,8 +766,9 @@
       "id": "bv-hex-color-to-int--node--default",
       "page": "/node-reference/bv-hex-color-to-int",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Hex Color To Int in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Hex Color To Int in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-hex-color-to-int.png"
     },
     {
       "id": "bv-hex-color-to-int--connection--minimal",
@@ -733,8 +781,9 @@
       "id": "bv-seed--node--default",
       "page": "/node-reference/bv-seed",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Seed in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Seed in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-seed.png"
     },
     {
       "id": "bv-seed--connection--minimal",
@@ -747,8 +796,9 @@
       "id": "bv-text-log-writer--node--default",
       "page": "/node-reference/bv-text-log-writer",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Text Log Writer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Text Log Writer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-text-log-writer.png"
     },
     {
       "id": "bv-text-log-writer--connection--minimal",
@@ -761,8 +811,9 @@
       "id": "bv-control-center--node--default",
       "page": "/node-reference/bv-control-center",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Control Center in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor."
+      "status": "captured",
+      "instructions": "Transparent export of BV Control Center in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "path": "/assets/nodes/bv-control-center.png"
     },
     {
       "id": "bv-control-center--connection--minimal",
