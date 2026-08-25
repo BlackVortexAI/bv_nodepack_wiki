@@ -165,6 +165,19 @@ def main() -> None:
                 "instructions": f"Minimal meaningful ConfigUI wiring centered on {node['name']}. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
             },
         ])
+    for slug, name in [
+        ("bv-subgraph-heading", "BV Subgraph Heading"),
+        ("bv-subgraph-spacer", "BV Subgraph Spacer"),
+        ("bv-subgraph-divider", "BV Subgraph Divider"),
+        ("bv-dynamic-combo", "BV Dynamic Combo"),
+    ]:
+        assets.append({
+            "id": f"{slug}--subgraph--minimal",
+            "page": f"/node-reference/{slug}",
+            "type": "connection",
+            "status": "missing",
+            "instructions": f"Inside view of a minimal Subgraph definition centered on {name}, including the projected interface wiring.",
+        })
     assets.extend([
         {"id": "installation--configuration--manager-search", "page": "/getting-started/installation", "type": "configuration", "status": "missing", "instructions": "ConfigUI Manager search result for BV Node Pack, showing the installed package identity without unrelated personal paths."},
         {"id": "quick-start--connection--seed-latent", "page": "/getting-started/quick-start", "type": "connection", "status": "missing", "instructions": "Neutral canvas showing BV Seed connected to the smallest meaningful deterministic starter path and BV Empty Latent Random Ratio configured to 1024x1024 with only 1:1 enabled."},
@@ -204,10 +217,16 @@ def main() -> None:
     }
     for asset in assets:
         stem = asset["id"].split("--", 1)[0]
-        relative_path = Path("assets") / asset_folders[asset["type"]] / f"{stem}.png"
+        filename = f"{asset['id']}.png" if asset["id"].endswith("--subgraph--minimal") else f"{stem}.png"
+        relative_path = Path("assets") / asset_folders[asset["type"]] / filename
         if (wiki_root / "public" / relative_path).is_file():
             asset["status"] = "captured"
             asset["path"] = f"/{relative_path.as_posix()}"
+        instructions = asset["instructions"].lower()
+        asset["aiGeneratedReviewRequired"] = (
+            asset["type"] in {"connection", "workflow"}
+            or (asset["type"] == "configuration" and any(term in instructions for term in ("graph", "workflow", "wiring")))
+        )
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps({"targetVersion": "1.0.0", "generated": "2026-08-25", "nodes": nodes}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

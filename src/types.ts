@@ -26,5 +26,6 @@ export type AssetEntry = {
   status: "missing" | "captured" | "reviewed" | "optimized" | "approved";
   instructions: string;
   path?: string;
+  aiGeneratedReviewRequired?: boolean;
 };
 export type PageInfo = {path: string; title: string; summary: string; section: string; hidden?: boolean};

@@ -103,7 +103,10 @@ function Layout({path, go, children, toc = []}: {path: string; go: (path: string
 function AssetPlaceholder({asset}: {asset: AssetEntry}) {
   if (asset.path) return <figure className={`asset-capture ${asset.type}`} data-asset-id={asset.id}>
     <img src={hrefFor(asset.path)} alt={asset.instructions}/>
-    <figcaption><code>{asset.id}</code><StatusPill status={asset.status}/></figcaption>
+    <figcaption>
+      <div className="asset-caption"><code>{asset.id}</code><StatusPill status={asset.status}/></div>
+      {asset.aiGeneratedReviewRequired && <p className="asset-review-warning">AI-generated workflow illustration — manual review required.</p>}
+    </figcaption>
   </figure>;
   return <figure className={`asset-placeholder ${asset.type}`} data-asset-id={asset.id}>
     <div className="placeholder-grid"/><span className="asset-type">{asset.type}</span>
