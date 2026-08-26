@@ -20,6 +20,19 @@ Regional collectors and consumers resolve only through persisted typed links in 
 
 An unrelated custom-node import failure may remove nodes required by a recipe. Confirm the failing package in the ConfigUI startup log. Do not modify BV workflow wiring to compensate for an unavailable dependency.
 
+## Native Subgraph auxiliary canvases
+
+ComfyUI Frontend 1.49.6 can fail when an additional `LGraphCanvas` is constructed
+with an active native Subgraph. The failed constructor may leave an incomplete
+canvas registered with the graph. This is tracked upstream in
+[ComfyUI Frontend issue #16035](https://github.com/Comfy-Org/ComfyUI_frontend/issues/16035).
+
+BV Node Pack 1.0.1 includes a caller-side workaround for image export: its
+offscreen canvas is initialized against the root graph and switches to the active
+Subgraph only after canvas initialization. It is detached after capture or
+failure. If another extension triggers the upstream constructor path, reload the
+workflow before retrying BV image export.
+
 ## Reporting a new issue
 
 If none of the documented boundaries explains the problem, prepare a minimal reproduction using the [issue-reporting checklist](/bv_nodepack_wiki/support/reporting-issues).

@@ -1,0 +1,57 @@
+export const meta = {title:"Export Graph and BV UI Images",slug:"/ui-guide/image-export",category:"BV UI Guide",documentationStatus:"under-review",appliesTo:"1.0.1",lastVerified:"2026-08-26"}
+
+## Open the exporter
+
+For graph content, open the canvas context menu and select **BV Node Pack →
+Export Graph Image…**. From an open BV managed window, use its context menu and
+select **Export BV UI Image…**.
+
+The exporter uses a normal browser download. Browser download-directory and
+automatic-download settings therefore apply; no native Save As picker is opened
+by BV Node Pack.
+
+## Sources
+
+- **Entire active graph** captures the current root graph or native Subgraph.
+- **Selected nodes and groups** uses tight bounds around the current selection.
+- **Open BV interfaces** captures the selected visible BV managed window.
+
+Graph captures render their own connection lines. Temporary selection, hover,
+and focus outlines and the LiteGraph performance statistics overlay are excluded
+from the PNG. A complete native Subgraph capture includes its input and output
+interface nodes as well as its ordinary nodes and groups.
+
+## Output controls
+
+- **Transparent** keeps the background alpha channel.
+- **BV Documentation Grid** adds the standard dark documentation grid.
+- **Current ComfyUI background** uses the active canvas background settings.
+- **Scale** controls output resolution without resizing the visible browser canvas.
+- **Outer padding** adds a uniform margin around the calculated source bounds.
+- **Complete workflow embedded** stores the serialized root workflow as PNG metadata.
+
+The dialog reports the final pixel dimensions before export. Unsafe canvas sizes
+are rejected instead of being silently downscaled.
+
+## Automation API
+
+The versioned frontend API is available at `window.bvNodepack.export.v1`:
+
+- `listSources()` returns currently available graph and BV-interface sources.
+- `capture(options)` creates an export result without downloading it.
+- `download(options)` captures and starts the same browser-download path as the dialog.
+- `openDialog(options)` opens the managed export window.
+
+Use `capture()` when an integration needs the PNG `Blob` directly. Use
+`download()` when browser-managed saving is the intended result.
+
+## Native Subgraph compatibility
+
+ComfyUI Frontend 1.49.6 can throw while a graph is supplied directly to the
+`LGraphCanvas` constructor for an active native Subgraph. BV Node Pack 1.0.1
+avoids that path by initializing its offscreen canvas against the root graph and
+switching to the active Subgraph only after canvas initialization. The visible
+ComfyUI canvas, its zoom, and its viewport are not modified during export.
+
+The upstream lifecycle defect is tracked in
+[ComfyUI Frontend issue #16035](https://github.com/Comfy-Org/ComfyUI_frontend/issues/16035).

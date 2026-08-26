@@ -23,6 +23,7 @@ const routes = [
   ["/workflow-recipes", "Workflow Recipes", "Verified BV Node Pack workflow recipes."],
   ["/workflow-recipes/verification", "Workflow Verification", "Structural and visual publication gates for workflow recipes."],
   ["/ui-guide", "BV UI Guide", "BV-owned windows, dialogs, persistence, and keyboard behavior."],
+  ["/ui-guide/image-export", "Export Graph and BV UI Images", "Create deterministic PNGs of graphs, selections, Subgraphs, and BV interfaces."],
   ["/compatibility", "Compatibility", "BV Node Pack compatibility boundaries."],
   ["/migration/upgrading-to-1-0", "Upgrading to 1.0", "Automatic migration and temporary compatibility features."],
   ["/troubleshooting", "Troubleshooting", "Diagnose BV Node Pack installation, graph, model, and UI problems."],

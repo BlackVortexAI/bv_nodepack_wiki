@@ -24,6 +24,7 @@ export const pages: PageInfo[] = [
   {path: "/workflow-recipes", title: "Workflow Recipes", summary: "Focused, verified workflows and explicit dependencies.", section: "Workflow Recipes"},
   {path: "/workflow-recipes/verification", title: "Workflow Verification", summary: "Structural and visual gates for downloadable JSON and embedded PNG recipes.", section: "Workflow Recipes"},
   {path: "/ui-guide", title: "BV UI Guide", summary: "Windows, dialogs, persistence, keyboard behavior, and notifications.", section: "BV UI Guide"},
+  {path: "/ui-guide/image-export", title: "Export Graph and BV UI Images", summary: "Create deterministic PNGs of graphs, selections, Subgraphs, and BV interfaces.", section: "BV UI Guide"},
   {path: "/compatibility", title: "Compatibility", summary: "Verified, experimental, known-issue, and unsupported boundaries.", section: "Compatibility"},
   {path: "/migration/upgrading-to-1-0", title: "Upgrading to 1.0", summary: "Automatic migration, temporary legacy ports, and deprecated nodes.", section: "Compatibility"},
   {path: "/troubleshooting", title: "Troubleshooting", summary: "Installation, missing nodes, graph scope, models, and UI issues.", section: "Troubleshooting"},
