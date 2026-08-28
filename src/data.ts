@@ -8,7 +8,7 @@ export const publicNodes = nodes;
 export const assets = assetData.assets as AssetEntry[];
 
 export const pages: PageInfo[] = [
-  {path: "/", title: "BV Node Pack 1.0", summary: "Visual regional prompting and deep workflow tools for ComfyUI.", section: "Home"},
+  {path: "/", title: "BV Node Pack 1.1", summary: "Visual regional prompting and deep workflow tools for ComfyUI.", section: "Home"},
   {path: "/getting-started/installation", title: "Installation", summary: "Install, update, and verify BV Node Pack.", section: "Getting Started"},
   {path: "/getting-started/quick-start", title: "Quick Start", summary: "Create a deterministic first workflow.", section: "Getting Started"},
   {path: "/concepts/regional-v3", title: "Regional V3", summary: "Understand persisted context, collectors, resources, and scoped capabilities.", section: "Core Concepts"},
@@ -30,8 +30,8 @@ export const pages: PageInfo[] = [
   {path: "/troubleshooting", title: "Troubleshooting", summary: "Installation, missing nodes, graph scope, models, and UI issues.", section: "Troubleshooting"},
   {path: "/troubleshooting/known-issues", title: "Known Issues", summary: "Confirmed limitations, affected paths, and practical workarounds.", section: "Troubleshooting"},
   {path: "/support/reporting-issues", title: "Reporting Issues", summary: "Prepare a reproducible BV Node Pack bug report without leaking secrets.", section: "Support"},
-  {path: "/reference/glossary", title: "Glossary", summary: "Canonical terms used throughout BV Node Pack 1.0 documentation.", section: "Reference"},
-  {path: "/reference/changelog", title: "Documentation Changelog", summary: "Material documentation changes and their verification state.", section: "Reference"},
+  {path: "/reference/glossary", title: "Glossary", summary: "Canonical terms used throughout BV Node Pack documentation.", section: "Reference"},
+  {path: "/reference/changelog", title: "Changelog", summary: "The four most recent BV Node Pack release entries and their verification state.", section: "Reference"},
   {path: "/reference/acknowledgements", title: "Acknowledgements", summary: "Projects and integrations that support documented BV workflows.", section: "Reference"},
   {path: "/migration/deprecated-nodes", title: "Deprecated Nodes", summary: "Replacement paths and temporary compatibility guarantees.", section: "Compatibility"},
 ];

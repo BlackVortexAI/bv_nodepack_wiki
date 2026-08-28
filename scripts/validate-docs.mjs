@@ -14,8 +14,8 @@ unique(contracts.nodes.map(node => node.name), "Node names");
 unique(contracts.nodes.map(node => node.slug), "Node slugs");
 unique(manifest.assets.map(asset => asset.id), "Asset IDs");
 
-if (contracts.targetVersion !== "1.0.0") errors.push(`Unexpected target version ${contracts.targetVersion}`);
-if (contracts.nodes.length !== 51) errors.push(`Expected 51 public nodes, found ${contracts.nodes.length}`);
+if (contracts.targetVersion !== "1.1.0") errors.push(`Unexpected target version ${contracts.targetVersion}`);
+if (contracts.nodes.length !== 60) errors.push(`Expected 60 public nodes, found ${contracts.nodes.length}`);
 if (contracts.nodes.some(node => node.internal || node.status === "internal")) errors.push("Public contracts contain internal nodes");
 
 for (const node of contracts.nodes) {

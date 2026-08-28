@@ -1,6 +1,6 @@
 {
-  "targetVersion": "1.0.0",
-  "generated": "2026-08-25",
+  "targetVersion": "1.1.0",
+  "generated": "2026-08-28",
   "nodes": [
     {
       "name": "BV Latent Random Aspect Ratio",
@@ -474,6 +474,88 @@
         {
           "name": "resource_provider",
           "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Impact Detector Mask",
+      "slug": "bv-impact-detector-mask",
+      "description": "Resolve Impact segmentation or BBOX plus SAM detections into a full-image LUT mask.",
+      "category": "🌀 BV Node Pack/regional/LUT",
+      "section": "Detailer",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "image",
+            "type": "IMAGE"
+          },
+          {
+            "name": "threshold",
+            "type": "FLOAT"
+          },
+          {
+            "name": "dilation",
+            "type": "INT"
+          },
+          {
+            "name": "crop_factor",
+            "type": "FLOAT"
+          },
+          {
+            "name": "drop_size",
+            "type": "INT"
+          },
+          {
+            "name": "detector_mode",
+            "type": "choice: auto | segmentation | bbox_sam | bbox_debug"
+          },
+          {
+            "name": "instance_mode",
+            "type": "choice: combined | largest | index"
+          },
+          {
+            "name": "instance_index",
+            "type": "INT"
+          },
+          {
+            "name": "mask_threshold",
+            "type": "FLOAT"
+          },
+          {
+            "name": "mask_grow",
+            "type": "INT"
+          },
+          {
+            "name": "mask_feather",
+            "type": "INT"
+          }
+        ],
+        "optional": [
+          {
+            "name": "bbox_detector",
+            "type": "BBOX_DETECTOR"
+          },
+          {
+            "name": "segm_detector",
+            "type": "SEGM_DETECTOR"
+          },
+          {
+            "name": "sam_model",
+            "type": "SAM_MODEL"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "mask",
+          "type": "MASK"
+        },
+        {
+          "name": "info",
+          "type": "STRING"
         }
       ],
       "inputError": null
@@ -1091,6 +1173,48 @@
       "inputError": null
     },
     {
+      "name": "BV Apply LUT",
+      "slug": "bv-apply-lut",
+      "description": "Apply a 3D LUT globally or through a detector or regional mask.",
+      "category": "🌀 BV Node Pack/regional/LUT",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "image",
+            "type": "IMAGE"
+          },
+          {
+            "name": "lut",
+            "type": "BV_LUT_PROTOTYPE"
+          },
+          {
+            "name": "strength",
+            "type": "FLOAT"
+          }
+        ],
+        "optional": [
+          {
+            "name": "mask",
+            "type": "MASK"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE"
+        },
+        {
+          "name": "applied_mask",
+          "type": "MASK"
+        }
+      ],
+      "inputError": null
+    },
+    {
       "name": "BV Apply Regional Enhancement",
       "slug": "bv-apply-regional-enhancement",
       "description": "Apply a verified prompt-only enhancement to its matching BV Regional source document.",
@@ -1138,6 +1262,394 @@
         {
           "name": "provider",
           "type": "BV_LLM_PROVIDER"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV LUT Job",
+      "slug": "bv-lut-job",
+      "description": "Append one LUT, strength and optional mask to an ordered LUT plan.",
+      "category": "🌀 BV Node Pack/regional/LUT",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "lut",
+            "type": "BV_LUT_PROTOTYPE"
+          },
+          {
+            "name": "strength",
+            "type": "FLOAT"
+          },
+          {
+            "name": "mask_invert",
+            "type": "BOOLEAN"
+          }
+        ],
+        "optional": [
+          {
+            "name": "plan",
+            "type": "BV_LUT_PLAN"
+          },
+          {
+            "name": "mask",
+            "type": "MASK"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "plan",
+          "type": "BV_LUT_PLAN"
+        },
+        {
+          "name": "job_count",
+          "type": "INT"
+        },
+        {
+          "name": "summary",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV LUT Loader",
+      "slug": "bv-lut-loader",
+      "description": "Load BV-authored looks and local 3D .cube LUT files.",
+      "category": "🌀 BV Node Pack/regional/LUT",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "lut_name",
+            "type": "choice: Built-in: Identity | Built-in: Warm Contrast | Built-in: Cool Graphite | BV_Test_Channel_Swap.cube | downloaded\\DuskTide.cube | downloaded\\NightMarket.cube | bv-prototype-warm-contrast.cube | Download more LUTs…"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "lut",
+          "type": "BV_LUT_PROTOTYPE"
+        },
+        {
+          "name": "info",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV LUT Loop End",
+      "slug": "bv-lut-loop-end",
+      "description": "Feed a processed image into the next LUT job and return the accumulated image.",
+      "category": "🌀 BV Node Pack/regional/LUT",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "flow",
+            "type": "FLOW_CONTROL"
+          },
+          {
+            "name": "processed_image",
+            "type": "IMAGE"
+          }
+        ],
+        "hidden": [
+          {
+            "name": "dynprompt",
+            "type": "DYNPROMPT"
+          },
+          {
+            "name": "unique_id",
+            "type": "UNIQUE_ID"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "final_image",
+          "type": "IMAGE"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV LUT Loop Job Resolver",
+      "slug": "bv-lut-loop-job-resolver",
+      "description": "Resolve the current Regional LUT job into image, LUT, mask and strength values.",
+      "category": "🌀 BV Node Pack/regional/LUT",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "loop_state",
+            "type": "BV_LUT_LOOP_STATE"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "current_image",
+          "type": "IMAGE"
+        },
+        {
+          "name": "lut",
+          "type": "BV_LUT_PROTOTYPE"
+        },
+        {
+          "name": "mask",
+          "type": "MASK"
+        },
+        {
+          "name": "strength",
+          "type": "FLOAT"
+        },
+        {
+          "name": "job_info",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV LUT Loop Start",
+      "slug": "bv-lut-loop-start",
+      "description": "Start an ordered Regional LUT loop with one current image accumulator.",
+      "category": "🌀 BV Node Pack/regional/LUT",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "plan",
+            "type": "*"
+          },
+          {
+            "name": "initial_image",
+            "type": "IMAGE"
+          }
+        ],
+        "optional": [
+          {
+            "name": "resource_provider_1",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_2",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_3",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_4",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_5",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_6",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_7",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_8",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_9",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_10",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_11",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_12",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_13",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_14",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_15",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_16",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_17",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_18",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_19",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_20",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_21",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_22",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_23",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_24",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_25",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_26",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_27",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_28",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_29",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_30",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_31",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_32",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_33",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_34",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_35",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_36",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_37",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_38",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_39",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_40",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          }
+        ],
+        "hidden": [
+          {
+            "name": "initial_value0",
+            "type": "*"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "flow",
+          "type": "FLOW_CONTROL"
+        },
+        {
+          "name": "loop_state",
+          "type": "BV_LUT_LOOP_STATE"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV LUT Registry",
+      "slug": "bv-lut-registry",
+      "description": "Configure and load several named LUTs in one Regional V3 registry node.",
+      "category": "🌀 BV Node Pack/regional/LUT",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "config_json",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "lut_count",
+          "type": "INT"
+        },
+        {
+          "name": "registry_summary",
+          "type": "STRING"
+        },
+        {
+          "name": "resource_provider",
+          "type": "BV_RUNTIME_RESOURCE_PROVIDER"
         }
       ],
       "inputError": null
@@ -1741,6 +2253,204 @@
       "inputError": null
     },
     {
+      "name": "BV Regional LUT Plan",
+      "slug": "bv-regional-lut-plan",
+      "description": "Build an ordered LUT plan from BV Regional v3 regions and same-graph resources.",
+      "category": "🌀 BV Node Pack/regional/LUT",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "regional_prompt",
+            "type": "BV_REGIONAL"
+          },
+          {
+            "name": "config_json",
+            "type": "STRING"
+          }
+        ],
+        "optional": [
+          {
+            "name": "resource_provider_1",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_2",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_3",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_4",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_5",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_6",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_7",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_8",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_9",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_10",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_11",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_12",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_13",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_14",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_15",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_16",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_17",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_18",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_19",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_20",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_21",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_22",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_23",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_24",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_25",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_26",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_27",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_28",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_29",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_30",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_31",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_32",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_33",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_34",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_35",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_36",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_37",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_38",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_39",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "resource_provider_40",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "lut_plan",
+          "type": "BV_LUT_PLAN"
+        },
+        {
+          "name": "job_count",
+          "type": "INT"
+        },
+        {
+          "name": "plan_summary",
+          "type": "STRING"
+        }
+      ],
+      "inputError": null
+    },
+    {
       "name": "BV Regional LoRA",
       "slug": "bv-regional-lora",
       "description": "Add or replace the immutable LoRA capability in a BV Regional v3 context.",
@@ -1993,6 +2703,10 @@
             "type": "STRING"
           },
           {
+            "name": "lut_v3_config_json",
+            "type": "STRING"
+          },
+          {
             "name": "resource_provider",
             "type": "BV_RUNTIME_RESOURCE_PROVIDER"
           },
@@ -2154,6 +2868,166 @@
           },
           {
             "name": "detailer_resource_provider_20",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_1",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_2",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_3",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_4",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_5",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_6",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_7",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_8",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_9",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_10",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_11",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_12",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_13",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_14",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_15",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_16",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_17",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_18",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_19",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_20",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_21",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_22",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_23",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_24",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_25",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_26",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_27",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_28",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_29",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_30",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_31",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_32",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_33",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_34",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_35",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_36",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_37",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_38",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_39",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "lut_resource_provider_40",
             "type": "BV_RUNTIME_RESOURCE_PROVIDER"
           }
         ]

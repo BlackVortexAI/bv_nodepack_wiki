@@ -1,6 +1,25 @@
-export const meta = { slug: "/reference/changelog", title: "Documentation Changelog", documentationStatus: "under-review" };
+export const meta = { slug: "/reference/changelog", title: "Changelog", documentationStatus: "under-review", appliesTo: "1.1.0", lastVerified: "2026-08-28" };
 
-## 1.0.1 release candidate
+The four most recent BV Node Pack releases are kept here and in the runtime
+README. Older entries remain available through the repository history.
+
+## 1.1.0 — 2026-08-28
+
+- Added Regional LUT authoring and execution workflows, including registry,
+  plan, loop, catalog, download and prototype tooling.
+- Unified Classic, Nodes 2.0 and Node Library presentation for technical,
+  provider and legacy ports, including connection-aware Legacy Debug visibility.
+- Stabilized node sizing and widget projection across mode changes, Subgraphs
+  and hot reloads without overwriting user-resized dimensions.
+- Refreshed Regional graph-dependent selectors and sender targets when relevant
+  nodes, editors or regions are created, replaced or removed.
+- Normalized Control Center, Seed, prompt-debug and text-preview presentation and
+  added regression coverage for the shared UI rules.
+
+This entry documents the prepared 1.1.0 source state. It does not claim that a
+tag, GitHub release, registry publication or end-user installation exists.
+
+## 1.0.1 — 2026-08-26
 
 - Added deterministic PNG export for the active graph, selected nodes and groups, and open BV managed windows.
 - Added transparent, BV Documentation Grid, and current ComfyUI background modes with configurable scale and padding.
@@ -8,15 +27,25 @@ export const meta = { slug: "/reference/changelog", title: "Documentation Change
 - Routed saves through the browser download mechanism so configured automatic-download behavior remains effective.
 - Added safe offscreen-canvas attachment and cleanup for native Subgraph captures while the upstream ComfyUI lifecycle defect remains open.
 
-This entry describes the local 1.0.1 release candidate. It does not claim that the version has been committed, published, or installed from a release channel.
+The source version was raised to 1.0.1 with the deterministic export feature.
 
-## 1.0 documentation draft
+## 1.0.0 — 2026-08-25
 
-- Rebuilt the information architecture around user tasks and complete public-node reference coverage.
-- Generated port contracts from the current registered runtime instead of maintaining a parallel handwritten inventory.
-- Added Regional V3 concepts, authoring guides, workflow identity, Smart Pipes, Detailer Loop, UI, compatibility, migration, troubleshooting, and support guidance.
-- Separated stable, experimental, deprecated, and internal surfaces.
-- Added explicit Legacy Debug presentation and the planned compatibility-removal date.
-- Introduced stable asset IDs, workflow-review requirements, and honest missing-content states.
+- Released Regional V3 with workflow-scoped documents, stable region identity,
+  resource providers and model-specific execution paths.
+- Added Regional LoRA V3, Regional Detailer V3 and migration support for
+  compatible pre-1.0 workflows.
+- Added temporary Legacy Debug visibility and explicit migration paths for
+  deprecated Regional wiring.
+- Published the task-oriented documentation site and runtime-derived node
+  reference.
 
-This entry describes documentation work. It does not claim that BV Node Pack 1.0.0 has been versioned, committed, released, or accepted.
+## 0.18.2 — 2026-08-23
+
+- Adopted the Fluent Cyclone mark and the `#1345B7` CI palette across published
+  brand assets and shared UI accent states.
+- Added canonical white, black and light-tinted logo variants with the required
+  Microsoft Fluent Emoji attribution.
+- Replaced the legacy Regional Editor and minimized-window marks with the
+  canonical Cyclone geometry.
+- Kept the layout-profile icon compact when a session layout was modified.

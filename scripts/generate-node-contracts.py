@@ -78,14 +78,19 @@ def mark_legacy_port(ports: list[dict[str, object]], name: str, guidance: str) -
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", required=True, type=Path)
+    parser.add_argument("--comfy-root", type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--assets", required=True, type=Path)
     args = parser.parse_args()
 
     source = args.source.resolve()
-    comfy_root = source.parents[1]
-    sys.path.insert(0, str(comfy_root))
-    package = importlib.import_module("custom_nodes.bv_nodepack")
+    # Import the checkout as a package regardless of whether it lives below a
+    # ComfyUI/custom_nodes tree or in an isolated Git worktree. An isolated
+    # worktree can use the host runtime supplied through --comfy-root.
+    if args.comfy_root:
+        sys.path.insert(0, str(args.comfy_root.resolve()))
+    sys.path.insert(0, str(source.parent))
+    package = importlib.import_module(source.name)
     descriptions = json.loads((source / "node_list.json").read_text(encoding="utf-8"))
 
     nodes = []
@@ -229,9 +234,9 @@ def main() -> None:
         )
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps({"targetVersion": "1.0.0", "generated": "2026-08-25", "nodes": nodes}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    args.output.write_text(json.dumps({"targetVersion": "1.1.0", "generated": "2026-08-28", "nodes": nodes}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     args.assets.parent.mkdir(parents=True, exist_ok=True)
-    args.assets.write_text(json.dumps({"generated": "2026-08-25", "assets": assets}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    args.assets.write_text(json.dumps({"generated": "2026-08-28", "assets": assets}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 

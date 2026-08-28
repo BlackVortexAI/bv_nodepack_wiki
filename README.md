@@ -1,6 +1,6 @@
 # BV Node Pack Documentation
 
-English documentation source for BV Node Pack 1.0.
+English documentation source for BV Node Pack 1.1.
 
 The site covers installation, core concepts, complete public-node reference,
 task-oriented guides, workflow recipes, UI behavior, compatibility, migration,
@@ -45,8 +45,8 @@ page coverage, internal links, asset-manifest coverage, and materialized routes.
 
 ## Content status
 
-- Target documentation version: 1.0.0
-- Public node reference pages: 51
+- Target documentation version: 1.1.0
+- Public node reference pages: generated from the current runtime
 - Screenshot and workflow status: tracked in `src/generated/asset-manifest.json`
 - Deployment: intentionally not configured
 

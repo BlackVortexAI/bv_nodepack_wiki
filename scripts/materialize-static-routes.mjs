@@ -30,7 +30,7 @@ const routes = [
   ["/troubleshooting/known-issues", "Known Issues", "Confirmed BV Node Pack limitations and workarounds."],
   ["/support/reporting-issues", "Reporting Issues", "Prepare a reproducible BV Node Pack bug report."],
   ["/reference/glossary", "Glossary", "Canonical BV Node Pack 1.0 terminology."],
-  ["/reference/changelog", "Documentation Changelog", "Material documentation changes and verification state."],
+  ["/reference/changelog", "Changelog", "The four most recent BV Node Pack release entries and their verification state."],
   ["/reference/acknowledgements", "Acknowledgements", "Projects and integrations used by documented BV workflows."],
   ["/migration/deprecated-nodes", "Deprecated Nodes", "Replacement paths and temporary compatibility guarantees."],
   ...contracts.nodes.map(node => [`/node-reference/${node.slug}`, node.name, node.description]),

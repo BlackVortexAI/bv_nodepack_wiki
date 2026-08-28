@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-25",
+  "generated": "2026-08-28",
   "assets": [
     {
       "id": "bv-latent-random-aspect-ratio--node--default",
@@ -161,6 +161,22 @@
       "status": "captured",
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detector Registry. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
       "path": "/assets/connections/bv-detector-registry.png",
+      "aiGeneratedReviewRequired": true
+    },
+    {
+      "id": "bv-impact-detector-mask--node--default",
+      "page": "/node-reference/bv-impact-detector-mask",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Impact Detector Mask in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-impact-detector-mask--connection--minimal",
+      "page": "/node-reference/bv-impact-detector-mask",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Impact Detector Mask. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
       "aiGeneratedReviewRequired": true
     },
     {
@@ -344,6 +360,22 @@
       "aiGeneratedReviewRequired": true
     },
     {
+      "id": "bv-apply-lut--node--default",
+      "page": "/node-reference/bv-apply-lut",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Apply LUT in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-apply-lut--connection--minimal",
+      "page": "/node-reference/bv-apply-lut",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Apply LUT. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "aiGeneratedReviewRequired": true
+    },
+    {
       "id": "bv-apply-regional-enhancement--node--default",
       "page": "/node-reference/bv-apply-regional-enhancement",
       "type": "node",
@@ -377,6 +409,102 @@
       "status": "captured",
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Comfy CLIP LLM Provider. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
       "path": "/assets/connections/bv-comfy-clip-llm-provider.png",
+      "aiGeneratedReviewRequired": true
+    },
+    {
+      "id": "bv-lut-job--node--default",
+      "page": "/node-reference/bv-lut-job",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV LUT Job in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-lut-job--connection--minimal",
+      "page": "/node-reference/bv-lut-job",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Job. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "aiGeneratedReviewRequired": true
+    },
+    {
+      "id": "bv-lut-loader--node--default",
+      "page": "/node-reference/bv-lut-loader",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV LUT Loader in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-lut-loader--connection--minimal",
+      "page": "/node-reference/bv-lut-loader",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Loader. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "aiGeneratedReviewRequired": true
+    },
+    {
+      "id": "bv-lut-loop-end--node--default",
+      "page": "/node-reference/bv-lut-loop-end",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV LUT Loop End in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-lut-loop-end--connection--minimal",
+      "page": "/node-reference/bv-lut-loop-end",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Loop End. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "aiGeneratedReviewRequired": true
+    },
+    {
+      "id": "bv-lut-loop-job-resolver--node--default",
+      "page": "/node-reference/bv-lut-loop-job-resolver",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV LUT Loop Job Resolver in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-lut-loop-job-resolver--connection--minimal",
+      "page": "/node-reference/bv-lut-loop-job-resolver",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Loop Job Resolver. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "aiGeneratedReviewRequired": true
+    },
+    {
+      "id": "bv-lut-loop-start--node--default",
+      "page": "/node-reference/bv-lut-loop-start",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV LUT Loop Start in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-lut-loop-start--connection--minimal",
+      "page": "/node-reference/bv-lut-loop-start",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Loop Start. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "aiGeneratedReviewRequired": true
+    },
+    {
+      "id": "bv-lut-registry--node--default",
+      "page": "/node-reference/bv-lut-registry",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV LUT Registry in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-lut-registry--connection--minimal",
+      "page": "/node-reference/bv-lut-registry",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Registry. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
       "aiGeneratedReviewRequired": true
     },
     {
@@ -593,6 +721,22 @@
       "status": "captured",
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Krea 2 Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
       "path": "/assets/connections/bv-regional-krea-2-attention.png",
+      "aiGeneratedReviewRequired": true
+    },
+    {
+      "id": "bv-regional-lut-plan--node--default",
+      "page": "/node-reference/bv-regional-lut-plan",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Regional LUT Plan in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-regional-lut-plan--connection--minimal",
+      "page": "/node-reference/bv-regional-lut-plan",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional LUT Plan. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
       "aiGeneratedReviewRequired": true
     },
     {
