@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-28",
+  "generated": "2026-08-29",
   "assets": [
     {
       "id": "bv-latent-random-aspect-ratio--node--default",
@@ -505,6 +505,22 @@
       "type": "connection",
       "status": "missing",
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Registry. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "aiGeneratedReviewRequired": true
+    },
+    {
+      "id": "bv-lora-registry--node--default",
+      "page": "/node-reference/bv-lora-registry",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV LoRA Registry in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-lora-registry--connection--minimal",
+      "page": "/node-reference/bv-lora-registry",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LoRA Registry. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
       "aiGeneratedReviewRequired": true
     },
     {

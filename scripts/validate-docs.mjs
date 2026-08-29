@@ -14,8 +14,8 @@ unique(contracts.nodes.map(node => node.name), "Node names");
 unique(contracts.nodes.map(node => node.slug), "Node slugs");
 unique(manifest.assets.map(asset => asset.id), "Asset IDs");
 
-if (contracts.targetVersion !== "1.1.0") errors.push(`Unexpected target version ${contracts.targetVersion}`);
-if (contracts.nodes.length !== 60) errors.push(`Expected 60 public nodes, found ${contracts.nodes.length}`);
+if (contracts.targetVersion !== "1.2.0") errors.push(`Unexpected target version ${contracts.targetVersion}`);
+if (contracts.nodes.length !== 61) errors.push(`Expected 61 public nodes, found ${contracts.nodes.length}`);
 if (contracts.nodes.some(node => node.internal || node.status === "internal")) errors.push("Public contracts contain internal nodes");
 
 for (const node of contracts.nodes) {
@@ -25,7 +25,7 @@ for (const node of contracts.nodes) {
   }
   const ports = [...Object.values(node.inputs).flat(), ...node.outputs];
   if (node.legacyPorts && !ports.some(port => port.legacy)) errors.push(`${page} declares legacy ports without marking the affected ports`);
-  if (ports.some(port => port.dynamic && !port.initiallyHidden)) errors.push(`${page} has a dynamic port family without its initial visibility state`);
+  if (ports.some(port => port.dynamic && !port.initiallyHidden && !port.dynamicDescription)) errors.push(`${page} has a dynamic input without an initial visibility state or stable description`);
 }
 if (manifest.assets.some(asset => asset.type === "legacy")) errors.push("Legacy-only screenshot assets are redundant with the full technical node exports");
 for (const asset of manifest.assets) {
@@ -33,7 +33,7 @@ for (const asset of manifest.assets) {
     || (asset.type === "configuration" && /graph|workflow|wiring/i.test(asset.instructions));
   if (depictsWorkflow && !asset.aiGeneratedReviewRequired) errors.push(`${asset.id} is missing the AI/manual-review notice flag`);
 }
-const fixedRoutes = ["", "getting-started/installation", "getting-started/quick-start", "concepts/regional-v3", "concepts/workflow-identity", "node-reference", "node-guides/regional-v3", "node-guides/detailer-loop", "node-guides/smart-pipes", "node-guides/prompt-processing", "node-guides/workflow-control", "node-guides/subgraph-interface", "node-guides/latent-utilities", "workflow-recipes", "workflow-recipes/verification", "ui-guide", "ui-guide/image-export", "compatibility", "migration/upgrading-to-1-0", "migration/deprecated-nodes", "troubleshooting", "troubleshooting/known-issues", "support/reporting-issues", "reference/glossary", "reference/changelog", "reference/acknowledgements"];
+const fixedRoutes = ["", "getting-started/installation", "getting-started/quick-start", "concepts/regional-v3", "concepts/workflow-identity", "node-reference", "node-guides/regional-v3", "node-guides/lut-library", "node-guides/lora-library", "node-guides/detailer-loop", "node-guides/smart-pipes", "node-guides/prompt-processing", "node-guides/workflow-control", "node-guides/subgraph-interface", "node-guides/latent-utilities", "workflow-recipes", "workflow-recipes/verification", "ui-guide", "ui-guide/image-export", "compatibility", "migration/upgrading-to-1-0", "migration/deprecated-nodes", "troubleshooting", "troubleshooting/known-issues", "support/reporting-issues", "reference/glossary", "reference/changelog", "reference/acknowledgements"];
 const routes = [...fixedRoutes, ...contracts.nodes.map(node => `node-reference/${node.slug}`)];
 const routeSet = new Set(routes.map(route => `/${route}`.replace(/\/$/, "") || "/"));
 for (const route of routes) {

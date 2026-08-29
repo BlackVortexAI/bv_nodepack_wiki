@@ -1,0 +1,32 @@
+export const meta = {title:"Use the LoRA Library",slug:"/node-guides/lora-library",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.2.0",lastVerified:"2026-08-29"}
+
+## Goal
+
+Collect local LoRA files in one workflow-owned registry and assign stable named
+resources to Regional V3 scopes without rebuilding a long manual collector chain.
+
+## Configure the registry
+
+1. Add **BV LoRA Registry** and open its shared BV editor.
+2. Add named entries from the local LoRA inventory.
+3. Use Quick selection for focused changes or Full mode when the complete entry
+   configuration is required.
+4. Save the registry and select its resources from the Regional LoRA capability
+   editor.
+
+The registry is workflow-scoped. Resource identity is based on the registry
+collector and entry ID, not merely on a display label or filename. Changes to a
+different workflow or Subgraph scope must not silently retarget consumers.
+
+## Compatibility path
+
+**BV Named LoRA Stack** and **BV LoRA Stack Collector** remain available for the
+published chain-based contract and compatible external stack producers. Use
+**BV LoRA Registry** for the prepared 1.2.0 workflow-local library path.
+
+## Verification boundary
+
+Confirm the selected filename, model compatibility and strength with an uncached
+workflow run. Catalog presence, registry persistence and a successful UI selection
+do not prove that a LoRA is compatible with the active model architecture or that
+its visual result is acceptable.

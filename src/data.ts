@@ -8,13 +8,15 @@ export const publicNodes = nodes;
 export const assets = assetData.assets as AssetEntry[];
 
 export const pages: PageInfo[] = [
-  {path: "/", title: "BV Node Pack 1.1", summary: "Visual regional prompting and deep workflow tools for ComfyUI.", section: "Home"},
+  {path: "/", title: "BV Node Pack 1.2", summary: "Visual regional prompting and deep workflow tools for ComfyUI.", section: "Home"},
   {path: "/getting-started/installation", title: "Installation", summary: "Install, update, and verify BV Node Pack.", section: "Getting Started"},
   {path: "/getting-started/quick-start", title: "Quick Start", summary: "Create a deterministic first workflow.", section: "Getting Started"},
   {path: "/concepts/regional-v3", title: "Regional V3", summary: "Understand persisted context, collectors, resources, and scoped capabilities.", section: "Core Concepts"},
   {path: "/concepts/workflow-identity", title: "Workflow Identity", summary: "Stable IDs, graph scope, persistence, and copying.", section: "Core Concepts"},
   {path: "/node-reference", title: "Node Reference", summary: "Complete runtime-derived reference grouped by authoring task.", section: "Node Reference"},
   {path: "/node-guides/regional-v3", title: "Build a Regional V3 Workflow", summary: "Wire authoring, resources, capabilities, and execution.", section: "Node Guides"},
+  {path: "/node-guides/lut-library", title: "Use the LUT Library", summary: "Choose built-ins, manage workflow LUTs, and test catalog channels.", section: "Node Guides"},
+  {path: "/node-guides/lora-library", title: "Use the LoRA Library", summary: "Collect local LoRAs and select workflow-scoped resources.", section: "Node Guides"},
   {path: "/node-guides/detailer-loop", title: "Build a Regional Detailer Loop", summary: "Process Detailer regions sequentially with optional detector refinement.", section: "Node Guides"},
   {path: "/node-guides/smart-pipes", title: "Build with Smart Pipes", summary: "Carry and merge typed workflow state by stable slot identity.", section: "Node Guides"},
   {path: "/node-guides/prompt-processing", title: "Build a Structured Prompt Pipeline", summary: "Encode, filter, inspect, and decode prompt categories.", section: "Node Guides"},
@@ -31,7 +33,7 @@ export const pages: PageInfo[] = [
   {path: "/troubleshooting/known-issues", title: "Known Issues", summary: "Confirmed limitations, affected paths, and practical workarounds.", section: "Troubleshooting"},
   {path: "/support/reporting-issues", title: "Reporting Issues", summary: "Prepare a reproducible BV Node Pack bug report without leaking secrets.", section: "Support"},
   {path: "/reference/glossary", title: "Glossary", summary: "Canonical terms used throughout BV Node Pack documentation.", section: "Reference"},
-  {path: "/reference/changelog", title: "Changelog", summary: "The four most recent BV Node Pack release entries and their verification state.", section: "Reference"},
+  {path: "/reference/changelog", title: "Changelog", summary: "Complete BV Node Pack version history with source and reconstruction boundaries.", section: "Reference"},
   {path: "/reference/acknowledgements", title: "Acknowledgements", summary: "Projects and integrations that support documented BV workflows.", section: "Reference"},
   {path: "/migration/deprecated-nodes", title: "Deprecated Nodes", summary: "Replacement paths and temporary compatibility guarantees.", section: "Compatibility"},
 ];

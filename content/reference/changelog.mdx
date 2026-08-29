@@ -1,51 +1,448 @@
-export const meta = { slug: "/reference/changelog", title: "Changelog", documentationStatus: "under-review", appliesTo: "1.1.0", lastVerified: "2026-08-28" };
+export const meta = { slug: "/reference/changelog", title: "Changelog", documentationStatus: "under-review", appliesTo: "1.2.0", lastVerified: "2026-08-29" };
 
-The four most recent BV Node Pack releases are kept here and in the runtime
-README. Older entries remain available through the repository history.
+This page contains the complete version history recoverable from the repository's
+own changelogs and version commits. Version 1.2.0 describes the prepared,
+unreleased working tree. Versions 0.0.7 through 0.0.1 are visibly separated
+because their summaries are reconstructed from Git commit evidence rather than a
+contemporary changelog.
+
+## 1.2.0 — prepared 2026-08-29, not released
+
+- Added the workflow-local **BV LoRA Registry**, catalog library and Full/Quick
+  selection flows while retaining the published V2 registry chain.
+- Completed the asynchronous LUT catalog with separate Stable and Experimental
+  channels, offline working-copy fallback, manual refresh and checksum-verified
+  downloads.
+- Added nine deterministic built-in looks: Digital Green, Machine Blue, Dustfire,
+  Steel Action, Sunbleached Coast, Expired Film, Classic Monochrome, Grayscale and
+  HDR Color Boost.
+- Expanded the Experimental LUT channel to 46 profile- and license-documented
+  candidates without changing the tested Stable channel.
+- Normalized newly discovered LUT paths across Windows and browser-facing choices
+  so Registry and Loader selections remain interoperable.
+
+The built-in looks were manually tested and the Experimental catalog was confirmed
+to load on 29 August 2026. This entry describes the prepared source state;
+it does not claim a release, tag, published package, visual qualification of every
+look or successful download of every external LUT.
 
 ## 1.1.0 — 2026-08-28
 
-- Added Regional LUT authoring and execution workflows, including registry,
-  plan, loop, catalog, download and prototype tooling.
-- Unified Classic, Nodes 2.0 and Node Library presentation for technical,
-  provider and legacy ports, including connection-aware Legacy Debug visibility.
-- Stabilized node sizing and widget projection across mode changes, Subgraphs
-  and hot reloads without overwriting user-resized dimensions.
+- Added Regional LUT authoring and execution workflows, including registry, plan,
+  loop, catalog, download and prototype tooling.
+- Unified Classic, Nodes 2.0 and Node Library presentation for technical, provider
+  and legacy ports, including connection-aware Legacy Debug visibility.
+- Stabilized node sizing and widget projection across mode changes, Subgraphs and
+  hot reloads without overwriting user-resized dimensions.
 - Refreshed Regional graph-dependent selectors and sender targets when relevant
-  nodes, editors or regions are created, replaced or removed.
+  nodes, editors or regions were created, replaced or removed.
 - Normalized Control Center, Seed, prompt-debug and text-preview presentation and
   added regression coverage for the shared UI rules.
 
-This entry documents the prepared 1.1.0 source state. It does not claim that a
-tag, GitHub release, registry publication or end-user installation exists.
+Source: repository commit `3b07b2b`. This entry records the committed source
+version and does not independently claim a tag, registry publication or release.
 
 ## 1.0.1 — 2026-08-26
 
-- Added deterministic PNG export for the active graph, selected nodes and groups, and open BV managed windows.
-- Added transparent, BV Documentation Grid, and current ComfyUI background modes with configurable scale and padding.
-- Added optional complete-workflow PNG metadata and the versioned `window.bvNodepack.export.v1` automation API.
-- Routed saves through the browser download mechanism so configured automatic-download behavior remains effective.
-- Added safe offscreen-canvas attachment and cleanup for native Subgraph captures while the upstream ComfyUI lifecycle defect remains open.
+- Added deterministic PNG export for the active graph, selected nodes and groups,
+  and open BV-managed windows.
+- Added transparent, BV Documentation Grid and current ComfyUI background modes
+  with configurable scale and padding.
+- Added optional complete-workflow PNG metadata and the versioned
+  `window.bvNodepack.export.v1` automation API.
+- Preserved native Subgraph capture compatibility with guarded offscreen-canvas
+  attachment and cleanup.
 
-The source version was raised to 1.0.1 with the deterministic export feature.
+Source: repository commit `929eaf7`.
 
 ## 1.0.0 — 2026-08-25
 
 - Released Regional V3 with workflow-scoped documents, stable region identity,
   resource providers and model-specific execution paths.
-- Added Regional LoRA V3, Regional Detailer V3 and migration support for
-  compatible pre-1.0 workflows.
-- Added temporary Legacy Debug visibility and explicit migration paths for
-  deprecated Regional wiring.
-- Published the task-oriented documentation site and runtime-derived node
-  reference.
+- Added migration support and temporary Legacy Debug visibility for compatible
+  pre-1.0 Regional workflows.
+- Published the task-oriented documentation site and runtime-derived node reference.
 
-## 0.18.2 — 2026-08-23
+Source: repository commit `544ac11`.
 
-- Adopted the Fluent Cyclone mark and the `#1345B7` CI palette across published
-  brand assets and shared UI accent states.
-- Added canonical white, black and light-tinted logo variants with the required
-  Microsoft Fluent Emoji attribution.
-- Replaced the legacy Regional Editor and minimized-window marks with the
-  canonical Cyclone geometry.
-- Kept the layout-profile icon compact when a session layout was modified.
+## Historical changelog preserved from the pre-1.0 README
+
+The following entries are reproduced from the repository README at commit
+`6dc2d05` and, for versions 0.0.24 through 0.0.8, the older snapshot at
+`f71c5f6`. Their wording reflects the contemporary project record.
+
+### 2026-08-23 — v0.18.2
+
+- Adopt the Fluent Cyclone mark and the `#1345B7` CI palette across published
+  BV NodePack brand assets and shared UI accent states.
+- Add white, black and light-tinted canonical logo variants together with the
+  required Microsoft Fluent Emoji MIT attribution.
+- Replace the legacy Regional Editor window and minimized-window spiral with
+  the canonical Cyclone geometry.
+- Keep the layout-profile icon compact and readable when a session layout is
+  modified instead of allowing the footer control to expand.
+
+### 2026-08-23 — v0.18.1
+
+- Restore pointer interaction for every Regional Editor drawing tool after the
+  shared BV toolbar migration.
+- Close polygon drawings by clicking the initial point once at least three
+  vertices have been placed.
+- Fix autocomplete styling and caret-relative placement in long, scrolled or
+  transformed text areas, and refresh suggestions when the cursor moves.
+
+### 2026-08-22 — v0.18.0
+
+- Move Smart Pipe and Smart Pipe Merge configuration into the shared BV window
+  framework with synchronized native widgets, stable drag ordering and guarded drafts.
+- Add bounded in-memory undo/redo, Save/Discard baselines, draft JSON recovery and
+  three-way migration for compatible external graph changes.
+- Add workflow-owned window-menu visibility with Smart Pipes hidden by default,
+  recoverable hidden-node discovery and graph/subgraph-scoped node identities.
+- Integrate the workflow-global Control Center into the shared tabbed BV UI with
+  autosave, immediate control actions and conditional toolbar discovery.
+- Add editor-type layout profiles, session working layouts, timed BV toasts and
+  ComfyUI-modal-safe window layering as reusable framework services.
+- Harden Smart Pipe Merge routing across bypassed or muted sources and preserve
+  active predecessor values during prompt materialization.
+- Document the BV window lifecycle and persistence contract and extend regression
+  coverage for routing, history, discovery, lifecycle and responsive behavior.
+
+### 2026-08-22 — v0.17.0
+
+- Add the shared BV UI module and offline component showcase as the canonical
+  implementation and visual reference for BV-owned controls, dialogs and windows.
+- Unify Regional Editor, Quick Edit, Detailer Plan and Detector Registry window
+  chrome, multi-node navigation, persistent switch preference and minimized shelf.
+- Add node-owned window state, full edge/corner resizing, responsive header and
+  footer overflow, compact contextual help and a restrained shared radius scale.
+- Refine the Regional Editor dock, layer ordering, compact inspectors, Detailer
+  Plan jobs and Detector Registry summaries using reusable production controls.
+- Add frontend regression coverage for shared UI integration, window lifecycle,
+  responsive behavior, preferences, geometry and regional interaction ordering.
+
+### 2026-08-21 — v0.16.0
+
+- Add the visual `BV Regional Detailer Plan` for ordered per-region jobs with
+  grouping, mask/prompt composition, per-job conditioning and optional named
+  detector assignment.
+- Add `BV Detector Registry`, which configures several self-loaded Ultralytics,
+  ONNX and optional SAM detectors in one node while retaining an advanced binding
+  adapter for compatible third-party detector objects.
+- Add the public Detailer Loop Start, Job Resolver, Impact Detect-to-SEGS and End
+  workflow, carrying the plan, current image and job index through one loop state
+  instead of exposing recursive implementation wiring.
+- Run detector inference only inside each padded regional crop, rebase detections
+  to full-image coordinates and gate the resulting `SEGS` with the composed region
+  mask; jobs without a detector use their region mask directly.
+- Preserve each processed image as the input to the next job, allowing detector-
+  backed and mask-only Detailer/Both regions to run sequentially with their own
+  positive and negative prompt context.
+- Validate the complete seven-job Anima workflow in ComfyUI with Person, Hand and
+  Face detector assignments plus detectorless regional jobs and an Impact
+  `Detailer (SEGS/pipe)` consumer.
+- Add frontend and Python regression coverage for plan/registry configuration,
+  optional detector routing, ROI coordinate rebasing, loop-state propagation and
+  recursive graph expansion.
+
+### 2026-08-20 — v0.15.0
+
+- Add spatially aware regional prompt enhancement that uses immutable canvas,
+  geometry, hierarchy, overlap and prompt relationships to improve scene coherence,
+  spatial wording and object ownership without changing region structure.
+- Add separate proposal and verified-apply nodes with Anima hybrid, natural-language
+  and conservative tag-only policies plus a bounded creativity control.
+- Add compatible local generation through ComfyUI CLIP and configurable
+  OpenAI-compatible HTTP providers, including managed profiles for hosted services,
+  Ollama, LM Studio, llama.cpp, vLLM and LocalAI.
+- Store provider keys separately from workflows and keep user settings independent
+  from the versioned provider catalog.
+- Cache successful provider responses by effective enhancer input so unchanged
+  requests do not trigger another paid call after workflow edits or restarts.
+- Document tested local and hosted model recommendations, direct model links and the
+  remaining nondeterminism of LLM output and image-model object binding.
+
+### 2026-08-20 — v0.14.0
+
+- Add `BV Regional Detailer Mask`, a package-neutral bridge that renders a selected
+  BV region and emits an Impact-compatible `BASIC_PIPE` with separately encoded
+  positive and negative conditioning.
+- Add `BV_REGIONAL` v2 region usage modes for generation, detailer-only or both;
+  migrate v1 documents deterministically to generation usage.
+- Let the primary region define the detail mask while optional context regions add
+  independently weighted prompt conditioning without expanding that mask.
+- Expose Global, Background, primary-region and context-region influence controls,
+  plus plain and ComfyUI-weighted resolved prompt text for inspection.
+- Preserve dynamic primary/context selections across workflow save and reload by
+  serializing only the canonical backend widget values in stable order.
+- Document direct `MaskDetailer (pipe)`, editable `SEGS` and detector-gated Impact
+  workflows without importing or vendoring Impact Pack internals.
+
+### 2026-08-20 — v0.13.0
+
+- Add experimental `token_gated_singlepass` regional model-LoRA execution to
+  `BV Regional Anima Conditioning` while retaining `multipass_legacy` as the default
+  for backward compatibility and published-result reproduction.
+- Apply compatible regional LoRA deltas to Anima text and spatiotemporal image tokens
+  inside the existing attention pass, eliminating additional per-stack model passes.
+- Preserve global LoRAs, scoped CLIP encoding and the intentional unmodified
+  `base_ratio` pass; reject unsupported or non-maskable model layers explicitly.
+- After the configured attention window, stop regional text routing and retain a
+  spatial image-LoRA tail that decays towards 35 percent to reduce late identity drift.
+- Document that single-pass output intentionally differs from multipass and that
+  overlapping subjects, shared anatomy and contradictory prompts remain limited by
+  both competing regional influence and the underlying model's generative capability.
+
+### 2026-08-20 — v0.12.0
+
+- Add token-gated single-pass regional LoRA and LoKr execution to
+  `BV Regional Krea 2 Attention (Experimental)`: compatible adapter deltas are
+  multiplied by their regional text/image-token masks inside one model pass.
+- Make `token_gated_singlepass` the new Krea regional-LoRA default while retaining
+  `multipass_legacy` as an explicit reproduction and compatibility fallback.
+- Preserve regional CLIP-hook encoding, inherited global stack semantics, intentional
+  duplicate adapters, promptless regional LoRA masks and Krea reference-image tokens.
+- Fail explicitly when a LoRA requires a model layer without a spatial token axis
+  instead of silently applying that layer globally; log adapter and patched-layer counts.
+- Validate the single-pass path with the existing dual-style Krea workflow on Krea 2
+  Turbo FP8 at 768 x 768, eight steps and CFG 1; the observed run completed in about
+  20.6 seconds and produced a coherent overlap without a hard regional seam.
+- Document that workflows saved before `regional_lora_mode` existed select the new
+  default when loaded and may therefore render differently; select `multipass_legacy`
+  when exact reproduction of an older Krea regional-LoRA result matters.
+
+### 2026-08-19 — v0.11.0
+
+- Add optional regional LoRA hooks to `BV Regional Krea 2 Attention (Experimental)`
+  without changing workflows that leave the new inputs disconnected.
+- Encode every Krea text slot with its assigned scoped CLIP hooks, then compose
+  distinct model-side LoRA stacks as mask-weighted full-model passes.
+- Preserve the existing 28-block Krea attention router and remove slot-local hook
+  metadata before the combined conditioning reaches the sampler.
+- Validate two independently assigned character LoRAs with 20-percent overlapping
+  regions, including a shared interaction area, and document the substantial
+  multipass memory and runtime cost.
+
+### 2026-08-19 — v0.10.1
+
+- Add optional regional LoRA hooks to `BV Regional Anima Conditioning` while
+  preserving workflows that leave `lora_registry` and `lora_bindings` disconnected.
+- Compose regional LoRA model effects as masked full-model passes without changing
+  the existing Anima attention router; share passes between identical model stacks.
+- Keep empty and fully disabled LoRA stacks as valid no-ops, and avoid additional
+  model passes when regional stacks differ only in CLIP strength.
+- Document the expected baseline-plus-distinct-stacks pass count and its sampling
+  performance impact, with regression coverage for global, regional and overlapping use.
+
+### 2026-08-19 — v0.10.0
+
+- Add optional regional LoRA hooks to `BV Regional Native Conditioning` while
+  preserving previous workflows that use only the original `BV_REGIONAL` output.
+- Add chainable `BV Named LoRA Stack` registry nodes and a documented public v1
+  registry/bindings contract for compatible external `LORA_STACK` producers.
+- Add `exclusive`, `hybrid` and `mask_bounds` native composition modes alongside
+  the backward-compatible `blend` default; reject unsupported Anima mask-bounds
+  execution with an explicit compatibility message.
+- Treat assigned but currently empty or disabled LoRA stacks as valid no-ops.
+- Reconcile region bindings when documents are loaded, imported, edited or queued;
+  preserve document and binding state together across editor undo and redo.
+- Search autocomplete candidates inside tags while retaining prefix matches first,
+  and expose LoRA stack selection in the Quick Prompt Editor.
+- Document controlled Anima dual-character and skin-tone isolation workflows with
+  fixed settings, embedded workflow metadata and explicit model/LoRA limitations.
+- Regional LoRA support in model-specific Attention nodes remains outside this
+  release and is planned as a separate backend extension.
+
+### 2026-08-18 — v0.9.0
+
+- Add additive and subtractive rectangle, ellipse and click-to-place polygon tools.
+- Extend the `BV_REGIONAL` v1 schema, validation, transforms and backend mask renderer
+  with ellipse and polygon geometry while preserving existing documents.
+- Add a persistent, inspection-only binary mask preview that resolves enabled mask
+  operations and region feather without authoring overlays or background images.
+- Show zoom-stable cyan Add/transform and dashed red Subtract previews, live polygon
+  edges and canvas-pixel dimensions while drawing, moving or resizing geometry.
+- Cover geometry contracts, hit testing, transforms, mask composition, persistence and
+  schema validation with frontend and Python regression tests.
+
+### 2026-08-18 — v0.8.0
+
+- Add an experimental Krea 2 regional joint-attention backend with normal KSampler compatibility.
+- Route Global, Background and regional Qwen3-VL contexts through all 28 main single-stream attention blocks.
+- Keep the four upstream text-fusion/refiner blocks global and document this as an explicit experimental isolation limit.
+- Normalize missing all-ones Krea attention masks and add architecture/memory guards, tests, an importable regional document and verified screenshots.
+- Document that successful regional composition combines prompt engineering, mask geometry, actual spatial need, model priors and sampling settings; attention routing is guidance, not hard layout enforcement.
+
+### 2026-08-18 — v0.7.0
+
+- Add an exact-architecture FLUX.2 Klein 9B joint-attention backend for
+  `BV_REGIONAL` documents with standard ComfyUI sampling paths.
+- Route Global, Background and regional Qwen3-8B contexts through all double-
+  and single-stream attention blocks while preserving `joint` overlap semantics.
+- Emit zero negative conditioning for the distilled 9B profile and reject Klein
+  4B, full FLUX.2 and unrelated architectures explicitly.
+- Add dense-mask memory guards, regression coverage, an importable separation-test
+  document and verified workflow/editor/result screenshots.
+- Document that sampler, scheduler, guidance and model-sampling configuration remain
+  caller-owned and must be validated independently from regional routing.
+
+### 2026-08-18 — v0.6.0
+
+- Add a Z-Image Turbo joint-attention backend for `BV_REGIONAL` documents with
+  standard-KSampler positive and zero negative conditioning.
+- Route Global, Background and regional text contexts through Z-Image Turbo's
+  model-internal attention while preserving overlapping region behavior.
+- Validate regional attribute separation against untuned Native Conditioning with
+  matching prompts, geometry, seed and sampling settings.
+- Reject incompatible model architectures explicitly and cover compilation,
+  attention routing, strength, timing and failure behavior with regression tests.
+- Add an importable Z-Image Turbo separation-test document and illustrated attention
+  and Native workflow evidence.
+
+### 2026-08-18 — v0.5.0
+
+- Add a generic SDXL cross-attention routing backend for `BV_REGIONAL` documents
+  with standard-KSampler positive and negative conditioning.
+- Validate the backend in real GPU workflows with WAI Illustrious SDXL and Pony
+  Diffusion V6 XL, including controlled untuned Native Conditioning comparisons.
+- Keep Global context available everywhere, restrict Background to uncovered pixels,
+  route regions through rendered masks and preserve `joint` overlap semantics.
+- Reject non-SDXL model architectures explicitly and cover model detection, routing,
+  overlap, strength and failure behavior with regression tests.
+- Add an importable SDXL attribute-separation document and illustrated workflow evidence.
+
+### 2026-08-17 — v0.4.1
+
+- Publish an explicit, documented `node_list.json` so ComfyUI Registry and
+  Manager can identify all 31 nodes despite the pack's dynamic module loader.
+- Validate the manual node list against every declared `NODE_CLASS_MAPPINGS`
+  key during CI to prevent registry metadata drift.
+- Run TypeScript-backed frontend behavior tests through an explicit `tsx`
+  loader so the Node 20 validation runner matches local test behavior.
+- Declare the shipped JavaScript test modules as ESM explicitly instead of
+  relying on Node 24 syntax detection that is unavailable in the Node 20 CI job.
+
+### 2026-08-17 — v0.4.0
+
+- Add native Anima LLLite layout control with deterministic regional color images,
+  debug legends, documented patch ordering and controlled A/B reference assets.
+- Add lossless compound-layer merge/split, resolution-aware disconnected-area
+  splitting and editable region display colors to the Regional Editor.
+- Close Regional Editor surfaces when switching workflows and preserve the active
+  workflow boundary safely.
+- Open prompt completions at the active caret by default, with optional field-aligned
+  placement in global settings and the editor menu.
+- Refresh the Regional Editor and autocomplete documentation assets and disclose
+  the project's AI-assisted development process.
+
+### 2026-08-17 — v0.3.5
+
+- Restore repository-relative README image paths so GitHub and local Markdown
+  previews resolve the committed files without an external Raw CDN dependency.
+- Keep the header on the PNG Registry banner instead of the SVG source.
+
+### 2026-08-17 — v0.3.4
+
+- Use explicit Raw GitHub URLs for every README image instead of relying on
+  repository-relative image resolution.
+
+### 2026-08-17 — v0.3.3
+
+- Use the Registry PNG banner for reliable README rendering on GitHub and mirrors.
+
+### 2026-08-17 — v0.3.2
+
+- Add Registry icon and 21:9 Nodes Manager banner metadata.
+- Publish the illustrated Regional Editor, Anima workflow and autocomplete documentation.
+- Preserve Quick Edit synchronization and background-image display state across editor sessions.
+- Extend selected brush layers and expose background-image opacity controls.
+
+### 2026-08-17 — v0.3.1
+
+- Extend BV Prompt Autocomplete to ordinary ComfyUI multiline text widgets.
+- Keep completion keyboard handling local and provide explicit widget opt-out.
+- Clean up listeners when nodes are removed and prevent duplicate adapter installation.
+
+### 2026-08-17 — v0.3.0
+
+- Add the BV-owned lazy CSV/TSV completion provider with extensible metadata.
+- Add global/editor controls and ordered completion datasets.
+- Bundle `bv_default_tags.csv` so completion has no runtime dependency on another node pack.
+
+### 2026-08-17 — v0.2.0
+
+- Add the model-neutral Regional Editor and document toolchain.
+- Add native masked conditioning and built-in Anima attention backends.
+- Add Quick Edit and preview/save image feedback senders.
+
+### 2026-08-14 — v0.1.0
+
+- Add Smart Pipe and native random-ratio empty latents.
+- Harden AST, Dynamic Combo, Subgraph UI, Control Center, debug, rotation and hex nodes.
+
+### 2026-01-29
+- v0.0.24 — Make subgraph UI widgets more rebuild-safe.
+
+### 2026-01-11
+- v0.0.23 — Add BV Latent Random Aspect Ratio node.
+- v0.0.22 — Change the category of BV Dynamic Combo. Add 90 Latent Rotate Node.
+
+### 2026-01-10
+- v0.0.21 — Add dynamic combo box node
+- v0.0.20 — Add a HEX color to INT node
+
+### 2026-01-02
+- v0.0.19 — Update README: add AST example image with embedded workflow
+- v0.0.18 — Add AST Prompting system
+- v0.0.17 — Changed toggle label system (`BV Control Center`)
+- v0.0.16 — Renamed inputs to avoid collisions
+
+### 2026-01-01
+- v0.0.15 — Fix subgraph renaming bug
+- v0.0.14 — Widget fixes for subgraph usage
+
+### 2025-12-31
+- v0.0.13 — Fix label inversion error
+- v0.0.12 — Fix input error
+- v0.0.11 — Reworked renaming logic
+
+### 2025-12-30
+- v0.0.10 — Fix widget create event
+
+### 2025-12-29
+- v0.0.9 — Fix subgraph issues
+- v0.0.8 — Major refactor to TypeScript
+
+## Reconstructed from Git: 0.0.7 through 0.0.1
+
+No contemporary README changelog entries were found for these versions. The
+summaries below are limited to the version-changing commit subject and date; they
+do not add retrospective test, runtime or release claims.
+
+### 2025-12-27 — v0.0.7
+
+- Updated the package description and version (`9a7833f`).
+
+### 2025-12-21 — v0.0.6
+
+- Added Subgraph-friendly Heading, Spacer and Divider UI nodes with documentation (`0bdeebc`).
+
+### 2025-12-21 — v0.0.5
+
+- Correctly resolved BV Pipe Config through directly mapped Subgraphs (`70aaf53`).
+
+### 2025-12-21 — v0.0.4
+
+- Fixed BV Pipe Config inside a Subgraph while documenting a remaining initial-connection issue (`390498d`).
+
+### 2025-12-20 — v0.0.3
+
+- Incremented the package version; no separate feature changelog was recorded (`d94ed88`).
+
+### 2025-12-20 — v0.0.2
+
+- Made the BV Pipe path Subgraph-compatible (`afbf4db`).
+
+### 2025-12-20 — v0.0.1
+
+- Added the initial BV Pipe and BV Pipe Config implementation for dynamic pipelines (`b1e656e`).

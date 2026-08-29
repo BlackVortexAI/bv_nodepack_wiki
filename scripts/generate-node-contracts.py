@@ -21,6 +21,23 @@ def value_type(value: object) -> str:
     return str(value)
 
 
+def contract_input(node_name: str, input_name: str, value: object) -> dict[str, object]:
+    if node_name == "BV LUT Loader" and input_name == "lut_name" and isinstance(value, (list, tuple)) and value:
+        choices = value[0]
+        if isinstance(choices, (list, tuple)):
+            stable = [
+                str(choice) for choice in choices
+                if str(choice).startswith("Built-in: ") or str(choice) == "Download more LUTs…"
+            ]
+            return {
+                "name": input_name,
+                "type": "choice: " + " | ".join(stable),
+                "dynamic": True,
+                "dynamicDescription": "built-ins | discovered .cube files | Download more LUTs…",
+            }
+    return {"name": input_name, "type": value_type(value)}
+
+
 def collapse_ports(ports: list[dict[str, str]]) -> list[dict[str, object]]:
     families: dict[tuple[str, str], list[int]] = {}
     plain: list[dict[str, str]] = []
@@ -81,6 +98,8 @@ def main() -> None:
     parser.add_argument("--comfy-root", type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--assets", required=True, type=Path)
+    parser.add_argument("--target-version", required=True)
+    parser.add_argument("--generated-date", required=True)
     args = parser.parse_args()
 
     source = args.source.resolve()
@@ -116,7 +135,7 @@ def main() -> None:
             if not isinstance(values, dict):
                 continue
             inputs[group] = collapse_ports([
-                {"name": key, "type": value_type(value)} for key, value in values.items()
+                contract_input(name, key, value) for key, value in values.items()
             ])
         output_types = list(getattr(cls, "RETURN_TYPES", ()) or ())
         output_names = list(getattr(cls, "RETURN_NAMES", ()) or output_types)
@@ -234,9 +253,9 @@ def main() -> None:
         )
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps({"targetVersion": "1.1.0", "generated": "2026-08-28", "nodes": nodes}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    args.output.write_text(json.dumps({"targetVersion": args.target_version, "generated": args.generated_date, "nodes": nodes}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     args.assets.parent.mkdir(parents=True, exist_ok=True)
-    args.assets.write_text(json.dumps({"generated": "2026-08-28", "assets": assets}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    args.assets.write_text(json.dumps({"generated": args.generated_date, "assets": assets}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 

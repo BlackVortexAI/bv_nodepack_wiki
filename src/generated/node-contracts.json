@@ -1,6 +1,6 @@
 {
-  "targetVersion": "1.1.0",
-  "generated": "2026-08-28",
+  "targetVersion": "1.2.0",
+  "generated": "2026-08-29",
   "nodes": [
     {
       "name": "BV Latent Random Aspect Ratio",
@@ -459,10 +459,6 @@
         ]
       },
       "outputs": [
-        {
-          "name": "detector_registry",
-          "type": "BV_DETECTOR_REGISTRY"
-        },
         {
           "name": "detector_count",
           "type": "INT"
@@ -1270,7 +1266,7 @@
       "name": "BV LUT Job",
       "slug": "bv-lut-job",
       "description": "Append one LUT, strength and optional mask to an ordered LUT plan.",
-      "category": "🌀 BV Node Pack/regional/LUT",
+      "category": "🌀 BV Node Pack/regional/LUT/Manual Chains (Optional)",
       "section": "Regional Prompting",
       "status": "stable",
       "legacyPorts": false,
@@ -1320,7 +1316,7 @@
       "name": "BV LUT Loader",
       "slug": "bv-lut-loader",
       "description": "Load BV-authored looks and local 3D .cube LUT files.",
-      "category": "🌀 BV Node Pack/regional/LUT",
+      "category": "🌀 BV Node Pack/regional/LUT/Manual Chains (Optional)",
       "section": "Regional Prompting",
       "status": "stable",
       "legacyPorts": false,
@@ -1328,7 +1324,9 @@
         "required": [
           {
             "name": "lut_name",
-            "type": "choice: Built-in: Identity | Built-in: Warm Contrast | Built-in: Cool Graphite | BV_Test_Channel_Swap.cube | downloaded\\DuskTide.cube | downloaded\\NightMarket.cube | bv-prototype-warm-contrast.cube | Download more LUTs…"
+            "type": "choice: Built-in: Identity | Built-in: Warm Contrast | Built-in: Cool Graphite | Built-in: Digital Green | Built-in: Machine Blue | Built-in: Dustfire | Built-in: Steel Action | Built-in: Sunbleached Coast | Built-in: Expired Film | Built-in: Classic Monochrome | Built-in: Grayscale | Built-in: HDR Color Boost | Download more LUTs…",
+            "dynamic": true,
+            "dynamicDescription": "built-ins | discovered .cube files | Download more LUTs…"
           }
         ]
       },
@@ -1655,18 +1653,42 @@
       "inputError": null
     },
     {
-      "name": "BV LoRA Stack Collector",
-      "slug": "bv-lora-stack-collector",
-      "description": "Expose live named LoRA stacks through the typed BV Regional v3 resource-provider contract.",
-      "category": "🌀 BV Node Pack/regional/core",
+      "name": "BV LoRA Registry",
+      "slug": "bv-lora-registry",
+      "description": "Configure several named and independently switchable local LoRA stacks in one node.",
+      "category": "🌀 BV Node Pack/regional/LoRA",
       "section": "Regional Prompting",
       "status": "stable",
       "legacyPorts": false,
       "inputs": {
         "required": [
           {
-            "name": "lora_registry",
-            "type": "BV_LORA_STACK_REGISTRY"
+            "name": "config_json",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "resource_provider",
+          "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV LoRA Stack Collector",
+      "slug": "bv-lora-stack-collector",
+      "description": "Expose live named LoRA stacks through the typed BV Regional v3 resource-provider contract.",
+      "category": "🌀 BV Node Pack/regional/LoRA/Manual Chains (Optional)",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "resource_provider",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
           },
           {
             "name": "collector_id",
@@ -1685,8 +1707,8 @@
     {
       "name": "BV Named LoRA Stack",
       "slug": "bv-named-lora-stack",
-      "description": "Name an external LoRA stack and add it to a chainable regional stack registry.",
-      "category": "🌀 BV Node Pack/regional/core",
+      "description": "Name an external LoRA stack for the published V2 registry chain or the optional V3 resource-provider chain.",
+      "category": "🌀 BV Node Pack/regional/LoRA/Manual Chains (Optional)",
       "section": "Regional Prompting",
       "status": "stable",
       "legacyPorts": false,
@@ -1709,6 +1731,10 @@
           {
             "name": "registry",
             "type": "BV_LORA_STACK_REGISTRY"
+          },
+          {
+            "name": "resource_provider",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
           }
         ]
       },
@@ -1716,6 +1742,10 @@
         {
           "name": "registry",
           "type": "BV_LORA_STACK_REGISTRY"
+        },
+        {
+          "name": "resource_provider",
+          "type": "BV_RUNTIME_RESOURCE_PROVIDER"
         }
       ],
       "inputError": null
@@ -2454,7 +2484,7 @@
       "name": "BV Regional LoRA",
       "slug": "bv-regional-lora",
       "description": "Add or replace the immutable LoRA capability in a BV Regional v3 context.",
-      "category": "🌀 BV Node Pack/regional/core",
+      "category": "🌀 BV Node Pack/regional/LoRA",
       "section": "Regional Prompting",
       "status": "stable",
       "legacyPorts": false,
@@ -2474,10 +2504,6 @@
           }
         ],
         "optional": [
-          {
-            "name": "resource_provider",
-            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
-          },
           {
             "name": "resource_provider_1",
             "type": "BV_RUNTIME_RESOURCE_PROVIDER"

@@ -1,0 +1,41 @@
+export const meta = {title:"Use the LUT Library",slug:"/node-guides/lut-library",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.2.0",lastVerified:"2026-08-29"}
+
+## Goal
+
+Choose built-in or downloaded LUTs, register several named workflow resources,
+and deliberately test Stable or Experimental catalog candidates.
+
+## Load and register LUTs
+
+1. Add **BV LUT Loader** for a standalone manual chain, or add **BV LUT Registry**
+   when several named resources belong to one workflow.
+2. Choose one of the built-in looks or a `.cube` file discovered below
+   `ComfyUI/models/luts`.
+3. Use **BV Apply LUT** for a direct application, or resolve the resource through
+   a Regional LUT plan and loop.
+
+The prepared 1.2.0 source contains Identity, Warm Contrast, Cool Graphite and
+nine additional deterministic built-ins. A built-in changes color only; it does
+not add grain, bloom, local contrast or genuine HDR luminance.
+
+## Download catalog channels
+
+- **Stable** contains manually accepted candidates intended for ordinary use.
+- **Experimental** is an intentionally uncurated testing pool. A listed LUT may
+  have an unsuitable input profile or produce an undesirable result.
+- The selected channel is persisted separately from workflow JSON.
+- Startup uses the newer valid local source and refreshes online asynchronously.
+  An unavailable remote source must not block ComfyUI startup.
+- Manual Refresh checks the selected channel. A remote catalog replaces the
+  working copy only when its catalog version is newer.
+
+Downloaded files are written below `ComfyUI/models/luts/downloaded`. Catalog
+metadata records the pinned source revision, checksum, expected profile and
+license. GPL entries retain their GPL obligations; camera-profile LUTs must not
+be treated as generic display-space looks.
+
+## Verification boundary
+
+On 29 August 2026 the built-in looks were manually tested and the Experimental
+catalog was confirmed to load. That does not establish that every external LUT
+was downloaded, visually approved or suitable for an arbitrary image profile.
