@@ -13,17 +13,17 @@ until they pass the review queue.
 Run `start-wiki-local.cmd` or:
 
 ```powershell
-npm install
+npm ci
 npm run wiki:dev
 ```
 
-The command prints the local URL. Nothing is deployed or uploaded.
+Local preview is optional. The command prints the local URL and does not deploy
+or upload anything.
 
 Local URL: `http://localhost:5174/bv_nodepack_wiki/`
 
-The production base path is `/bv_nodepack_wiki/`, matching the intended
-GitHub Pages project path. Repository and deployment configuration remain
-outside this local documentation task.
+The production base path is `/bv_nodepack_wiki/`, matching the GitHub Pages
+project path.
 
 ## Validate
 
@@ -39,17 +39,37 @@ npm run generate:contracts -- --source "C:\path\to\bv_nodepack" --target-version
 ```
 
 The generator requires Python and the source checkout's runtime dependencies.
-No machine-specific source path is stored in this repository.
+It is a separate maintainer snapshot step and is not part of the GitHub Pages
+build. No machine-specific source path is stored in this repository.
 
 Validation checks runtime-derived public-node coverage, stable asset IDs, MDX
 page coverage, internal links, asset-manifest coverage, and materialized routes.
+It consumes the committed contract and asset snapshots; it does not regenerate
+them or deploy the site.
+
+## GitHub Pages deployment
+
+GitHub Actions is the regular production build and deployment path. A push to
+the Wiki repository's `main` branch, or a manual workflow dispatch, runs:
+
+1. a fresh checkout of this Wiki repository;
+2. Node.js 22 setup and `npm ci`;
+3. `npm run build` to create `dist`;
+4. `npm run validate` to gate the materialized documentation;
+5. upload of `dist` as the GitHub Pages artifact; and
+6. deployment through the `github-pages` environment.
+
+The Pages workflow neither checks out the BV Node Pack runtime repository nor
+regenerates contracts or assets. `src/generated/*.json` and `public/assets/**`
+are committed, reviewed snapshot inputs. `dist/` is an ephemeral CI artifact.
 
 ## Content status
 
 - Target documentation version: 1.2.0 (prepared and not yet released)
-- Public node reference pages: generated from the current runtime
+- Public node reference pages: committed snapshots generated from an explicitly
+  selected BV Node Pack checkout
 - Screenshot and workflow status: tracked in `src/generated/asset-manifest.json`
-- Deployment: intentionally not configured
+- Deployment: configured through GitHub Actions and GitHub Pages
 
 `captured`, `reviewed`, `optimized`, and `approved` are distinct asset states.
 A structurally valid workflow or screenshot is never treated as visual approval.
