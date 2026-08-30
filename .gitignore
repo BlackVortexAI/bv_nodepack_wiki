@@ -10,5 +10,10 @@ dist/
 coverage/
 node_modules/
 
+# Local BV Node Pack runtime state
+/user/default/bv_nodepack/remote_llm_settings.json
+/user/default/bv_nodepack/remote_llm_secrets.json
+/user/default/bv_nodepack/cache/remote_llm/
+
 # Browser-test profiles
 .*profile*/

@@ -20,6 +20,7 @@ export const pages: PageInfo[] = [
   {path: "/node-guides/detailer-loop", title: "Build a Regional Detailer Loop", summary: "Process Detailer regions sequentially with optional detector refinement.", section: "Node Guides"},
   {path: "/node-guides/smart-pipes", title: "Build with Smart Pipes", summary: "Carry and merge typed workflow state by stable slot identity.", section: "Node Guides"},
   {path: "/node-guides/prompt-processing", title: "Build a Structured Prompt Pipeline", summary: "Encode, filter, inspect, and decode prompt categories.", section: "Node Guides"},
+  {path: "/node-guides/remote-llm-provider", title: "Configure a Remote LLM Provider", summary: "Configure hosted or local OpenAI-compatible providers without storing credentials in workflows.", section: "Node Guides"},
   {path: "/node-guides/workflow-control", title: "Build Deterministic Workflow Controls", summary: "Apply persistent active, bypass, and mute states to named stages.", section: "Node Guides"},
   {path: "/node-guides/subgraph-interface", title: "Design a Subgraph Interface", summary: "Project a readable, scoped control surface from a Subgraph definition.", section: "Node Guides"},
   {path: "/node-guides/latent-utilities", title: "Build Reproducible Latent Utilities", summary: "Freeze seed and latent structure while allowing reviewed visual exceptions.", section: "Node Guides"},

@@ -19,6 +19,7 @@ const routes = [
   ["/node-guides/detailer-loop", "Build a Regional Detailer Loop", "Process Regional Detailer jobs sequentially."],
   ["/node-guides/smart-pipes", "Build with Smart Pipes", "Carry and merge typed workflow state."],
   ["/node-guides/prompt-processing", "Build a Structured Prompt Pipeline", "Encode, filter, inspect, and decode structured prompt categories."],
+  ["/node-guides/remote-llm-provider", "Configure a Remote LLM Provider", "Configure hosted or local OpenAI-compatible providers without storing credentials in workflows."],
   ["/node-guides/workflow-control", "Build Deterministic Workflow Controls", "Apply persistent states to deliberate workflow stages."],
   ["/node-guides/subgraph-interface", "Design a Subgraph Interface", "Project a readable and scoped Subgraph control surface."],
   ["/node-guides/latent-utilities", "Build Reproducible Latent Utilities", "Use deterministic seed and constrained latent settings."],

@@ -1,0 +1,62 @@
+export const meta = {
+  slug: "/node-guides/remote-llm-provider",
+  title: "Configure a Remote LLM Provider",
+  documentationStatus: "under-review",
+};
+
+## Choose a provider
+
+Add **BV Remote LLM Provider** and choose a hosted or local
+OpenAI-compatible profile. The shipped provider catalog defines the supported
+profiles and their product defaults. Values selected on the node are serialized
+as normal workflow widgets; credentials are not.
+
+For a custom compatible service, use a profile that permits a custom endpoint.
+Treat that endpoint as private infrastructure information when it contains an
+internal host name, address, tenant, or routing identifier.
+
+## Configure credentials
+
+Use the node's **Configure API Key** action for profiles that require bearer
+authentication. BV Node Pack stores keys separately from both the workflow and
+the optional user-default settings. Deleting a configured key does not rewrite
+workflow JSON.
+
+Local profiles such as Ollama, LM Studio, llama.cpp, vLLM, and LocalAI can use
+their catalogued loopback endpoints without bearer authentication. Confirm the
+selected local server and model are running before executing the workflow.
+
+## User settings and secrets
+
+BV Node Pack runtime state belongs below the active ComfyUI user directory:
+
+```text
+<ComfyUI user directory>/default/bv_nodepack/
+  remote_llm_settings.json
+  remote_llm_secrets.json
+  cache/remote_llm/
+```
+
+`remote_llm_settings.json` is an optional advanced override document. It can
+select a default provider profile and override only that profile's custom
+endpoint, model, reasoning effort, and timeout. When the file is absent, the
+provider catalog supplies the same defaults in memory; source checkout and Wiki
+directories do not need a generated copy.
+
+`remote_llm_secrets.json` is the separate credential store. Never copy it into
+a workflow, repository, Wiki, issue attachment, or diagnostic archive. Do not
+use a shared or broadly accessible ComfyUI user directory for credential
+persistence; restrict access to the active user root. The response cache can
+contain derived provider output and must be treated as user data as well.
+
+## Backup and troubleshooting
+
+Back up settings only when preserving machine-specific defaults is intentional.
+Store credential backups in an approved secret manager rather than beside
+workflow files. Before sharing logs or configuration, remove API keys,
+authorization headers, custom endpoints, local paths, prompts, and cached
+responses.
+
+If the provider node fails to load, validate the settings schema and profile ID
+against the installed BV Node Pack version. Invalid or unknown overrides fail
+closed; the runtime does not silently rewrite them.
