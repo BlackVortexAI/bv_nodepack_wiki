@@ -1,6 +1,6 @@
 {
-  "targetVersion": "1.2.0",
-  "generated": "2026-08-29",
+  "targetVersion": "1.2.1",
+  "generated": "2026-08-30",
   "nodes": [
     {
       "name": "BV Latent Random Aspect Ratio",
@@ -2135,7 +2135,7 @@
     {
       "name": "BV Regional Image Save",
       "slug": "bv-regional-image-save",
-      "description": "Save an image and send the saved result to a selected Regional Editor.",
+      "description": "Save an image, optionally embed Civitai-compatible BV Regional metadata, and send the result to a selected Regional Editor.",
       "category": "🌀 BV Node Pack/regional/output",
       "section": "Regional Prompting",
       "status": "stable",
@@ -2155,6 +2155,12 @@
             "type": "STRING"
           }
         ],
+        "optional": [
+          {
+            "name": "regional",
+            "type": "BV_REGIONAL"
+          }
+        ],
         "hidden": [
           {
             "name": "prompt",
@@ -2163,6 +2169,10 @@
           {
             "name": "extra_pnginfo",
             "type": "EXTRA_PNGINFO"
+          },
+          {
+            "name": "unique_id",
+            "type": "UNIQUE_ID"
           }
         ]
       },
@@ -3542,6 +3552,30 @@
         {
           "name": "color",
           "type": "INT"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Inspect Any",
+      "slug": "bv-inspect-any",
+      "description": "Inspect any connected value as safe, bounded text with type and truncation status.",
+      "category": "🌀 BV Node Pack/utils",
+      "section": "Utilities",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "value",
+            "type": "*"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING"
         }
       ],
       "inputError": null

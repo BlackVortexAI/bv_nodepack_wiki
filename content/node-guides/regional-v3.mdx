@@ -1,4 +1,4 @@
-export const meta = {title:"Build a Regional V3 Workflow",slug:"/node-guides/regional-v3",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+export const meta = {title:"Build a Regional V3 Workflow",slug:"/node-guides/regional-v3",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.2.1",lastVerified:"2026-08-30"}
 
 ## Goal
 
@@ -38,6 +38,29 @@ sampler path required by that backend.
 
 Save, reload, reopen the editor, change a live external stack, and queue an
 uncached run. Confirm unrelated scopes remain unchanged.
+
+## Save Civitai-compatible metadata
+
+**BV Regional Image Save** keeps its `regional` input optional. Leave it
+disconnected to retain the previous save behavior and metadata path.
+
+When connected, use the same Regional Context that produced the image and keep the
+node's `document_id` aligned with that context. The PNG then contains:
+
+- raw Civitai/A1111-style `parameters` text with the combined Global, Background
+  and enabled generation-region prompts;
+- sampler, scheduler, steps, CFG, seed, size and denoise values when one supported
+  sampler can be resolved upstream;
+- the resolved base-model name and SHA-256 hash when the model file is available;
+- materialized Regional V3 LoRAs and upstream core `LoraLoader` or
+  `LoraLoaderModelOnly` resources, including strengths, scopes and hashes; and
+- the complete versioned context in `bv_regional`, alongside ComfyUI's `prompt`
+  and `workflow` chunks.
+
+Metadata enrichment is fail-soft for file resolution and hashing: an unavailable
+resource hash does not block image saving. A mismatched Regional Context and
+`document_id` is rejected because silently attaching another document would make
+the provenance misleading.
 
 > Spatial conditioning guides a model. It does not guarantee anatomy,
 > separation, interaction, or prompt compliance. Freeze a visually accepted

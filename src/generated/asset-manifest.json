@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-29",
+  "generated": "2026-08-30",
   "assets": [
     {
       "id": "bv-latent-random-aspect-ratio--node--default",
@@ -1023,6 +1023,22 @@
       "status": "captured",
       "instructions": "Minimal meaningful ConfigUI wiring centered on BV Hex Color To Int. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
       "path": "/assets/connections/bv-hex-color-to-int.png",
+      "aiGeneratedReviewRequired": true
+    },
+    {
+      "id": "bv-inspect-any--node--default",
+      "page": "/node-reference/bv-inspect-any",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Inspect Any in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-inspect-any--connection--minimal",
+      "page": "/node-reference/bv-inspect-any",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Inspect Any. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
       "aiGeneratedReviewRequired": true
     },
     {

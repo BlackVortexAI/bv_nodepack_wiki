@@ -1,12 +1,27 @@
-export const meta = { slug: "/reference/changelog", title: "Changelog", documentationStatus: "under-review", appliesTo: "1.2.0", lastVerified: "2026-08-29" };
+export const meta = { slug: "/reference/changelog", title: "Changelog", documentationStatus: "under-review", appliesTo: "1.2.1", lastVerified: "2026-08-30" };
 
 This page contains the complete version history recoverable from the repository's
-own changelogs and version commits. Version 1.2.0 describes the prepared,
-unreleased working tree. Versions 0.0.7 through 0.0.1 are visibly separated
+own changelogs and version commits. Versions 0.0.7 through 0.0.1 are visibly separated
 because their summaries are reconstructed from Git commit evidence rather than a
 contemporary changelog.
 
-## 1.2.0 — prepared 2026-08-29, not released
+## 1.2.1 — 2026-08-30
+
+- Added **BV Inspect Any**, a bounded in-node preview for arbitrary values with
+  copy support and an ordinary `STRING` output for downstream logging or routing.
+- Made BV widget surfaces inherit the active ComfyUI light or dark canvas theme
+  through the shared widget UI layer.
+- Added an optional `regional` input to **BV Regional Image Save**. Connected
+  workflows embed Civitai-compatible combined prompts, sampling values, model and
+  LoRA names, resolved hashes, scope data and the complete BV Regional context.
+- Preserved the previous save behavior when `regional` is disconnected, so existing
+  workflows do not opt into the additional metadata implicitly.
+
+Source: repository commit `0a3e83c`. The Anima E2E check used two generation
+regions, the Anima base model and the Anima Turbo LoRA, then verified the raw
+`parameters`, `bv_regional`, `prompt` and `workflow` PNG chunks.
+
+## 1.2.0 — 2026-08-29
 
 - Added the workflow-local **BV LoRA Registry**, catalog library and Full/Quick
   selection flows while retaining the published V2 registry chain.
@@ -22,9 +37,8 @@ contemporary changelog.
   so Registry and Loader selections remain interoperable.
 
 The built-in looks were manually tested and the Experimental catalog was confirmed
-to load on 29 August 2026. This entry describes the prepared source state;
-it does not claim a release, tag, published package, visual qualification of every
-look or successful download of every external LUT.
+to load on 29 August 2026. This does not claim visual qualification of every look
+or successful download of every external LUT.
 
 ## 1.1.0 — 2026-08-28
 

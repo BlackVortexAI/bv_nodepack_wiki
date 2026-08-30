@@ -1,4 +1,4 @@
-export const meta = {title:"Build Reproducible Latent Utilities",slug:"/node-guides/latent-utilities",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+export const meta = {title:"Use Latent and Inspection Utilities",slug:"/node-guides/latent-utilities",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.2.1",lastVerified:"2026-08-30"}
 
 ## Goal
 
@@ -16,6 +16,21 @@ without implying that one seed is visually suitable for every model or prompt.
 The fixed seed proves reproducibility for that concrete workflow. It is not a
 package-wide recommended seed. A published visual example may use another fixed
 seed after output review.
+
+## Inspect an arbitrary value
+
+Use **BV Inspect Any** when a workflow value needs a readable node-local preview
+without changing its upstream type. Connect the value to `value`; after execution,
+the node shows a bounded textual representation with a copy action and emits the
+same representation through its `text` output.
+
+The output is useful for ordinary `STRING` consumers such as logs, labels or debug
+branches. It is not a typed pass-through of the original object. Large collections,
+binary values, tensors and objects with unsafe or expensive representations are
+summarized and truncated deliberately so preview generation remains bounded.
+
+Do not treat the preview as a serialization format. Use a node with an explicit
+schema when another node must reconstruct the original value.
 
 ## Add variation deliberately
 

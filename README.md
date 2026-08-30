@@ -1,7 +1,6 @@
 # BV Node Pack Documentation
 
-English documentation source for the prepared, unreleased BV Node Pack 1.2.0
-source state.
+English documentation source for BV Node Pack 1.2.1.
 
 The site covers installation, core concepts, complete public-node reference,
 task-oriented guides, workflow recipes, UI behavior, compatibility, migration,
@@ -35,7 +34,7 @@ npm run validate
 Regenerate the runtime-derived node contracts from a local BV Node Pack checkout:
 
 ```powershell
-npm run generate:contracts -- --source "C:\path\to\bv_nodepack" --target-version 1.2.0 --generated-date 2026-08-29
+npm run generate:contracts -- --source "C:\path\to\bv_nodepack" --target-version 1.2.1 --generated-date 2026-08-30
 ```
 
 The generator requires Python and the source checkout's runtime dependencies.
@@ -65,7 +64,7 @@ are committed, reviewed snapshot inputs. `dist/` is an ephemeral CI artifact.
 
 ## Content status
 
-- Target documentation version: 1.2.0 (prepared and not yet released)
+- Target documentation version: 1.2.1
 - Public node reference pages: committed snapshots generated from an explicitly
   selected BV Node Pack checkout
 - Screenshot and workflow status: tracked in `src/generated/asset-manifest.json`

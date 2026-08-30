@@ -1,4 +1,4 @@
-export const meta = {title:"BV UI Guide",slug:"/ui-guide",category:"BV UI Guide",documentationStatus:"under-review",appliesTo:"1.0.1",lastVerified:"2026-08-26"}
+export const meta = {title:"BV UI Guide",slug:"/ui-guide",category:"BV UI Guide",documentationStatus:"under-review",appliesTo:"1.2.1",lastVerified:"2026-08-30"}
 
 ## Image export
 
@@ -19,6 +19,17 @@ window must never edit a similarly titled node in another graph.
 
 Product data belongs in the workflow. Appearance and local window preferences
 remain outside workflow JSON unless they are explicitly part of a node contract.
+
+## Node widget appearance
+
+BV controls mounted directly on ComfyUI nodes use the shared widget UI layer. Its
+surface, border, foreground and muted colors inherit the active ComfyUI canvas
+theme, including light and dark appearances. This widget bridge is separate from
+the theme system used by full BV windows and dialogs.
+
+If a node widget appears with dark controls on a light canvas or the reverse,
+confirm that the current frontend bundle is loaded before changing BV window-theme
+preferences. Those preferences do not override ComfyUI-owned node-widget colors.
 
 After editing product data, save the workflow and reload it. Moving, minimizing,
 or docking a window may remain a local preference and must not be used as proof
