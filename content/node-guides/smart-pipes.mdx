@@ -20,3 +20,23 @@ identity and serialized order remain stable.
 Use **BV Smart Pipe Merge** with explicit source order. Genuine branch writes
 beat inherited base values; later divergent writes win. Wireless routing remains
 workflow-scoped and must not leak across simultaneously open workflows.
+
+## Pending release: DG routing through Subgraphs
+
+The development candidate uses the shared DG connection infrastructure for
+Smart Pipe selections. This is not yet a released-version promise: user acceptance
+and the version update remain pending.
+
+Choose the upstream Smart Pipe through its configuration. The NodePack manages
+the connection across graph boundaries; do not drag from a DG anchor. Debug lines
+are visual diagnostics, while ordinary typed inputs and outputs remain available
+for manual connections. Source addresses are workflow-scoped and distinguish
+nested paths rather than relying on repeated node titles.
+
+When checking an existing workflow, exercise source selection, save/reload,
+nested and sibling Subgraphs, and execution with a distinguishable value. Native
+mute and bypass are still subject to valid port mappings and shared-definition
+semantics; a hidden diagnostic line does not itself prove successful execution.
+
+See [Regional V3](/concepts/regional-v3) for the candidate's DG presentation
+and runtime boundaries. No special ComfyUI frontend is required.

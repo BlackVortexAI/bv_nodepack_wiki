@@ -6,7 +6,7 @@ export const meta = {title:"Regional V3",slug:"/concepts/regional-v3",category:"
 JSON-compatible capabilities. Runtime models, LoRA stacks, detectors, images,
 latents, and provider objects are never serialized into the context.
 
-## Graph truth
+## Released graph scope
 
 Collectors expose resources through ordinary persisted typed ConfigUI links.
 Every external selection stores `collector_id` and `resource_id`. Resolution is
@@ -26,3 +26,27 @@ Titles, labels, node order, and slot position are never executable fallbacks.
 Capability transformers apply `Replace`, `Merge`, `Subtract`, or `Clear` to an
 explicit scope. Repeating an executor intentionally repeats its behavior; V3
 does not store an execution-history registry.
+
+## Pending release: subgraph-aware DG connections
+
+The following describes the development candidate, not a released version.
+Release approval and the version change are still pending.
+
+Supported Registry/provider selections can create persisted typed connections
+across nested and sibling Subgraphs within the same workflow. Stable provider
+and resource identities determine the source; matching titles are not fallbacks.
+Missing or ambiguous sources fail closed.
+
+DG anchors are presentation points for programmatically managed connections,
+not user-draggable ports. Debug mode displays the dotted DG lines at node titles
+and above ordinary Subgraph boundary ports. With debug disabled these lines stay
+hidden; ordinary ports and their connections remain independently usable.
+
+This integration is supplied by the NodePack on the standard ComfyUI frontend.
+No modified ComfyUI installation is required. Shared Subgraph definitions retain
+native shared-state semantics, including mode changes. Do not assume that every
+arbitrary input/output combination forms a valid native bypass mapping.
+
+Throwaway Canary and M0 Fake nodes are not part of the candidate runtime. Old
+development workflows containing them are not release examples; historical empty
+test ports are not automatically removed from saved workflows.
