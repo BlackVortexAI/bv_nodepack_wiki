@@ -2,6 +2,7 @@ export const meta = {
   slug: "/node-guides/remote-llm-provider",
   title: "Configure a Remote LLM Provider",
   documentationStatus: "under-review",
+  appliesTo: "1.3.0",
 };
 
 ## Choose a provider
@@ -21,6 +22,23 @@ Use the node's **Configure API Key** action for profiles that require bearer
 authentication. BV Node Pack stores keys separately from both the workflow and
 the optional user-default settings. Deleting a configured key does not rewrite
 workflow JSON.
+
+The dialog shows the exact destination that will receive the key. Verify that
+address before saving. Each key is bound to its profile and complete approved
+endpoint, including scheme, host, port and path. A workflow cannot authorize a
+different destination by changing its endpoint widget. To use a different
+destination, open **Configure API Key**, verify the new address and enter the key
+again. No existing key is prefilled or silently reassigned.
+
+Existing keys for fixed catalog providers continue to use their catalog endpoint.
+An older key for a custom provider has no destination approval and is blocked until
+you save it again. Reading an old credential file does not rewrite it. Saving a key
+upgrades the credential document while retaining other keys; unapproved custom
+keys remain disabled until explicitly saved with a destination.
+
+HTTP redirects are blocked, including redirects to the same host. Configure the
+service's final Chat Completions URL directly. Removing or rebinding a key takes
+effect on the next generation request, including requests with cached responses.
 
 Local profiles such as Ollama, LM Studio, llama.cpp, vLLM, and LocalAI can use
 their catalogued loopback endpoints without bearer authentication. Confirm the
@@ -48,6 +66,10 @@ a workflow, repository, Wiki, issue attachment, or diagnostic archive. Do not
 use a shared or broadly accessible ComfyUI user directory for credential
 persistence; restrict access to the active user root. The response cache can
 contain derived provider output and must be treated as user data as well.
+
+Endpoint binding protects credential destinations. It does not authenticate the
+ComfyUI server or its settings routes; keep access to the server restricted to
+trusted users. Local providers without bearer authentication continue to work.
 
 ## Backup and troubleshooting
 

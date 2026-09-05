@@ -1,4 +1,4 @@
-export const meta = {title:"Workflow Identity",slug:"/concepts/workflow-identity",category:"Core Concepts",documentationStatus:"under-review",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+export const meta = {title:"Workflow Identity",slug:"/concepts/workflow-identity",category:"Core Concepts",documentationStatus:"under-review",appliesTo:"1.3.0",lastVerified:"2026-09-01"}
 
 ## Stable identity
 
@@ -11,6 +11,11 @@ Renaming a region or collector must not silently retarget a relationship.
 Copy complete provider and consumer groups when resource relationships must
 survive. An isolated consumer never searches another workflow, root graph, or
 Subgraph for a similarly named provider.
+
+> **1.3.0 adds workflow-scoped DG routing through Subgraphs** for registries and
+> Smart Pipes. Connections use graph paths and stable IDs, never matching titles
+> across scopes. Verify copied and nested workflows by saving, reloading and
+> running them; automated routing fixtures do not prove every live graph layout.
 
 ## Reload and caching
 

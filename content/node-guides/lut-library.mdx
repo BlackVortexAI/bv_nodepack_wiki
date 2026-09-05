@@ -1,4 +1,4 @@
-export const meta = {title:"Use the LUT Library",slug:"/node-guides/lut-library",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.2.1",lastVerified:"2026-08-30"}
+export const meta = {title:"Use the LUT Library",slug:"/node-guides/lut-library",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.3.0",lastVerified:"2026-09-04"}
 
 ## Goal
 
@@ -14,25 +14,53 @@ and deliberately test Stable or Experimental catalog candidates.
 3. Use **BV Apply LUT** for a direct application, or resolve the resource through
    a Regional LUT plan and loop.
 
-The 1.2.x line contains Identity, Warm Contrast, Cool Graphite and
-nine additional deterministic built-ins. A built-in changes color only; it does
-not add grain, bloom, local contrast or genuine HDR luminance.
+For the direct example on this page, connect `Load Image.image` to
+`BV Apply LUT.image`, connect `BV LUT Loader.lut` to `BV Apply LUT.lut`, and send
+the resulting image to **Preview Image**. It uses `Built-in: HDR Color Boost` at
+strength `1.00`. With `mask` disconnected, the LUT applies globally.
+
+BV Node Pack 1.3.0 includes twelve
+deterministic built-ins: Identity, Warm Contrast, Cool Graphite, Digital Green,
+Machine Blue, Dustfire, Steel Action, Sunbleached Coast, Expired Film, Classic
+Monochrome, Grayscale, and HDR Color Boost. This is a documentation-target
+statement, not a claim that 1.3.0 has already been released.
+
+A built-in changes color only. In particular, HDR Color Boost is the name of a
+creative color transform; it does not create HDR luminance or metadata, grain,
+bloom, or local contrast.
+
+The embedded example workflow references the BV test-character image shown in
+the screenshot. After importing the PNG into ComfyUI, select your own file in
+**Load Image** if that source image is not available locally.
 
 ## Download catalog channels
 
-- **Stable** contains manually accepted candidates intended for ordinary use.
-- **Experimental** is an intentionally uncurated testing pool. A listed LUT may
-  have an unsuitable input profile or produce an undesirable result.
+- **Stable** contains curated direct-download candidates. Pinned catalog
+  metadata and checksums protect identity and transfer integrity, but do not
+  replace license or input-profile review.
+- **Experimental** contains candidates that are not yet fully validated and may
+  change or be removed. A listed LUT may have an unsuitable input profile or
+  produce an undesirable result.
 - The selected channel is persisted separately from workflow JSON.
-- Startup uses the newer valid local source and refreshes online asynchronously.
-  An unavailable remote source must not block ComfyUI startup.
+- `Download more LUTs…` in a LUT selector opens **BV Download Manager**; the
+  Registry editor also provides **Download LUTs**.
+- At startup, a valid working copy wins when its `catalog_version` is equal to
+  or newer than the bundled catalog. Online refresh remains asynchronous, so an
+  unavailable remote source does not block ComfyUI startup.
 - Manual Refresh checks the selected channel. A remote catalog replaces the
-  working copy only when its catalog version is newer.
+  effective catalog only when its version is strictly newer.
+- Installed resources publish into open selectors automatically. If an already
+  open selector remains stale, focus the graph and press `R`.
 
 Downloaded files are written below `ComfyUI/models/luts/downloaded`. Catalog
 metadata records the pinned source revision, checksum, expected profile and
 license. GPL entries retain their GPL obligations; camera-profile LUTs must not
 be treated as generic display-space looks.
+
+The Download Manager screenshot is captured above the same four-node HDR Color
+Boost example. Its embedded workflow therefore loads that example graph when
+the PNG is dragged into ComfyUI; it does not attempt to recreate or open the
+manager window by itself.
 
 ## Verification boundary
 

@@ -1,4 +1,4 @@
-export const meta = {title:"Build a Regional V3 Workflow",slug:"/node-guides/regional-v3",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.2.1",lastVerified:"2026-08-30"}
+export const meta = {title:"Build a Regional V3 Workflow",slug:"/node-guides/regional-v3",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.3.0",lastVerified:"2026-09-04"}
 
 ## Goal
 
@@ -7,10 +7,13 @@ resources, and execute it through one compatible conditioning or attention node.
 
 ## Prerequisites
 
-- BV Node Pack 1.0.0 release candidate or later;
+- BV Node Pack 1.3.0 or later;
 - one compatible model and matching execution node;
 - optional external LoRA stack producer and tested LoRAs;
-- every collector and consumer in the same concrete graph.
+- every provider and consumer inside the same owning workflow. Registered LoRA,
+  LUT, and Detector Registry integrations can use managed provider routes across
+  Root and Subgraph boundaries; manual and Legacy Collector chains must remain
+  in the same concrete graph as their consumer.
 
 ## Build the document
 
@@ -22,17 +25,70 @@ resources, and execute it through one compatible conditioning or attention node.
 
 ## Add a consumer
 
-Connect `regional` to Native Conditioning or one compatible model-specific
-Attention node. Connect the ordinary model, CLIP, conditioning, latent, and
-sampler path required by that backend.
+Choose exactly one execution backend for the graph.
+
+- **BV Regional Native Conditioning** consumes `regional` and a matching `CLIP`,
+  then emits positive and negative conditioning for a standard sampler. It does
+  not patch the model.
+- A compatible model-specific Regional backend consumes the exact supported
+  model architecture, `CLIP`, and Regional Context. Where applicable, connect
+  both its patched model and its conditioning outputs to the sampler path.
+
+Do not chain Native Conditioning and a model-specific backend for the same
+Regional pass.
 
 ## Add scoped LoRA resources
 
-1. Name an external stack with **BV Named LoRA Stack**.
-2. Connect it to **BV LoRA Stack Collector**.
-3. Open the LoRA capability editor.
-4. Select the collector and resource for Global or one region.
-5. Use `Replace`, `Merge`, `Subtract`, or `Clear` intentionally.
+1. Add **BV LoRA Registry** and configure one or more named stacks.
+2. Open the Regional Prompt LoRA capability editor.
+3. Select a Registry stack for Global or one region. The saved selection retains
+   provider and resource identity plus its managed route inside the owning
+   workflow.
+4. Use `Replace`, `Merge`, `Subtract`, or `Clear` intentionally.
+
+**BV Named LoRA Stack** → **BV LoRA Stack Collector** remains available as a
+manual graph-local alternative. Keep that chain in the same concrete graph as
+its consumer.
+
+## Native Conditioning composition and quality
+
+Native Conditioning is the generic masked-conditioning path. It is a practical
+starting point, but it does not guarantee the strongest spatial fidelity or
+image quality for every checkpoint and LoRA combination. Results also depend on
+prompts, region overlap, LoRA compatibility and strength, and the selected
+composition mode:
+
+- `blend` uses the backward-compatible masked-conditioning layout;
+- `exclusive` uses scope-specific masked branches without an additional
+  unmasked conditioning branch;
+- `hybrid` mixes both layouts. `hybrid_blend_ratio=0` matches `exclusive`, while
+  `1` matches `blend`; and
+- `mask_bounds` asks ComfyUI to use mask bounding areas. It requires a 2D image
+  latent and is rejected for Anima.
+
+The hybrid ratio affects only `hybrid`. Compare the modes with an unchanged
+seed, checkpoint, LoRAs, prompts, sampler, and resolution. When an exactly
+compatible model-specific backend exists, compare it separately: its
+architecture-aware routing can be a better fit, but is not universally superior.
+
+## Complete Native Conditioning example
+
+The Selection Export prepared for this page uses Native Conditioning in
+`exclusive` mode with an Illustrious-family checkpoint, Lazy Positive and Lazy
+Negative embeddings, and separate Frieren and Fern LoRA Registry stacks. It is
+a reproducible worked example, not a quality benchmark or a dependency-free
+starter workflow.
+
+Resources used by the example:
+
+- [JANKU Trained Chenkin and NoobAI RouWei Illustrious XL — version 2786084](https://civitai.com/models/1277670/janku-trained-chenkin-and-noobai-rouwei-illustrious-xl?modelVersionId=2786084)
+- [Lazy Positive embedding (`lazypos`)](https://civitai.com/models/1302719/lazy-embeddings-for-all-illustrious-noobai-pony-sdxl-models-lazypositive-lazynegative-positive-and-negative-plus-more)
+- [Lazy Negative embedding (`lazyneg`), version 2121199](https://civitai.com/models/1302719/lazy-embeddings-for-all-illustrious-noobai-pony-sdxl-models-lazypositive-lazynegative-positive-and-negative-plus-more?modelVersionId=2121199)
+- [Fern — 3 Outfits LoRA, version 1336553](https://civitai.com/models/1187364/fern-3-outfits-or-illustrious-or-sousou-no-frieren?modelVersionId=1336553)
+- [Frieren — 4 Outfits LoRA, version 1336431](https://civitai.com/models/1187259/frieren-4-outfits-or-illustrious-or-sousou-no-frieren?modelVersionId=1336431)
+
+These are third-party resources. Review their current availability, licenses,
+and usage terms before downloading or redistributing them.
 
 ## Verify
 
@@ -64,4 +120,6 @@ the provenance misleading.
 
 > Spatial conditioning guides a model. It does not guarantee anatomy,
 > separation, interaction, or prompt compliance. Freeze a visually accepted
-> seed per published workflow.
+> seed per published workflow. Embedded workflow PNGs can expose prompts,
+> settings, and model or LoRA filenames, so inspect their metadata before
+> publication.

@@ -1,1099 +1,1407 @@
 {
-  "generated": "2026-08-30",
+  "generated": "2026-09-05",
   "assets": [
     {
       "id": "bv-latent-random-aspect-ratio--node--default",
       "page": "/node-reference/bv-latent-random-aspect-ratio",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Latent Random Aspect Ratio in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-latent-random-aspect-ratio.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Latent Random Aspect Ratio node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-latent-random-aspect-ratio--nord-20260905-fbeec30e.png",
+      "sha256": "fbeec30e2f0dc851bb2765ebf042b66c9fd64ccb13fe9186d9113d0d790c8dbd",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-latent-random-aspect-ratio--connection--minimal",
       "page": "/node-reference/bv-latent-random-aspect-ratio",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Latent Random Aspect Ratio. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-latent-random-aspect-ratio.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Latent Random Aspect Ratio in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-latent-random-aspect-ratio--nord-20260905-f72388da.png",
+      "sha256": "f72388dac9bad7d0ea661bde7335ff4d62835c83e345597f58f29405c4e6f592",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-pipe--node--default",
       "page": "/node-reference/bv-pipe",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Pipe in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-pipe.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Pipe node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-pipe--nord-20260905-ddca0824.png",
+      "sha256": "ddca08249b29a860c6bacbd740210d2d76f4b78f2dbe93d0afdbda52f8448652",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-pipe--connection--minimal",
       "page": "/node-reference/bv-pipe",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Pipe. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-pipe.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Pipe in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-pipe--nord-20260905-9da4a6c8.png",
+      "sha256": "9da4a6c802ffdf018ac5fb2d1f4ea9f9e85125f2805249cc06346408f313e755",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-pipe-config--node--default",
       "page": "/node-reference/bv-pipe-config",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Pipe Config in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-pipe-config.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Pipe Config node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-pipe-config--nord-20260905-fcfaa5db.png",
+      "sha256": "fcfaa5db3667b1f3f692a0223184fe2827328d5818ec4b0188799f84993a2376",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-pipe-config--connection--minimal",
       "page": "/node-reference/bv-pipe-config",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Pipe Config. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-pipe-config.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Pipe Config in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-pipe--nord-20260905-9da4a6c8.png",
+      "sha256": "9da4a6c802ffdf018ac5fb2d1f4ea9f9e85125f2805249cc06346408f313e755",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-detailer-loop-detect-to-segs-impact--node--default",
       "page": "/node-reference/bv-detailer-loop-detect-to-segs-impact",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Detailer Loop Detect to SEGS (Impact) in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-detailer-loop-detect-to-segs-impact.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Detailer Loop Detect to SEGS (Impact) node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-detailer-loop-detect-to-segs-impact--nord-20260905-e9f7a621.png",
+      "sha256": "e9f7a621d05c7815176266762f6bfeae61f889b2e66051f760c627d48f3d1fe5",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-detailer-loop-detect-to-segs-impact--connection--minimal",
       "page": "/node-reference/bv-detailer-loop-detect-to-segs-impact",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detailer Loop Detect to SEGS (Impact). Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-detailer-loop-detect-to-segs-impact.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Detailer Loop Detect to SEGS (Impact) in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-detailer-loop-detect-to-segs-impact--nord-20260905-ce8c2c66.png",
+      "sha256": "ce8c2c6634fb82d0a9f00d745f2e463e0ed32485712264f4ce46906635985365",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-detailer-loop-end--node--default",
       "page": "/node-reference/bv-detailer-loop-end",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Detailer Loop End in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-detailer-loop-end.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Detailer Loop End node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-detailer-loop-end--nord-20260905-81b63caa.png",
+      "sha256": "81b63caa772dfe3ff70635d629d0984d2e3b0defefba2093ef9a6a17c5a911bb",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-detailer-loop-end--connection--minimal",
       "page": "/node-reference/bv-detailer-loop-end",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detailer Loop End. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-detailer-loop-end.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Detailer Loop End in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-detailer-loop-end--nord-20260905-fa527502.png",
+      "sha256": "fa5275029472c9fb5de51e7a4be2a73d3115425f0158203d17b144d996e21434",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-detailer-loop-job-resolver--node--default",
       "page": "/node-reference/bv-detailer-loop-job-resolver",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Detailer Loop Job Resolver in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-detailer-loop-job-resolver.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Detailer Loop Job Resolver node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-detailer-loop-job-resolver--nord-20260905-eccb8b34.png",
+      "sha256": "eccb8b34331f31d77f90fb398f6cd8c32f2db8d75eb30fe08b3b84e907b337b0",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-detailer-loop-job-resolver--connection--minimal",
       "page": "/node-reference/bv-detailer-loop-job-resolver",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detailer Loop Job Resolver. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-detailer-loop-job-resolver.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Detailer Loop Job Resolver in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-detailer-loop-detect-to-segs-impact--nord-20260905-ce8c2c66.png",
+      "sha256": "ce8c2c6634fb82d0a9f00d745f2e463e0ed32485712264f4ce46906635985365",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-detailer-loop-start--node--default",
       "page": "/node-reference/bv-detailer-loop-start",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Detailer Loop Start in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-detailer-loop-start.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Detailer Loop Start node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-detailer-loop-start--nord-20260905-44f372ad.png",
+      "sha256": "44f372ad60faa9e5704ee2f43935be0489e59bc5a2b9f9d876532b5c79f043d0",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-detailer-loop-start--connection--minimal",
       "page": "/node-reference/bv-detailer-loop-start",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detailer Loop Start. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-detailer-loop-start.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Detailer Loop Start in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-detailer-loop-end--nord-20260905-fa527502.png",
+      "sha256": "fa5275029472c9fb5de51e7a4be2a73d3115425f0158203d17b144d996e21434",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-detector-binding--node--default",
       "page": "/node-reference/bv-detector-binding",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Detector Binding in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-detector-binding.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Detector Binding node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-detector-binding--nord-20260905-4f769d6f.png",
+      "sha256": "4f769d6f356c3ab35d6da567e3ab087efca5fef2e91f997a84ac38299bd39618",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-detector-binding--connection--minimal",
       "page": "/node-reference/bv-detector-binding",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detector Binding. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-detector-binding.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Detector Binding in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-detector-binding--nord-20260905-1b714afc.png",
+      "sha256": "1b714afc62b1af04b42f74a8fb4771fcfc0109aec3f90326cdffb63c354a272c",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-detector-registry--node--default",
       "page": "/node-reference/bv-detector-registry",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Detector Registry in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-detector-registry.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Detector Registry node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-detector-registry--nord-20260905-a4e1cb1e.png",
+      "sha256": "a4e1cb1ebeaa673b73f51717aff797010b0be8a9d76b885901efe996eb94a2f0",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-detector-registry--connection--minimal",
       "page": "/node-reference/bv-detector-registry",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Detector Registry. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-detector-registry.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Detector Registry in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-detector-binding--nord-20260905-1b714afc.png",
+      "sha256": "1b714afc62b1af04b42f74a8fb4771fcfc0109aec3f90326cdffb63c354a272c",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-impact-detector-mask--node--default",
       "page": "/node-reference/bv-impact-detector-mask",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Impact Detector Mask in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Impact Detector Mask node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-impact-detector-mask--nord-20260905-8b7ad052.png",
+      "sha256": "8b7ad052cb316c261d071fd32f917dae8e646e5ee971bc829e9a0855eb86c232",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-impact-detector-mask--connection--minimal",
       "page": "/node-reference/bv-impact-detector-mask",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Impact Detector Mask. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Impact Detector Mask in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-impact-detector-mask--nord-20260905-52e599ed.png",
+      "sha256": "52e599eda040dcb0cfb8bcc7061d6f87edbb60c5f646e9f784b382eee09f3e12",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-detailer-mask--node--default",
       "page": "/node-reference/bv-regional-detailer-mask",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Detailer Mask in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-detailer-mask.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Detailer Mask node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-detailer-mask--nord-20260905-647e98ef.png",
+      "sha256": "647e98ef81f0ab011c97721c2166e7697db5cc8407e21e24a51897621bf944bc",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-detailer-mask--connection--minimal",
       "page": "/node-reference/bv-regional-detailer-mask",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Detailer Mask. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-detailer-mask.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Detailer Mask in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-detailer-mask--nord-20260905-fab152d1.png",
+      "sha256": "fab152d194612e7cdcd355bb0b47811fe0bc343cfbc00e9bdf830ba8e6bd62b9",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-detailer-plan--node--default",
       "page": "/node-reference/bv-regional-detailer-plan",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Detailer Plan in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-detailer-plan.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Detailer Plan node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-detailer-plan--nord-20260905-d21707f0.png",
+      "sha256": "d21707f0e6538d9e65640c092610216711a4ab59fff8de9109955882cb7161ec",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-detailer-plan--connection--minimal",
       "page": "/node-reference/bv-regional-detailer-plan",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Detailer Plan. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-detailer-plan.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Detailer Plan in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-detailer-plan--nord-20260905-b3471807.png",
+      "sha256": "b3471807da103b3b2a49e36e0d397b4db29e7d13819e354be6e82ad641f2ed86",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-empty-latent-random-ratio--node--default",
       "page": "/node-reference/bv-empty-latent-random-ratio",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Empty Latent Random Ratio in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-empty-latent-random-ratio.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Empty Latent Random Ratio node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-empty-latent-random-ratio--nord-20260905-53d90d0d.png",
+      "sha256": "53d90d0df8b19e980adf31edd1e43ddc221ae32b5e3a6c638a7944a436f34fe2",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-empty-latent-random-ratio--connection--minimal",
       "page": "/node-reference/bv-empty-latent-random-ratio",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Empty Latent Random Ratio. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-empty-latent-random-ratio.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Empty Latent Random Ratio in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-latent-random-aspect-ratio--nord-20260905-f72388da.png",
+      "sha256": "f72388dac9bad7d0ea661bde7335ff4d62835c83e345597f58f29405c4e6f592",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-latent-random-rotate-90--node--default",
       "page": "/node-reference/bv-latent-random-rotate-90",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Latent Random Rotate 90 in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-latent-random-rotate-90.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Latent Random Rotate 90 node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-latent-random-rotate-90--nord-20260905-d632c537.png",
+      "sha256": "d632c5377059c2957ca9c52936972282c36d5e52268b13f48fe5bddccb2af923",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-latent-random-rotate-90--connection--minimal",
       "page": "/node-reference/bv-latent-random-rotate-90",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Latent Random Rotate 90. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-latent-random-rotate-90.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Latent Random Rotate 90 in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-latent-random-rotate-90--nord-20260905-dce634ed.png",
+      "sha256": "dce634ede2d19688f05c42e113fd42112692cb9702049f0daaf5d2f4d7966505",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-smart-pipe--node--default",
       "page": "/node-reference/bv-smart-pipe",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Smart Pipe in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-smart-pipe.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Smart Pipe node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-smart-pipe--nord-20260905-4e9bba59.png",
+      "sha256": "4e9bba5949d94d73a69891a46b8d677499144c28c375f9cfc05152ad6fdb9cd0",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-smart-pipe--connection--minimal",
       "page": "/node-reference/bv-smart-pipe",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Smart Pipe. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-smart-pipe.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Smart Pipe in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-smart-pipe--nord-20260905-3cee82dc.png",
+      "sha256": "3cee82dc203b85a3d7aec2fe3e519aa8a1f263e2c91a821ef4ab5ab3143851a4",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-smart-pipe-merge--node--default",
       "page": "/node-reference/bv-smart-pipe-merge",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Smart Pipe Merge in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-smart-pipe-merge.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Smart Pipe Merge node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-smart-pipe-merge--nord-20260905-6ca1665a.png",
+      "sha256": "6ca1665ad6e44b9d856db7bc587e84e2aca87d3af024d50e78ebc8df4c8a1b08",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-smart-pipe-merge--connection--minimal",
       "page": "/node-reference/bv-smart-pipe-merge",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Smart Pipe Merge. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-smart-pipe-merge.png",
-      "aiGeneratedReviewRequired": true
+      "status": "blocked",
+      "instructions": "No verified connection example is available. During capture, native connections to Add Pipe Source did not persist; no wired input was created.",
+      "aiGeneratedReviewRequired": false
     },
     {
       "id": "bv-prompt-ast-debug--node--default",
       "page": "/node-reference/bv-prompt-ast-debug",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Prompt AST Debug in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-prompt-ast-debug.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Prompt AST Debug node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-prompt-ast-debug--nord-20260905-f9e9351c.png",
+      "sha256": "f9e9351c38b47b94c6da63bf4a7a72e53368a4cbad14c50c1f23943e9df04501",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-prompt-ast-debug--connection--minimal",
       "page": "/node-reference/bv-prompt-ast-debug",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Prompt AST Debug. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-prompt-ast-debug.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Prompt AST Debug in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-prompt-ast-debug--nord-20260905-ae95450b.png",
+      "sha256": "ae95450beb463ba652429b274bd6381acd15685fda4ce8f907ebe0c5d13f7cae",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-prompt-category-switch--node--default",
       "page": "/node-reference/bv-prompt-category-switch",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Prompt Category Switch in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-prompt-category-switch.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Prompt Category Switch node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-prompt-category-switch--nord-20260905-9cb93cb5.png",
+      "sha256": "9cb93cb58d55e2808411eaa4430b5920bee27b0bbb27d2d86f38ebb6a1c297f7",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-prompt-category-switch--connection--minimal",
       "page": "/node-reference/bv-prompt-category-switch",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Prompt Category Switch. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-prompt-category-switch.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Prompt Category Switch in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-prompt-category-switch--nord-20260905-0fae31b4.png",
+      "sha256": "0fae31b4aa23f6d3e03681b38258a3a195f55ac53a05474c4cbba21021d274f5",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-prompt-decode--node--default",
       "page": "/node-reference/bv-prompt-decode",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Prompt Decode in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-prompt-decode.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Prompt Decode node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-prompt-decode--nord-20260905-7c27e0b1.png",
+      "sha256": "7c27e0b1db2fa43fd567dec66c545ee0cf5a92f3c78a0982422539ca7a839138",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-prompt-decode--connection--minimal",
       "page": "/node-reference/bv-prompt-decode",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Prompt Decode. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-prompt-decode.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Prompt Decode in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-prompt-category-switch--nord-20260905-0fae31b4.png",
+      "sha256": "0fae31b4aa23f6d3e03681b38258a3a195f55ac53a05474c4cbba21021d274f5",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-prompt-encode--node--default",
       "page": "/node-reference/bv-prompt-encode",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Prompt Encode in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-prompt-encode.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Prompt Encode node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-prompt-encode--nord-20260905-6344756b.png",
+      "sha256": "6344756b9e4e0382cf231a51c6ba08ab0b2b111909e227f709a446bd64c4ce9f",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-prompt-encode--connection--minimal",
       "page": "/node-reference/bv-prompt-encode",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Prompt Encode. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-prompt-encode.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Prompt Encode in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-prompt-ast-debug--nord-20260905-ae95450b.png",
+      "sha256": "ae95450beb463ba652429b274bd6381acd15685fda4ce8f907ebe0c5d13f7cae",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-apply-lut--node--default",
       "page": "/node-reference/bv-apply-lut",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Apply LUT in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Apply LUT node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-apply-lut--nord-20260905-feacc0de.png",
+      "sha256": "feacc0dea1d881a307e8f00dba10f75ff9f53225af987da3617ed27d6b02e0ac",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-apply-lut--connection--minimal",
       "page": "/node-reference/bv-apply-lut",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Apply LUT. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Apply LUT in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-apply-lut--nord-20260905-dfd24965.png",
+      "sha256": "dfd2496587266d9a5edc53930647c186fe9e0c9b3a1abd0545282e8ae7f9713c",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-apply-regional-enhancement--node--default",
       "page": "/node-reference/bv-apply-regional-enhancement",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Apply Regional Enhancement in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-apply-regional-enhancement.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Apply Regional Enhancement node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-apply-regional-enhancement--nord-20260905-96e55614.png",
+      "sha256": "96e55614883d9a982911a160ecbe7362d31a66fcc76f5aa7385b634fa014d1f6",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-apply-regional-enhancement--connection--minimal",
       "page": "/node-reference/bv-apply-regional-enhancement",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Apply Regional Enhancement. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-apply-regional-enhancement.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Apply Regional Enhancement in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-apply-regional-enhancement--nord-20260905-b31626f2.png",
+      "sha256": "b31626f223b96319795ebc915be97925f2efff6f5ba50ee5023f89056542a1e8",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-comfy-clip-llm-provider--node--default",
       "page": "/node-reference/bv-comfy-clip-llm-provider",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Comfy CLIP LLM Provider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-comfy-clip-llm-provider.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Comfy CLIP LLM Provider node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-comfy-clip-llm-provider--nord-20260905-7af1cb8c.png",
+      "sha256": "7af1cb8cd5dcd039904e74fde4eff3f2b3bd1c6cf683d78aada0312f4bd5dbd7",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-comfy-clip-llm-provider--connection--minimal",
       "page": "/node-reference/bv-comfy-clip-llm-provider",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Comfy CLIP LLM Provider. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-comfy-clip-llm-provider.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Comfy CLIP LLM Provider in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-apply-regional-enhancement--nord-20260905-b31626f2.png",
+      "sha256": "b31626f223b96319795ebc915be97925f2efff6f5ba50ee5023f89056542a1e8",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-lut-job--node--default",
       "page": "/node-reference/bv-lut-job",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV LUT Job in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV LUT Job node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-lut-job--nord-20260905-d88617ce.png",
+      "sha256": "d88617ce3311cbf9412003e5cac4f969d573dcde8b52c3dc322444c7754d56d7",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-lut-job--connection--minimal",
       "page": "/node-reference/bv-lut-job",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Job. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV LUT Job in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-lut-job--nord-20260905-daed9b27.png",
+      "sha256": "daed9b27780a2a3019096c105020738e5d481b789579b6f9412abea36c46fe29",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-lut-loader--node--default",
       "page": "/node-reference/bv-lut-loader",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV LUT Loader in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV LUT Loader node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-lut-loader--nord-20260905-128947e7.png",
+      "sha256": "128947e7e34bf53442c205650c9461cc4fe7743c514bd4d144e28b359b9b55d9",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-lut-loader--connection--minimal",
       "page": "/node-reference/bv-lut-loader",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Loader. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV LUT Loader in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-apply-lut--nord-20260905-dfd24965.png",
+      "sha256": "dfd2496587266d9a5edc53930647c186fe9e0c9b3a1abd0545282e8ae7f9713c",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-lut-loop-end--node--default",
       "page": "/node-reference/bv-lut-loop-end",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV LUT Loop End in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV LUT Loop End node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-lut-loop-end--nord-20260905-d76ba798.png",
+      "sha256": "d76ba79830be885fdcf1554a73849623e64155f53ce3e52d240d2daf1922be2b",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-lut-loop-end--connection--minimal",
       "page": "/node-reference/bv-lut-loop-end",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Loop End. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV LUT Loop End in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-lut-loop-end--nord-20260905-5c5c2492.png",
+      "sha256": "5c5c2492ded89193a2229c80dcd8ac5dd0330121ba42871b05d58cb68b118758",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-lut-loop-job-resolver--node--default",
       "page": "/node-reference/bv-lut-loop-job-resolver",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV LUT Loop Job Resolver in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV LUT Loop Job Resolver node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-lut-loop-job-resolver--nord-20260905-9cd3529b.png",
+      "sha256": "9cd3529bd44ecdba822904e5f90f3509c4989bb7b4e2a609bf6e9f8e2341c3f6",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-lut-loop-job-resolver--connection--minimal",
       "page": "/node-reference/bv-lut-loop-job-resolver",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Loop Job Resolver. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV LUT Loop Job Resolver in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-lut-loop-job-resolver--nord-20260905-6b05fb74.png",
+      "sha256": "6b05fb7456d735e101401b628b01a0cbcc2b4046614f8b5152cf3d9ac7e3c59f",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-lut-loop-start--node--default",
       "page": "/node-reference/bv-lut-loop-start",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV LUT Loop Start in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV LUT Loop Start node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-lut-loop-start--nord-20260905-4a1695b9.png",
+      "sha256": "4a1695b939ccc35967bacc0a7c6d0d0f45f891a35e80ed72c199ac78a7c68d11",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-lut-loop-start--connection--minimal",
       "page": "/node-reference/bv-lut-loop-start",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Loop Start. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV LUT Loop Start in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-lut-loop-end--nord-20260905-5c5c2492.png",
+      "sha256": "5c5c2492ded89193a2229c80dcd8ac5dd0330121ba42871b05d58cb68b118758",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-lut-registry--node--default",
       "page": "/node-reference/bv-lut-registry",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV LUT Registry in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV LUT Registry node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-lut-registry--nord-20260905-cd6601e7.png",
+      "sha256": "cd6601e7a12f5a3b00650a34c3d64aece5a413419a3612a12fb676082dc7efed",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-lut-registry--connection--minimal",
       "page": "/node-reference/bv-lut-registry",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LUT Registry. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV LUT Registry in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-lut-registry--nord-20260905-14434a2b.png",
+      "sha256": "14434a2b9e090287d6cb516dcc112a7d0456db3abf118f492a0dd0a39a381197",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-lora-registry--node--default",
       "page": "/node-reference/bv-lora-registry",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV LoRA Registry in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV LoRA Registry node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-lora-registry--nord-20260905-8dcbe884.png",
+      "sha256": "8dcbe88414ec49a095bc0e73d3e14b0adff311fbd42a127e1ca4a1932d7762c0",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-lora-registry--connection--minimal",
       "page": "/node-reference/bv-lora-registry",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LoRA Registry. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV LoRA Registry in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-lora-registry--nord-20260905-fcf66d41.png",
+      "sha256": "fcf66d41f035cfd87d2f8bd0b628a239a418b68320f9555bf7a8975059c55450",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-lora-stack-collector--node--default",
       "page": "/node-reference/bv-lora-stack-collector",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV LoRA Stack Collector in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-lora-stack-collector.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV LoRA Stack Collector node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-lora-stack-collector--nord-20260905-13626033.png",
+      "sha256": "13626033120305149b136790d3e745c340744f642d46a68a2458a060dca94e6f",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-lora-stack-collector--connection--minimal",
       "page": "/node-reference/bv-lora-stack-collector",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV LoRA Stack Collector. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-lora-stack-collector.png",
-      "aiGeneratedReviewRequired": true
+      "status": "blocked",
+      "instructions": "No connection example is available: the captured LoRA Stack Collector exposes no visible native ports.",
+      "aiGeneratedReviewRequired": false
     },
     {
       "id": "bv-named-lora-stack--node--default",
       "page": "/node-reference/bv-named-lora-stack",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Named LoRA Stack in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-named-lora-stack.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Named LoRA Stack node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-named-lora-stack--nord-20260905-37d66839.png",
+      "sha256": "37d6683971e1041e3f7299187e72b45f6292dd189834441b3bbd8b1b766942c2",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-named-lora-stack--connection--minimal",
       "page": "/node-reference/bv-named-lora-stack",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Named LoRA Stack. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-named-lora-stack.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Named LoRA Stack in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-named-lora-stack--nord-20260905-ac89716b.png",
+      "sha256": "ac89716b060665dc284d920af22df0551434a8aeb9555fcf42d2c656d0a610c2",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-anima-adapter--node--default",
       "page": "/node-reference/bv-regional-anima-adapter",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Anima Adapter in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-anima-adapter.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Anima Adapter node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-anima-adapter--nord-20260905-3ea26e6d.png",
+      "sha256": "3ea26e6d6a10e0daa8efe1817b8985620f9b98779e3c5888aeb4b8f0b054a35c",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-anima-adapter--connection--minimal",
       "page": "/node-reference/bv-regional-anima-adapter",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Anima Adapter. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-anima-adapter.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Anima Adapter in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-anima-adapter--nord-20260905-456814e5.png",
+      "sha256": "456814e57e3f592f2162c74966eebd00e7e32a565c81c46251126a2cc59f42d6",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-anima-conditioning--node--default",
       "page": "/node-reference/bv-regional-anima-conditioning",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Anima Conditioning in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-anima-conditioning.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Anima Conditioning node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-anima-conditioning--nord-20260905-9c2ee4f8.png",
+      "sha256": "9c2ee4f8c1078fd95fc4de7205e45bce03b856c6ac687e05cb1fb35239fc9de6",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-anima-conditioning--connection--minimal",
       "page": "/node-reference/bv-regional-anima-conditioning",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Anima Conditioning. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-anima-conditioning.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Anima Conditioning in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-anima-conditioning--nord-20260905-1ba9c30a.png",
+      "sha256": "1ba9c30aacc9f505cbc8596858e37ebdd2eda779e3521f621d8540d4b2a40a3f",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-anima-lllite--node--default",
       "page": "/node-reference/bv-regional-anima-lllite",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Anima LLLite in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-anima-lllite.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Anima LLLite node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-anima-lllite--nord-20260905-7b8b3864.png",
+      "sha256": "7b8b386452677ee5c62e52cb95c8c386dd460ad94ec5faa287ed435ba04555af",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-anima-lllite--connection--minimal",
       "page": "/node-reference/bv-regional-anima-lllite",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Anima LLLite. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-anima-lllite.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Anima LLLite in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-anima-lllite--nord-20260905-18ae0c3b.png",
+      "sha256": "18ae0c3b7e23a6e8807b2350b166ff3fea36bdb799772922e23029292d99db97",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-color-control-image--node--default",
       "page": "/node-reference/bv-regional-color-control-image",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Color Control Image in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-color-control-image.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Color Control Image node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-color-control-image--nord-20260905-4fe54d97.png",
+      "sha256": "4fe54d975317b60a58ae491f1bca7e3f18aef4a284135df303b39ac36a8d7e36",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-color-control-image--connection--minimal",
       "page": "/node-reference/bv-regional-color-control-image",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Color Control Image. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-color-control-image.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Color Control Image in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-color-control-image--nord-20260905-d7fd8411.png",
+      "sha256": "d7fd8411f56262179043bcd96ca800dff5f9f56c0aa39fcf2c97cc4849b9f890",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-debug--node--default",
       "page": "/node-reference/bv-regional-debug",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Debug in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-debug.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Debug node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-debug--nord-20260905-3c5a2fba.png",
+      "sha256": "3c5a2fbab666c0d6d2c1f8e8ef8b10c752d300522811b5308158dc922a9db336",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-debug--connection--minimal",
       "page": "/node-reference/bv-regional-debug",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Debug. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-debug.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Debug in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-debug--nord-20260905-93a76340.png",
+      "sha256": "93a76340de85be1075e7062beaef1d0e0bd1ca7cc0ff12fbf2f095963dda94e6",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-deconstructor--node--default",
       "page": "/node-reference/bv-regional-deconstructor",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Deconstructor in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-deconstructor.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Deconstructor node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-deconstructor--nord-20260905-3073ee7e.png",
+      "sha256": "3073ee7ef607fedaa40a309fc841942fe5c99f2c25c22dd357c618fb8d643952",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-deconstructor--connection--minimal",
       "page": "/node-reference/bv-regional-deconstructor",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Deconstructor. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-deconstructor.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Deconstructor in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-deconstructor--nord-20260905-641cd463.png",
+      "sha256": "641cd463804476f9592c54a9f99cbbcaaa185007f6f0edc9a6447f1db0545f4b",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-flux-2-klein-9b-attention--node--default",
       "page": "/node-reference/bv-regional-flux-2-klein-9b-attention",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional FLUX.2 Klein 9B Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-flux-2-klein-9b-attention.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional FLUX.2 Klein 9B Attention node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-flux-2-klein-9b-attention--nord-20260905-f9adb202.png",
+      "sha256": "f9adb202b3881b3746c4e5c9f8232973ade9acd64f8af2c5e12886875978abfa",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-flux-2-klein-9b-attention--connection--minimal",
       "page": "/node-reference/bv-regional-flux-2-klein-9b-attention",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional FLUX.2 Klein 9B Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-flux-2-klein-9b-attention.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional FLUX.2 Klein 9B Attention in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-flux-2-klein-9b-attention--nord-20260905-4b83ab00.png",
+      "sha256": "4b83ab00ee976d5ef95dab0ccd3479799b681694b95f463d742df01d0e6ce94a",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-image-save--node--default",
       "page": "/node-reference/bv-regional-image-save",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Image Save in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-image-save.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Image Save node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-image-save--nord-20260905-341fcbdb.png",
+      "sha256": "341fcbdba8b2daa057514dda9a4ef0efbf7b358697ee989b3a77bcff786380f6",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-image-save--connection--minimal",
       "page": "/node-reference/bv-regional-image-save",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Image Save. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-image-save.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Image Save in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-color-control-image--nord-20260905-d7fd8411.png",
+      "sha256": "d7fd8411f56262179043bcd96ca800dff5f9f56c0aa39fcf2c97cc4849b9f890",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-image-send--node--default",
       "page": "/node-reference/bv-regional-image-send",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Image Send in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-image-send.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Image Send node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-image-send--nord-20260905-0e69c7f7.png",
+      "sha256": "0e69c7f7e9d1131f69843b6e9a980bb155aafaf038f649438327e3f51b314dd1",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-image-send--connection--minimal",
       "page": "/node-reference/bv-regional-image-send",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Image Send. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-image-send.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Image Send in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-image-send--nord-20260905-3dcdab51.png",
+      "sha256": "3dcdab513b691707ab6b6bf20097d7eac14f2aaa14e658be4da48e84365c36bf",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-krea-2-attention--node--default",
       "page": "/node-reference/bv-regional-krea-2-attention",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Krea 2 Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-krea-2-attention.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Krea 2 Attention node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-krea-2-attention--nord-20260905-36335451.png",
+      "sha256": "363354519621836d6013f1f31afa55022d40fd1932b0657f72558d58b2d8b157",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-krea-2-attention--connection--minimal",
       "page": "/node-reference/bv-regional-krea-2-attention",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Krea 2 Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-krea-2-attention.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Krea 2 Attention in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-krea-2-attention--nord-20260905-25fa0671.png",
+      "sha256": "25fa067138af47d9a667e9e78800176991d1a70518e622846d4d22e3536e9e31",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-lut-plan--node--default",
       "page": "/node-reference/bv-regional-lut-plan",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Regional LUT Plan in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional LUT Plan node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-lut-plan--nord-20260905-7e3c49f4.png",
+      "sha256": "7e3c49f488a0b4a0c5c01bbb1badd3d0ecb5d93a7b3e5d0a158c6fb3171127e2",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-lut-plan--connection--minimal",
       "page": "/node-reference/bv-regional-lut-plan",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional LUT Plan. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional LUT Plan in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-lut-plan--nord-20260905-6f2f5ff7.png",
+      "sha256": "6f2f5ff722ea60f1ad4ed3ee6bde07181478d04832421f16edefc2592eef894f",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-lora--node--default",
       "page": "/node-reference/bv-regional-lora",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional LoRA in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-lora.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional LoRA node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-lora--nord-20260905-0cfb9f6f.png",
+      "sha256": "0cfb9f6f140a6d3a52b385203980fe8900e94e2af819e77a7fb0fa701267e071",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-lora--connection--minimal",
       "page": "/node-reference/bv-regional-lora",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional LoRA. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-lora.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional LoRA in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-debug--nord-20260905-93a76340.png",
+      "sha256": "93a76340de85be1075e7062beaef1d0e0bd1ca7cc0ff12fbf2f095963dda94e6",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-mask-render--node--default",
       "page": "/node-reference/bv-regional-mask-render",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Mask Render in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-mask-render.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Mask Render node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-mask-render--nord-20260905-aa2fbafc.png",
+      "sha256": "aa2fbafc0f6d11dfcbd38adac99d3b80a037b0a7620b31c4ed5799a07a33349e",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-mask-render--connection--minimal",
       "page": "/node-reference/bv-regional-mask-render",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Mask Render. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-mask-render.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Mask Render in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-mask-render--nord-20260905-2aec04d1.png",
+      "sha256": "2aec04d1406262a216b3ae0de9e08024c58b7ee853bbc3c43e071450d3de2714",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-native-conditioning--node--default",
       "page": "/node-reference/bv-regional-native-conditioning",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Native Conditioning in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-native-conditioning.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Native Conditioning node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-native-conditioning--nord-20260905-656d7302.png",
+      "sha256": "656d7302a0a9394fc59526b19ab147d5cf74f42766453703e7ec9705828bb0f5",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-native-conditioning--connection--minimal",
       "page": "/node-reference/bv-regional-native-conditioning",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Native Conditioning. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-native-conditioning.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Native Conditioning in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-named-lora-stack--nord-20260905-ac89716b.png",
+      "sha256": "ac89716b060665dc284d920af22df0551434a8aeb9555fcf42d2c656d0a610c2",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-prompt--node--default",
       "page": "/node-reference/bv-regional-prompt",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Prompt in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-prompt.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Prompt node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-prompt--nord-20260905-47e939fe.png",
+      "sha256": "47e939fe751ddbb6e065e36f1cce6dfd765fc47819db68a2da7e898505d19d31",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-prompt--connection--minimal",
       "page": "/node-reference/bv-regional-prompt",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Prompt. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-prompt.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Prompt in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-detailer-mask--nord-20260905-fab152d1.png",
+      "sha256": "fab152d194612e7cdcd355bb0b47811fe0bc343cfbc00e9bdf830ba8e6bd62b9",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-prompt-enhancer--node--default",
       "page": "/node-reference/bv-regional-prompt-enhancer",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Prompt Enhancer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-prompt-enhancer.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Prompt Enhancer node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-prompt-enhancer--nord-20260905-5ee8df6e.png",
+      "sha256": "5ee8df6e0781b0c29d7e4ba30716c085060d312c2c9ef1d52e546472ac32602a",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-prompt-enhancer--connection--minimal",
       "page": "/node-reference/bv-regional-prompt-enhancer",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Prompt Enhancer. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-prompt-enhancer.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Prompt Enhancer in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-apply-regional-enhancement--nord-20260905-b31626f2.png",
+      "sha256": "b31626f223b96319795ebc915be97925f2efff6f5ba50ee5023f89056542a1e8",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-prompt-extract--node--default",
       "page": "/node-reference/bv-regional-prompt-extract",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Prompt Extract in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-prompt-extract.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Prompt Extract node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-prompt-extract--nord-20260905-62bea057.png",
+      "sha256": "62bea05722d28a722422fc270ff80056cd15d089180158f8f388465bbf7dbf94",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-prompt-extract--connection--minimal",
       "page": "/node-reference/bv-regional-prompt-extract",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Prompt Extract. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-prompt-extract.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Prompt Extract in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-prompt-extract--nord-20260905-f8907114.png",
+      "sha256": "f89071149e7dbaceb6c1e34fd8674fbd27b24502296b66f4ce446c1ea2c8ffe7",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-sdxl-attention--node--default",
       "page": "/node-reference/bv-regional-sdxl-attention",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional SDXL Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-sdxl-attention.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional SDXL Attention node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-sdxl-attention--nord-20260905-b9bb09dc.png",
+      "sha256": "b9bb09dcb42bbca26d6ebf99d1a0ab5551a28082c496b89055f0968913ffd4bb",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-sdxl-attention--connection--minimal",
       "page": "/node-reference/bv-regional-sdxl-attention",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional SDXL Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-sdxl-attention.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional SDXL Attention in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-sdxl-attention--nord-20260905-213a27c5.png",
+      "sha256": "213a27c5abfd1118c80d15523ef24ab8b11939a52d2237909068c07e0d891414",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-select--node--default",
       "page": "/node-reference/bv-regional-select",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Select in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-select.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Select node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-select--nord-20260905-17ece6f1.png",
+      "sha256": "17ece6f1a7b8b20b275b7f8cf5dbdf33fbdcd6846eed3efc271dcf38bfc1ca2e",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-select--connection--minimal",
       "page": "/node-reference/bv-regional-select",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Select. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-select.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Select in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-mask-render--nord-20260905-2aec04d1.png",
+      "sha256": "2aec04d1406262a216b3ae0de9e08024c58b7ee853bbc3c43e071450d3de2714",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-regional-z-image-attention--node--default",
       "page": "/node-reference/bv-regional-z-image-attention",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Regional Z-Image Attention in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-regional-z-image-attention.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Regional Z-Image Attention node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-regional-z-image-attention--nord-20260905-103cc680.png",
+      "sha256": "103cc6800d0955547c30e807f886d2178259d4c3043a860353accf531cda1a11",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-regional-z-image-attention--connection--minimal",
       "page": "/node-reference/bv-regional-z-image-attention",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Regional Z-Image Attention. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-regional-z-image-attention.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Regional Z-Image Attention in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-regional-z-image-attention--nord-20260905-07d3d2bb.png",
+      "sha256": "07d3d2bbfc25c70c9ebe9fe5d2df74dcaae73b17043a98a2b4c851c21e850715",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-remote-llm-provider--node--default",
       "page": "/node-reference/bv-remote-llm-provider",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Remote LLM Provider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-remote-llm-provider.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Remote LLM Provider node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-remote-llm-provider--nord-20260905-9be456fe.png",
+      "sha256": "9be456fe4054db485de06a1283a46f47ec9402d14066e70c7f509b201f7fdedb",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-remote-llm-provider--connection--minimal",
       "page": "/node-reference/bv-remote-llm-provider",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Remote LLM Provider. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-remote-llm-provider.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Remote LLM Provider in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-remote-llm-provider--nord-20260905-8a3b98ee.png",
+      "sha256": "8a3b98ee73c92c46345a627fb67adf3711d13ef593681184104efdc3499db8fb",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-dynamic-combo--node--default",
       "page": "/node-reference/bv-dynamic-combo",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Dynamic Combo in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-dynamic-combo.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Dynamic Combo node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-dynamic-combo--nord-20260905-6ae45fac.png",
+      "sha256": "6ae45fac5f01d6d118f58ea22974a5b8b500257a10fe1e3c4e892ea48c6f346c",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-dynamic-combo--connection--minimal",
       "page": "/node-reference/bv-dynamic-combo",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Dynamic Combo. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-dynamic-combo.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Dynamic Combo in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-dynamic-combo--nord-20260905-de79c9b9.png",
+      "sha256": "de79c9b9daac4d7de62d6c0a3ee62fab77799d66bb70bce48583c03308ed72ea",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-subgraph-divider--node--default",
       "page": "/node-reference/bv-subgraph-divider",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Subgraph Divider in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-subgraph-divider.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Subgraph Divider node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-subgraph-divider--nord-20260905-9f0fb557.png",
+      "sha256": "9f0fb557c94c20ffc3e9493ef68d7edfe73b63eb01c45d56d2aa91a89bd2e78b",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-subgraph-divider--connection--minimal",
       "page": "/node-reference/bv-subgraph-divider",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Subgraph Divider. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-subgraph-divider.png",
-      "aiGeneratedReviewRequired": true
+      "status": "not-applicable",
+      "instructions": "BV Subgraph Divider has no public native connection ports. Its default appearance is shown above.",
+      "aiGeneratedReviewRequired": false
     },
     {
       "id": "bv-subgraph-heading--node--default",
       "page": "/node-reference/bv-subgraph-heading",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Subgraph Heading in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-subgraph-heading.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Subgraph Heading node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-subgraph-heading--nord-20260905-778e6561.png",
+      "sha256": "778e6561ac6c60f4b34f481ccf17ea617df2d122d0cb51503a836291f5f38639",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-subgraph-heading--connection--minimal",
       "page": "/node-reference/bv-subgraph-heading",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Subgraph Heading. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-subgraph-heading.png",
-      "aiGeneratedReviewRequired": true
+      "status": "not-applicable",
+      "instructions": "BV Subgraph Heading has no public native connection ports. Its default appearance is shown above.",
+      "aiGeneratedReviewRequired": false
     },
     {
       "id": "bv-subgraph-spacer--node--default",
       "page": "/node-reference/bv-subgraph-spacer",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Subgraph Spacer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-subgraph-spacer.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Subgraph Spacer node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-subgraph-spacer--nord-20260905-d897ad6b.png",
+      "sha256": "d897ad6b64c61597f1f41e630c7b84a69ab4434940c3947c424fc2f957627f7d",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-subgraph-spacer--connection--minimal",
       "page": "/node-reference/bv-subgraph-spacer",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Subgraph Spacer. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-subgraph-spacer.png",
-      "aiGeneratedReviewRequired": true
+      "status": "not-applicable",
+      "instructions": "BV Subgraph Spacer has no public native connection ports. Its default appearance is shown above.",
+      "aiGeneratedReviewRequired": false
     },
     {
       "id": "bv-hex-color-to-int--node--default",
       "page": "/node-reference/bv-hex-color-to-int",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Hex Color To Int in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-hex-color-to-int.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Hex Color To Int node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-hex-color-to-int--nord-20260905-457dc575.png",
+      "sha256": "457dc5752878ec91070ac6f20698c59e187f95b1aae2d628df5ec6e0a39694ab",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-hex-color-to-int--connection--minimal",
       "page": "/node-reference/bv-hex-color-to-int",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Hex Color To Int. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-hex-color-to-int.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Hex Color To Int in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-hex-color-to-int--nord-20260905-a02f0570.png",
+      "sha256": "a02f0570ef367675f2d891a9b6b7c1d74b454af6195fde2c1d4ece3fd08b5e3f",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-inspect-any--node--default",
       "page": "/node-reference/bv-inspect-any",
       "type": "node",
-      "status": "missing",
-      "instructions": "Transparent export of BV Inspect Any in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Inspect Any node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-inspect-any--nord-20260905-87287172.png",
+      "sha256": "8728717253b7a0bc5391647ec5b654ea83e160bdb64a7961c0b85a9a97aebe70",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-inspect-any--connection--minimal",
       "page": "/node-reference/bv-inspect-any",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Inspect Any. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Inspect Any in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-inspect-any--nord-20260905-3da97afe.png",
+      "sha256": "3da97afe8cb17a8562b76c9d807e91f9c6d5eae72e4b3edc022d67e5c5569f2f",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-seed--node--default",
       "page": "/node-reference/bv-seed",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Seed in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-seed.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Seed node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-seed--nord-20260905-127339ed.png",
+      "sha256": "127339ed14c4a099dd42d8211944c79d833d10d2dcdb9ffd9cea01c1fb6e181c",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-seed--connection--minimal",
       "page": "/node-reference/bv-seed",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Seed. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-seed.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Seed in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-inspect-any--nord-20260905-3da97afe.png",
+      "sha256": "3da97afe8cb17a8562b76c9d807e91f9c6d5eae72e4b3edc022d67e5c5569f2f",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-text-log-writer--node--default",
       "page": "/node-reference/bv-text-log-writer",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Text Log Writer in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-text-log-writer.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Text Log Writer node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-text-log-writer--nord-20260905-0eaff7fd.png",
+      "sha256": "0eaff7fdd2407fd02e34136674b412e1d9639cee919d1b27423559a80fe8e553",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-text-log-writer--connection--minimal",
       "page": "/node-reference/bv-text-log-writer",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Text Log Writer. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-text-log-writer.png",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Native connection example for BV Text Log Writer in the Nord theme.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/bv-dynamic-combo--nord-20260905-de79c9b9.png",
+      "sha256": "de79c9b9daac4d7de62d6c0a3ee62fab77799d66bb70bce48583c03308ed72ea",
+      "workflowEmbedded": true,
+      "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
       "id": "bv-control-center--node--default",
       "page": "/node-reference/bv-control-center",
       "type": "node",
-      "status": "captured",
-      "instructions": "Transparent export of BV Control Center in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
-      "path": "/assets/nodes/bv-control-center.png",
-      "aiGeneratedReviewRequired": false
+      "status": "approved",
+      "instructions": "Default BV Control Center node in the Nord theme, including its public ports and widgets.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/nodes/bv-control-center--nord-20260905-55455e47.png",
+      "sha256": "55455e47bc72d541c5ebded4f53721510a6eaf9717c9ca5607bc6090724f85cd",
+      "workflowEmbedded": true
     },
     {
       "id": "bv-control-center--connection--minimal",
       "page": "/node-reference/bv-control-center",
       "type": "connection",
-      "status": "captured",
-      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Control Center. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
-      "path": "/assets/connections/bv-control-center.png",
-      "aiGeneratedReviewRequired": true
+      "status": "not-applicable",
+      "instructions": "BV Control Center has no public native connection ports. Its default appearance is shown above.",
+      "aiGeneratedReviewRequired": false
     },
     {
       "id": "bv-subgraph-heading--subgraph--minimal",
@@ -1102,6 +1410,7 @@
       "status": "captured",
       "instructions": "Inside view of a minimal Subgraph definition centered on BV Subgraph Heading, including the projected interface wiring.",
       "path": "/assets/connections/bv-subgraph-heading--subgraph--minimal.png",
+      "workflowEmbedded": false,
       "aiGeneratedReviewRequired": true
     },
     {
@@ -1111,6 +1420,7 @@
       "status": "captured",
       "instructions": "Inside view of a minimal Subgraph definition centered on BV Subgraph Spacer, including the projected interface wiring.",
       "path": "/assets/connections/bv-subgraph-spacer--subgraph--minimal.png",
+      "workflowEmbedded": false,
       "aiGeneratedReviewRequired": true
     },
     {
@@ -1120,6 +1430,7 @@
       "status": "captured",
       "instructions": "Inside view of a minimal Subgraph definition centered on BV Subgraph Divider, including the projected interface wiring.",
       "path": "/assets/connections/bv-subgraph-divider--subgraph--minimal.png",
+      "workflowEmbedded": false,
       "aiGeneratedReviewRequired": true
     },
     {
@@ -1129,55 +1440,118 @@
       "status": "captured",
       "instructions": "Inside view of a minimal Subgraph definition centered on BV Dynamic Combo, including the projected interface wiring.",
       "path": "/assets/connections/bv-dynamic-combo--subgraph--minimal.png",
+      "workflowEmbedded": false,
       "aiGeneratedReviewRequired": true
     },
     {
-      "id": "installation--configuration--manager-search",
+      "id": "installation-current--configuration--manager-search",
       "page": "/getting-started/installation",
       "type": "configuration",
-      "status": "missing",
-      "instructions": "ConfigUI Manager search result for BV Node Pack, showing the installed package identity without unrelated personal paths.",
+      "status": "captured",
+      "instructions": "Current Nodes Manager search result showing BV-NodePack 1.0.0. Retained across releases as UI orientation; it does not verify the current BV Node Pack release.",
+      "path": "/assets/configuration/installation-current.png",
+      "workflowEmbedded": false,
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "installation-legacy--configuration--manager-search",
+      "page": "/getting-started/installation",
+      "type": "configuration",
+      "status": "captured",
+      "instructions": "Legacy ComfyUI Manager search result showing BV-NodePack 1.0.0. Retained for older ComfyUI installations as UI orientation; it does not verify the current BV Node Pack release.",
+      "path": "/assets/configuration/installation-legacy.png",
+      "workflowEmbedded": false,
       "aiGeneratedReviewRequired": false
     },
     {
       "id": "quick-start--connection--seed-latent",
       "page": "/getting-started/quick-start",
       "type": "connection",
-      "status": "missing",
-      "instructions": "Neutral canvas showing BV Seed connected to the smallest meaningful deterministic starter path and BV Empty Latent Random Ratio configured to 1024x1024 with only 1:1 enabled.",
-      "aiGeneratedReviewRequired": true
+      "status": "captured",
+      "instructions": "Complete 1024x1024 Anima example showing BV Seed connected to BV Empty Latent Random Ratio with only 1:1 enabled, followed by the prompt, sampler, decode, and saved output path.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/connections/quick-start.png",
+      "workflowEmbedded": true
     },
     {
       "id": "regional-v3-concept--configuration--architecture",
       "page": "/concepts/regional-v3",
       "type": "configuration",
-      "status": "missing",
-      "instructions": "Documentation-native architecture graphic: authoring document -> typed provider links -> scoped capability composition -> executor. Distinguish collector, configuration owner, and executor.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Documentation-native architecture graphic showing Root-to-Subgraph, Subgraph-to-Root, and sibling Subgraph Registry DG routes inside one owning workflow. Separate domain IDs from bvDgSenderId transport identity, show native typed boundary links, and retain the hard no-cross-workflow boundary.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/configuration/regional-v3-concept.svg",
+      "workflowEmbedded": false
     },
     {
       "id": "workflow-identity--configuration--scope",
       "page": "/concepts/workflow-identity",
       "type": "configuration",
-      "status": "missing",
-      "instructions": "Documentation-native graph-scope graphic comparing a valid same-root provider link, a valid same-Subgraph-definition link, and a rejected cross-workflow lookup.",
-      "aiGeneratedReviewRequired": true
+      "status": "approved",
+      "instructions": "Documentation-native graph-scope graphic comparing a valid same-root provider link, a valid same-Subgraph-definition link, and a rejected cross-workflow lookup. Stable executable IDs are contrasted with presentation-only labels and ordering.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/configuration/workflow-identity.svg",
+      "workflowEmbedded": false
+    },
+    {
+      "id": "regional-v3-guide--workflow--native-exclusive",
+      "page": "/node-guides/regional-v3",
+      "type": "workflow",
+      "status": "captured",
+      "instructions": "Selection export of a complete 1024x1024 Illustrious example using BV LoRA Registry, BV Regional Prompt, BV Regional Native Conditioning in exclusive mode, KSampler, VAE Decode, and BV Regional Save Send. Contains an embedded workflow and requires the listed third-party checkpoint, embeddings, and LoRAs.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/workflows/regional-v3-guide--native-exclusive.png",
+      "workflowEmbedded": true
     },
     {
       "id": "regional-v3-guide--configuration--editor",
       "page": "/node-guides/regional-v3",
       "type": "configuration",
-      "status": "missing",
-      "instructions": "Regional Editor with Global, Background, and two named regions. English UI, 1024x1024 canvas, simple non-sensitive prompts, no Legacy Debug ports.",
-      "aiGeneratedReviewRequired": false
+      "status": "captured",
+      "instructions": "BV Regional Editor showing two named generation regions, their spatial masks, Global prompts, and a region-scoped Fern LoRA Registry assignment alongside the generated 1024x1024 example.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/configuration/regional-v3-guide--editor.png",
+      "workflowEmbedded": true
     },
     {
-      "id": "regional-v3-guide--connection--minimal",
-      "page": "/node-guides/regional-v3",
-      "type": "connection",
-      "status": "missing",
-      "instructions": "Minimal Regional V3 authoring-to-executor graph using BV Regional Prompt and one compatible consumer; persisted provider links visible where applicable.",
-      "aiGeneratedReviewRequired": true
+      "id": "lut-library-guide--workflow--hdr-color-boost",
+      "page": "/node-guides/lut-library",
+      "type": "workflow",
+      "status": "captured",
+      "instructions": "Importable direct-application example showing Load Image, BV LUT Loader set to Built-in: HDR Color Boost, BV Apply LUT at strength 1.00, and side-by-side source and result previews. Replace the referenced test-character input image after import when it is unavailable locally.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/workflows/lut-library-guide--hdr-color-boost.png",
+      "workflowEmbedded": true
+    },
+    {
+      "id": "lut-library-guide--configuration--stable-catalog",
+      "page": "/node-guides/lut-library",
+      "type": "configuration",
+      "status": "captured",
+      "instructions": "BV Download Manager showing the Stable LUT catalog v1 snapshot with search, availability filters, source and license links, download actions, and catalog refresh. The PNG intentionally embeds the underlying HDR Color Boost example workflow rather than the manager window itself.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/configuration/lut-library-guide--stable-catalog.png",
+      "workflowEmbedded": true
+    },
+    {
+      "id": "lora-library-registry--configuration--named-stacks",
+      "page": "/node-guides/lora-library",
+      "type": "configuration",
+      "status": "captured",
+      "instructions": "BV LoRA Registry showing two enabled named stacks, one local LoRA assignment per stack, and the saved workflow-owned registry state. Fern and Frieren are examples and are not included with BV Node Pack. The PNG intentionally embeds the underlying example workflow rather than the open Registry window itself.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/configuration/lora-library-registry.png",
+      "workflowEmbedded": true
+    },
+    {
+      "id": "lora-library-catalog--configuration--filtered-selection",
+      "page": "/node-guides/lora-library",
+      "type": "configuration",
+      "status": "captured",
+      "instructions": "Add LoRA catalog filtered to two local example resources, showing directory facets, model metadata, safe preview images, the mature-or-unrated preview preference, and the target stack. Fern and Frieren are examples and are not included with BV Node Pack. The PNG intentionally embeds the underlying example workflow rather than the open catalog window itself.",
+      "aiGeneratedReviewRequired": false,
+      "path": "/assets/configuration/lora-library-catalog.png",
+      "workflowEmbedded": true
     },
     {
       "id": "detailer-loop-guide--connection--minimal",
@@ -1306,14 +1680,6 @@
       "status": "missing",
       "instructions": "Tightly cropped BV notification examples for migration summary, unresolved provider, and Legacy Debug state. Compose from real UI captures only.",
       "aiGeneratedReviewRequired": false
-    },
-    {
-      "id": "regional-v3-quick-start--workflow--embedded",
-      "page": "/node-guides/regional-v3",
-      "type": "workflow",
-      "status": "missing",
-      "instructions": "Verified 1024x1024 Regional V3 starter workflow. Freeze a visually accepted per-workflow seed; export lossless PNG with embedded workflow JSON and matching extracted JSON.",
-      "aiGeneratedReviewRequired": true
     },
     {
       "id": "detailer-loop--workflow--embedded",

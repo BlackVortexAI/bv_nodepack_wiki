@@ -8,6 +8,7 @@
     "build": "tsc --noEmit && vite build && node scripts/materialize-static-routes.mjs",
     "wiki:build": "npm run build",
     "generate:contracts": "python scripts/generate-node-contracts.py --output src/generated/node-contracts.json --assets src/generated/asset-manifest.json",
+    "sync:asset-metadata": "node scripts/sync-asset-metadata.mjs",
     "validate": "node scripts/validate-docs.mjs"
   },
   "dependencies": {

@@ -1,15 +1,40 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib
 import json
 import re
 import sys
+import tomllib
 from pathlib import Path
 
 
 def slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+
+
+def png_contains_embedded_workflow(path: Path) -> bool:
+    if path.suffix.lower() != ".png":
+        return False
+    data = path.read_bytes()
+    signature = b"\x89PNG\r\n\x1a\n"
+    if not data.startswith(signature):
+        return False
+    offset = len(signature)
+    while offset + 12 <= len(data):
+        length = int.from_bytes(data[offset:offset + 4], "big")
+        chunk_type = data[offset + 4:offset + 8]
+        data_start = offset + 8
+        data_end = data_start + length
+        if data_end + 4 > len(data):
+            return False
+        if chunk_type in {b"tEXt", b"zTXt", b"iTXt"}:
+            keyword = data[data_start:data_end].split(b"\0", 1)[0].lower()
+            if keyword == b"workflow":
+                return True
+        offset = data_end + 4
+    return False
 
 
 def value_type(value: object) -> str:
@@ -92,17 +117,68 @@ def mark_legacy_port(ports: list[dict[str, object]], name: str, guidance: str) -
             return
 
 
+def apply_asset_overrides(assets: list[dict[str, object]], wiki_root: Path) -> None:
+    """Apply reviewed captures without replacing retained historical assets."""
+    overrides_path = wiki_root / "asset-overrides.json"
+    if not overrides_path.is_file():
+        return
+    overrides = json.loads(overrides_path.read_text(encoding="utf-8"))["assets"]
+    by_id = {asset["id"]: asset for asset in assets}
+    if unknown := set(overrides) - set(by_id):
+        raise ValueError(f"Unknown asset overrides: {sorted(unknown)}")
+    for asset_id, override in overrides.items():
+        asset = by_id[asset_id]
+        status = override["status"]
+        if status not in {"approved", "not-applicable", "blocked"}:
+            raise ValueError(f"Invalid override status: {asset_id}")
+        for key in ("path", "workflowEmbedded", "sha256", "caption"):
+            asset.pop(key, None)
+        asset.update(status=status, instructions=override["instructions"], aiGeneratedReviewRequired=False)
+        if status != "approved":
+            if override.get("path"):
+                raise ValueError(f"Unavailable asset must not have a path: {asset_id}")
+            continue
+        relative = Path(override["path"].removeprefix("/"))
+        expected_folder = "nodes" if asset["type"] == "node" else "connections"
+        if relative.is_absolute() or relative.parts[:2] != ("assets", expected_folder) or ".." in relative.parts:
+            raise ValueError(f"Invalid asset path: {asset_id}")
+        path = wiki_root / "public" / relative
+        if hashlib.sha256(path.read_bytes()).hexdigest() != override["sha256"]:
+            raise ValueError(f"Reviewed asset hash mismatch: {asset_id}")
+        if not png_contains_embedded_workflow(path):
+            raise ValueError(f"Reviewed capture lacks workflow metadata: {asset_id}")
+        asset.update(path=override["path"], sha256=override["sha256"], workflowEmbedded=True)
+        if override.get("caption"):
+            asset["caption"] = override["caption"]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source", required=True, type=Path)
+    parser.add_argument("--source", type=Path)
+    parser.add_argument("--assets-only", action="store_true", help="Refresh reviewed assets without importing or changing node contracts.")
     parser.add_argument("--comfy-root", type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--assets", required=True, type=Path)
-    parser.add_argument("--target-version", required=True)
+    parser.add_argument("--target-version")
     parser.add_argument("--generated-date", required=True)
     args = parser.parse_args()
 
+    wiki_root = Path(__file__).resolve().parent.parent
+    documentation_target = json.loads((wiki_root / "documentation-target.json").read_text(encoding="utf-8"))
+    target_version = documentation_target["targetVersion"]
+    if args.target_version and args.target_version != target_version:
+        parser.error(f"--target-version {args.target_version} does not match documentation target {target_version}")
+
+    if args.assets_only:
+        manifest = json.loads(args.assets.read_text(encoding="utf-8"))
+        apply_asset_overrides(manifest["assets"], wiki_root)
+        manifest["generated"] = args.generated_date
+        args.assets.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        return
+    if args.source is None:
+        parser.error("--source is required unless --assets-only is used")
     source = args.source.resolve()
+    source_version = tomllib.loads((source / "pyproject.toml").read_text(encoding="utf-8"))["project"]["version"]
     # Import the checkout as a package regardless of whether it lives below a
     # ComfyUI/custom_nodes tree or in an isolated Git worktree. An isolated
     # worktree can use the host runtime supplied through --comfy-root.
@@ -203,12 +279,17 @@ def main() -> None:
             "instructions": f"Inside view of a minimal Subgraph definition centered on {name}, including the projected interface wiring.",
         })
     assets.extend([
-        {"id": "installation--configuration--manager-search", "page": "/getting-started/installation", "type": "configuration", "status": "missing", "instructions": "ConfigUI Manager search result for BV Node Pack, showing the installed package identity without unrelated personal paths."},
-        {"id": "quick-start--connection--seed-latent", "page": "/getting-started/quick-start", "type": "connection", "status": "missing", "instructions": "Neutral canvas showing BV Seed connected to the smallest meaningful deterministic starter path and BV Empty Latent Random Ratio configured to 1024x1024 with only 1:1 enabled."},
-        {"id": "regional-v3-concept--configuration--architecture", "page": "/concepts/regional-v3", "type": "configuration", "status": "missing", "instructions": "Documentation-native architecture graphic: authoring document -> typed provider links -> scoped capability composition -> executor. Distinguish collector, configuration owner, and executor."},
-        {"id": "workflow-identity--configuration--scope", "page": "/concepts/workflow-identity", "type": "configuration", "status": "missing", "instructions": "Documentation-native graph-scope graphic comparing a valid same-root provider link, a valid same-Subgraph-definition link, and a rejected cross-workflow lookup."},
-        {"id": "regional-v3-guide--configuration--editor", "page": "/node-guides/regional-v3", "type": "configuration", "status": "missing", "instructions": "Regional Editor with Global, Background, and two named regions. English UI, 1024x1024 canvas, simple non-sensitive prompts, no Legacy Debug ports."},
-        {"id": "regional-v3-guide--connection--minimal", "page": "/node-guides/regional-v3", "type": "connection", "status": "missing", "instructions": "Minimal Regional V3 authoring-to-executor graph using BV Regional Prompt and one compatible consumer; persisted provider links visible where applicable."},
+        {"id": "installation-current--configuration--manager-search", "page": "/getting-started/installation", "type": "configuration", "status": "missing", "instructions": "Current Nodes Manager search result showing BV-NodePack 1.0.0. Retained across releases as UI orientation; it does not verify the current BV Node Pack release."},
+        {"id": "installation-legacy--configuration--manager-search", "page": "/getting-started/installation", "type": "configuration", "status": "missing", "instructions": "Legacy ComfyUI Manager search result showing BV-NodePack 1.0.0. Retained for older ComfyUI installations as UI orientation; it does not verify the current BV Node Pack release."},
+        {"id": "quick-start--connection--seed-latent", "page": "/getting-started/quick-start", "type": "connection", "status": "missing", "instructions": "Complete 1024x1024 Anima example showing BV Seed connected to BV Empty Latent Random Ratio with only 1:1 enabled, followed by the prompt, sampler, decode, and saved output path.", "aiGeneratedReviewRequired": False},
+        {"id": "regional-v3-concept--configuration--architecture", "page": "/concepts/regional-v3", "type": "configuration", "status": "approved", "instructions": "Documentation-native architecture graphic showing Root-to-Subgraph, Subgraph-to-Root, and sibling Subgraph Registry DG routes inside one owning workflow. Separate domain IDs from bvDgSenderId transport identity, show native typed boundary links, and retain the hard no-cross-workflow boundary.", "extension": "svg", "aiGeneratedReviewRequired": False},
+        {"id": "workflow-identity--configuration--scope", "page": "/concepts/workflow-identity", "type": "configuration", "status": "approved", "instructions": "Documentation-native graph-scope graphic comparing a valid same-root provider link, a valid same-Subgraph-definition link, and a rejected cross-workflow lookup. Stable executable IDs are contrasted with presentation-only labels and ordering.", "extension": "svg", "aiGeneratedReviewRequired": False},
+        {"id": "regional-v3-guide--workflow--native-exclusive", "page": "/node-guides/regional-v3", "type": "workflow", "status": "captured", "filename": "regional-v3-guide--native-exclusive.png", "instructions": "Selection export of a complete 1024x1024 Illustrious example using BV LoRA Registry, BV Regional Prompt, BV Regional Native Conditioning in exclusive mode, KSampler, VAE Decode, and BV Regional Save Send. Contains an embedded workflow and requires the listed third-party checkpoint, embeddings, and LoRAs.", "aiGeneratedReviewRequired": False},
+        {"id": "regional-v3-guide--configuration--editor", "page": "/node-guides/regional-v3", "type": "configuration", "status": "captured", "filename": "regional-v3-guide--editor.png", "instructions": "BV Regional Editor showing two named generation regions, their spatial masks, Global prompts, and a region-scoped Fern LoRA Registry assignment alongside the generated 1024x1024 example.", "aiGeneratedReviewRequired": False},
+        {"id": "lut-library-guide--workflow--hdr-color-boost", "page": "/node-guides/lut-library", "type": "workflow", "status": "captured", "filename": "lut-library-guide--hdr-color-boost.png", "instructions": "Importable direct-application example showing Load Image, BV LUT Loader set to Built-in: HDR Color Boost, BV Apply LUT at strength 1.00, and side-by-side source and result previews. Replace the referenced test-character input image after import when it is unavailable locally.", "aiGeneratedReviewRequired": False},
+        {"id": "lut-library-guide--configuration--stable-catalog", "page": "/node-guides/lut-library", "type": "configuration", "status": "captured", "filename": "lut-library-guide--stable-catalog.png", "instructions": "BV Download Manager showing the Stable LUT catalog v1 snapshot with search, availability filters, source and license links, download actions, and catalog refresh. The PNG intentionally embeds the underlying HDR Color Boost example workflow rather than the manager window itself.", "aiGeneratedReviewRequired": False},
+        {"id": "lora-library-registry--configuration--named-stacks", "page": "/node-guides/lora-library", "type": "configuration", "status": "captured", "instructions": "BV LoRA Registry showing two enabled named stacks, one local LoRA assignment per stack, and the saved workflow-owned registry state. Fern and Frieren are examples and are not included with BV Node Pack. The PNG intentionally embeds the underlying example workflow rather than the open Registry window itself.", "aiGeneratedReviewRequired": False},
+        {"id": "lora-library-catalog--configuration--filtered-selection", "page": "/node-guides/lora-library", "type": "configuration", "status": "captured", "instructions": "Add LoRA catalog filtered to two local example resources, showing directory facets, model metadata, safe preview images, the mature-or-unrated preview preference, and the target stack. Fern and Frieren are examples and are not included with BV Node Pack. The PNG intentionally embeds the underlying example workflow rather than the open catalog window itself.", "aiGeneratedReviewRequired": False},
         {"id": "detailer-loop-guide--connection--minimal", "page": "/node-guides/detailer-loop", "type": "connection", "status": "missing", "instructions": "Minimal two-job Detailer loop graph from BV Regional Detailer Plan through Start, Job Resolver, one processing placeholder, and End. Hidden expansion nodes must not be manually placed."},
         {"id": "detailer-loop-guide--configuration--detectors", "page": "/node-guides/detailer-loop", "type": "configuration", "status": "missing", "instructions": "BV Detector Registry and Regional Detailer configuration showing two stable detector resources without exposing private model paths."},
         {"id": "smart-pipes-guide--configuration--slots", "page": "/node-guides/smart-pipes", "type": "configuration", "status": "missing", "instructions": "BV Smart Pipe editor with a small set of clearly named typed slots and stable identity; avoid project-specific names."},
@@ -225,7 +306,6 @@ def main() -> None:
         {"id": "latent-utilities--workflow--embedded", "page": "/node-guides/latent-utilities", "type": "workflow", "status": "missing", "instructions": "Deterministic BV Seed and BV Empty Latent Random Ratio example. Use 1024x1024 and 1:1 unless a documented model constraint requires an approved exception."},
         {"id": "ui-guide--configuration--window-states", "page": "/ui-guide", "type": "configuration", "status": "missing", "instructions": "BV-owned editor demonstrated in workspace, floating, minimized, and switching states. Use one neutral example workflow and default interface size."},
         {"id": "ui-guide--configuration--notifications", "page": "/ui-guide", "type": "configuration", "status": "missing", "instructions": "Tightly cropped BV notification examples for migration summary, unresolved provider, and Legacy Debug state. Compose from real UI captures only."},
-        {"id": "regional-v3-quick-start--workflow--embedded", "page": "/node-guides/regional-v3", "type": "workflow", "status": "missing", "instructions": "Verified 1024x1024 Regional V3 starter workflow. Freeze a visually accepted per-workflow seed; export lossless PNG with embedded workflow JSON and matching extracted JSON."},
         {"id": "detailer-loop--workflow--embedded", "page": "/node-guides/detailer-loop", "type": "workflow", "status": "missing", "instructions": "Two-job Regional Detailer workflow using BV Detector Registry and Impact SEGS. Requires successful execution and output review before embedded PNG export."},
         {"id": "upgrading-to-1-0--configuration--legacy-debug", "page": "/migration/upgrading-to-1-0", "type": "configuration", "status": "missing", "instructions": "ConfigUI Settings screenshot showing Enable BV Regional Legacy Debug Mode and the Ctrl+Alt+B shortcut. English UI, dark theme, tightly cropped."},
         {"id": "documentation-home--result--regional", "page": "/", "type": "result", "status": "missing", "instructions": "Approved representative BV Regional result for the documentation home hero. No embedded workflow required; confirm provenance and model attribution."},
@@ -241,19 +321,26 @@ def main() -> None:
     }
     for asset in assets:
         stem = asset["id"].split("--", 1)[0]
-        filename = f"{asset['id']}.png" if asset["id"].endswith("--subgraph--minimal") else f"{stem}.png"
+        extension = asset.pop("extension", "png")
+        filename = asset.pop("filename", None)
+        if filename is None:
+            filename = f"{asset['id']}.{extension}" if asset["id"].endswith("--subgraph--minimal") else f"{stem}.{extension}"
         relative_path = Path("assets") / asset_folders[asset["type"]] / filename
-        if (wiki_root / "public" / relative_path).is_file():
-            asset["status"] = "captured"
+        asset_path = wiki_root / "public" / relative_path
+        if asset_path.is_file():
+            if asset["status"] not in {"reviewed", "optimized", "approved"}:
+                asset["status"] = "captured"
             asset["path"] = f"/{relative_path.as_posix()}"
+            asset["workflowEmbedded"] = png_contains_embedded_workflow(asset_path)
         instructions = asset["instructions"].lower()
-        asset["aiGeneratedReviewRequired"] = (
+        asset["aiGeneratedReviewRequired"] = asset.get("aiGeneratedReviewRequired", (
             asset["type"] in {"connection", "workflow"}
             or (asset["type"] == "configuration" and any(term in instructions for term in ("graph", "workflow", "wiring")))
-        )
+        ))
 
+    apply_asset_overrides(assets, wiki_root)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps({"targetVersion": args.target_version, "generated": args.generated_date, "nodes": nodes}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    args.output.write_text(json.dumps({"targetVersion": target_version, "sourceVersion": source_version, "generated": args.generated_date, "nodes": nodes}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     args.assets.parent.mkdir(parents=True, exist_ok=True)
     args.assets.write_text(json.dumps({"generated": args.generated_date, "assets": assets}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 

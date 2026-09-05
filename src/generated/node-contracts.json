@@ -1,6 +1,7 @@
 {
-  "targetVersion": "1.2.1",
-  "generated": "2026-08-30",
+  "targetVersion": "1.3.0",
+  "sourceVersion": "1.3.0",
+  "generated": "2026-09-05",
   "nodes": [
     {
       "name": "BV Latent Random Aspect Ratio",
@@ -1324,7 +1325,7 @@
         "required": [
           {
             "name": "lut_name",
-            "type": "choice: Built-in: Identity | Built-in: Warm Contrast | Built-in: Cool Graphite | Built-in: Digital Green | Built-in: Machine Blue | Built-in: Dustfire | Built-in: Steel Action | Built-in: Sunbleached Coast | Built-in: Expired Film | Built-in: Classic Monochrome | Built-in: Grayscale | Built-in: HDR Color Boost | Download more LUTs…",
+            "type": "choice: Built-in: Identity | Built-in: Warm Contrast | Built-in: Cool Graphite | Built-in: Digital Green | Built-in: Machine Blue | Built-in: Dustfire | Built-in: Steel Action | Built-in: Sunbleached Coast | Built-in: Expired Film | Built-in: Day for Night | Built-in: Classic Monochrome | Built-in: Grayscale | Built-in: HDR Color Boost | Download more LUTs…",
             "dynamic": true,
             "dynamicDescription": "built-ins | discovered .cube files | Download more LUTs…"
           }
@@ -1669,6 +1670,14 @@
         ]
       },
       "outputs": [
+        {
+          "name": "lora_count",
+          "type": "INT"
+        },
+        {
+          "name": "registry_summary",
+          "type": "STRING"
+        },
         {
           "name": "resource_provider",
           "type": "BV_RUNTIME_RESOURCE_PROVIDER"
@@ -2211,6 +2220,10 @@
           {
             "name": "extra_pnginfo",
             "type": "EXTRA_PNGINFO"
+          },
+          {
+            "name": "unique_id",
+            "type": "UNIQUE_ID"
           }
         ]
       },
@@ -3065,6 +3078,16 @@
           {
             "name": "lut_resource_provider_40",
             "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "canvas_image",
+            "type": "IMAGE"
+          }
+        ],
+        "hidden": [
+          {
+            "name": "unique_id",
+            "type": "UNIQUE_ID"
           }
         ]
       },

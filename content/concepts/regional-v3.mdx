@@ -1,4 +1,4 @@
-export const meta = {title:"Regional V3",slug:"/concepts/regional-v3",category:"Core Concepts",documentationStatus:"under-review",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+export const meta = {title:"Regional V3",slug:"/concepts/regional-v3",category:"Core Concepts",documentationStatus:"under-review",appliesTo:"1.3.0",lastVerified:"2026-08-25"}
 
 ## One context, explicit capabilities
 
@@ -6,14 +6,37 @@ export const meta = {title:"Regional V3",slug:"/concepts/regional-v3",category:"
 JSON-compatible capabilities. Runtime models, LoRA stacks, detectors, images,
 latents, and provider objects are never serialized into the context.
 
-## Released graph scope
+## Provider routing in the 1.3.0 candidate
 
-Collectors expose resources through ordinary persisted typed ConfigUI links.
-Every external selection stores `collector_id` and `resource_id`. Resolution is
-restricted to the same root graph or the same Subgraph definition and fails
-closed when the required provider is missing.
+Registered Registry providers can be selected across graph boundaries inside
+one owning workflow hierarchy. Supported routes include Root to Subgraph,
+Subgraph to Root, and Subgraph to sibling or nested Subgraph. Sibling routes
+travel through their lowest common ancestor instead of relying on global lookup.
 
-Titles, labels, node order, and slot position are never executable fallbacks.
+BV creates program-managed `BV_RUNTIME_RESOURCE_PROVIDER` links and the required
+technical input or output boundaries along the route. These are persisted native
+workflow connections. Debug visibility and the displayed DG anchors are
+presentation only; ordinary ports remain independently usable.
+
+This is the documentation target for the upcoming 1.3.0 release. It does not
+describe the currently published package release.
+
+## Workflow boundary
+
+Provider discovery begins at the consumer's owning root workflow and never
+searches another workflow or browser tab. Missing providers, duplicate domain
+identities, incompatible Registry families, and broken native routes fail closed.
+There is no title-, position-, or proximity-based fallback.
+
+## Persisted identity and native transport
+
+Domain intent stores `document_id`, `region_id`, `collector_id`, and
+`resource_id`. DG transport separately persists a stable `bvDgSenderId` plus the
+receiver and channel selection. Resolution succeeds only when that selection is
+backed by a valid native typed-link chain across every required boundary.
+
+Titles and graph-path labels help people distinguish choices, but never become
+executable identity.
 
 ## Ownership
 
@@ -27,26 +50,41 @@ Capability transformers apply `Replace`, `Merge`, `Subtract`, or `Clear` to an
 explicit scope. Repeating an executor intentionally repeats its behavior; V3
 does not store an execution-history registry.
 
-## Pending release: subgraph-aware DG connections
+## Supported provider families
 
-The following describes the development candidate, not a released version.
-Release approval and the version change are still pending.
+Cross-boundary DG routing applies to the registered Registry integrations:
 
-Supported Registry/provider selections can create persisted typed connections
-across nested and sibling Subgraphs within the same workflow. Stable provider
-and resource identities determine the source; matching titles are not fallbacks.
-Missing or ambiguous sources fail closed.
+- LoRA Registry providers used by opted-in Regional Prompt and Regional LoRA
+  channels;
+- LUT and Detector Registry providers used by enabled Regional Prompt, LUT,
+  and Detailer families.
 
-DG anchors are presentation points for programmatically managed connections,
-not user-draggable ports. Debug mode displays the dotted DG lines at node titles
-and above ordinary Subgraph boundary ports. With debug disabled these lines stay
-hidden; ordinary ports and their connections remain independently usable.
+Manual and legacy Collector channels remain graph-local. The routing layer is
+not a generic arbitrary-port router. Shared Subgraph definitions retain native
+shared-state semantics, and the NodePack requires no modified ComfyUI frontend.
 
-This integration is supplied by the NodePack on the standard ComfyUI frontend.
-No modified ComfyUI installation is required. Shared Subgraph definitions retain
-native shared-state semantics, including mode changes. Do not assume that every
-arbitrary input/output combination forms a valid native bypass mapping.
+## Pending release: existing prompt fields
 
-Throwaway Canary and M0 Fake nodes are not part of the candidate runtime. Old
-development workflows containing them are not release examples; historical empty
-test ports are not automatically removed from saved workflows.
+The development candidate connects the existing Global, Background, and Region
+negative prompt fields throughout the conditioning and attention compilers. No
+additional prompt fields or workflow ports are required.
+
+- `prompt` encodes the negative inputs, including empty text when a scope has no
+  negative prompt.
+- `auto` encodes negatives when Global, Background, or an enabled generation
+  region contains a negative source; otherwise it produces zero conditioning.
+- `zero_out` explicitly produces zero conditioning regardless of entered text.
+
+Anima now passes scoped negatives through the existing conditioning connections.
+Global Negative remains global, Background Negative uses the area outside the
+region masks, and Region Negative follows its region. Attention strengths and
+the configured sampling window still apply; `base_ratio=1` explicitly bypasses
+regional attention. Existing positive background settings are unchanged.
+
+Prompt encoding does not force the sampler to evaluate negative conditioning.
+At CFG 1 the usual CFG path skips the negative branch, so filling a negative
+field alone does not guarantee an image change. Use guidance settings supported
+by the actual checkpoint; distilled models may intentionally run without CFG.
+
+These 1.3.0 changes have automated regression coverage. Full live generation
+acceptance across all supported checkpoints remains a separate verification step.

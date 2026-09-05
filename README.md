@@ -1,11 +1,14 @@
 # BV Node Pack Documentation
 
-English documentation source for BV Node Pack 1.2.1.
+English documentation source for BV Node Pack 1.3.0.
 
 The site covers installation, core concepts, complete public-node reference,
 task-oriented guides, workflow recipes, UI behavior, compatibility, migration,
-troubleshooting, and support. Images and workflows remain explicit placeholders
-until they pass the review queue.
+troubleshooting, and support. All 62 public nodes have reviewed Nord screenshots;
+56 have reviewed connection diagrams, four have no applicable native connection
+example and two retain explicit capture limitations. These diagrams are not
+executed workflow recipes. Optional missing guide artwork is omitted from reader
+pages; the asset manifest retains all 19 missing supplementary assets and workflows.
 
 ## Local preview
 
@@ -34,12 +37,17 @@ npm run validate
 Regenerate the runtime-derived node contracts from a local BV Node Pack checkout:
 
 ```powershell
-npm run generate:contracts -- --source "C:\path\to\bv_nodepack" --target-version 1.2.1 --generated-date 2026-08-30
+npm run generate:contracts -- --source "C:\path\to\bv_nodepack" --generated-date YYYY-MM-DD
 ```
 
 The generator requires Python and the source checkout's runtime dependencies.
+When needed, add `--comfy-root "C:\path\to\ComfyUI"` to resolve ComfyUI imports.
+`asset-overrides.json` is authoritative for reviewed node and connection assets;
+full regeneration validates their original PNG hashes and workflow metadata.
 It is a separate maintainer snapshot step and is not part of the GitHub Pages
-build. No machine-specific source path is stored in this repository.
+build. The documentation target comes from `documentation-target.json`; the
+generated contract records the selected package checkout's own source version.
+No machine-specific source path is stored in this repository.
 
 Validation checks runtime-derived public-node coverage, stable asset IDs, MDX
 page coverage, internal links, asset-manifest coverage, and materialized routes.
@@ -64,7 +72,7 @@ are committed, reviewed snapshot inputs. `dist/` is an ephemeral CI artifact.
 
 ## Content status
 
-- Target documentation version: 1.2.1
+- Target documentation version: 1.3.0
 - Public node reference pages: committed snapshots generated from an explicitly
   selected BV Node Pack checkout
 - Screenshot and workflow status: tracked in `src/generated/asset-manifest.json`

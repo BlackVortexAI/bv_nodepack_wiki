@@ -23,9 +23,12 @@ export type AssetEntry = {
   id: string;
   page: string;
   type: AssetType;
-  status: "missing" | "captured" | "reviewed" | "optimized" | "approved";
+  status: "missing" | "captured" | "reviewed" | "optimized" | "approved" | "not-applicable" | "blocked";
   instructions: string;
   path?: string;
   aiGeneratedReviewRequired?: boolean;
+  workflowEmbedded?: boolean;
+  sha256?: string;
+  caption?: string;
 };
 export type PageInfo = {path: string; title: string; summary: string; section: string; hidden?: boolean};

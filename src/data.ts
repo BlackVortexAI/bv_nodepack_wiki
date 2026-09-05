@@ -1,14 +1,18 @@
 import contractData from "./generated/node-contracts.json";
 import assetData from "./generated/asset-manifest.json";
+import documentationTarget from "../documentation-target.json";
 import type {AssetEntry, NodeContract, PageInfo} from "./types";
 
-export const targetVersion = contractData.targetVersion;
+export const contractSnapshotDate = contractData.generated;
+export const targetVersion = documentationTarget.targetVersion;
+export const targetReleaseState = documentationTarget.releaseState;
+export const targetReleaseLabel = documentationTarget.releaseLabel;
 export const nodes = contractData.nodes as unknown as NodeContract[];
 export const publicNodes = nodes;
 export const assets = assetData.assets as AssetEntry[];
 
 export const pages: PageInfo[] = [
-  {path: "/", title: "BV Node Pack 1.2", summary: "Visual regional prompting and deep workflow tools for ComfyUI.", section: "Home"},
+  {path: "/", title: `BV Node Pack ${targetVersion}`, summary: "Visual regional prompting and deep workflow tools for ComfyUI.", section: "Home"},
   {path: "/getting-started/installation", title: "Installation", summary: "Install, update, and verify BV Node Pack.", section: "Getting Started"},
   {path: "/getting-started/quick-start", title: "Quick Start", summary: "Create a deterministic first workflow.", section: "Getting Started"},
   {path: "/concepts/regional-v3", title: "Regional V3", summary: "Understand persisted context, collectors, resources, and scoped capabilities.", section: "Core Concepts"},

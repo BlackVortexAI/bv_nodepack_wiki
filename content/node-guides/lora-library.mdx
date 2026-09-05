@@ -1,4 +1,4 @@
-export const meta = {title:"Use the LoRA Library",slug:"/node-guides/lora-library",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.2.1",lastVerified:"2026-08-30"}
+export const meta = {title:"Use the LoRA Library",slug:"/node-guides/lora-library",category:"Node Guides",documentationStatus:"under-review",appliesTo:"1.3.0",lastVerified:"2026-09-04"}
 
 ## Goal
 
@@ -8,21 +8,49 @@ resources to Regional V3 scopes without rebuilding a long manual collector chain
 ## Configure the registry
 
 1. Add **BV LoRA Registry** and open its shared BV editor.
-2. Add named entries from the local LoRA inventory.
-3. Use Quick selection for focused changes or Full mode when the complete entry
-   configuration is required.
-4. Save the registry and select its resources from the Regional LoRA capability
-   editor.
+2. Create a named stack for each reusable assignment, then choose **Add LoRA**.
+3. Search or filter the machine-local catalog by directory, model, type,
+   category, tag, or author. Select a result to inspect its metadata and add it
+   to the target stack.
+4. Expand an entry to set its strength and state. Trigger words can be copied
+   directly from the entry details.
+5. Save the registry and select its named resources from the Regional LoRA
+   capability editor.
+
+**Reload local metadata** rebuilds the catalog from the currently loaded local
+LoRA paths and their supported sidecars and preview images. It does not change
+registry identities or download missing resources. After updating BV Node Pack
+Python code, restart ComfyUI before expecting the running catalog service to use
+that code.
+
+Previews explicitly classified as PG or safe are shown by default. PG-13,
+mature or adult-rated previews, and unrated previews remain hidden unless
+**Show mature or unrated previews** is enabled. That opt-in is a persistent,
+machine-local ComfyUI preference; it is not stored in the workflow or registry.
 
 The registry is workflow-scoped. Resource identity is based on the registry
 collector and entry ID, not merely on a display label or filename. Changes to a
 different workflow or Subgraph scope must not silently retarget consumers.
 
+## Screenshot context
+
+The screenshots use local Fern and Frieren LoRAs only as configuration examples;
+BV Node Pack does not include those resources. Both PNGs intentionally retain
+the underlying example workflow. Dragging either image into ComfyUI loads that
+workflow, but does not recreate or reopen the Registry or Add LoRA window shown
+in the capture.
+
 ## Compatibility path
 
 **BV Named LoRA Stack** and **BV LoRA Stack Collector** remain available for the
 published chain-based contract and compatible external stack producers. Use
-**BV LoRA Registry** for the workflow-local library path available in 1.2.0 and later.
+**BV LoRA Registry** for the workflow-local library path in 1.3.0.
+
+Regional stacks load LoRAs only from configured ComfyUI LoRA directories,
+including additional folders registered in `extra_model_paths.yaml`. Absolute
+legacy paths within those directories remain supported. If a saved stack points
+outside them, register its folder in ComfyUI and restart. A configured directory
+may itself be a symbolic link; file links escaping its resolved root are rejected.
 
 ## Verification boundary
 

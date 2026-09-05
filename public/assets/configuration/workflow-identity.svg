@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title description">
+  <title id="title">Workflow Identity scope and persistence</title>
+  <desc id="description">Three cases compare a valid provider relationship in one root graph, a valid relationship authored inside one Subgraph definition, and a rejected lookup across workflows. Stable IDs carry executable identity while labels and visual order are presentation only.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d121a"/>
+      <stop offset="1" stop-color="#111925"/>
+    </linearGradient>
+    <linearGradient id="validCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#142921"/>
+      <stop offset="1" stop-color="#111c1a"/>
+    </linearGradient>
+    <linearGradient id="subgraphCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172744"/>
+      <stop offset="1" stop-color="#151a2b"/>
+    </linearGradient>
+    <linearGradient id="rejectedCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b191f"/>
+      <stop offset="1" stop-color="#1d151a"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#253247" stroke-opacity=".28" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity=".34"/>
+    </filter>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0l10 5-10 5z" fill="#71d5a5"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0l10 5-10 5z" fill="#79a6f4"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="980" rx="24" fill="url(#background)"/>
+  <rect width="1600" height="980" rx="24" fill="url(#grid)"/>
+  <path d="M0 8Q0 0 8 0h1584q8 0 8 8v4H0z" fill="#477bd2"/>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="64" y="78" fill="#79a4ec" font-size="18" font-weight="700" letter-spacing="3">CORE CONCEPT</text>
+    <text x="64" y="135" fill="#f0f5fc" font-size="42" font-weight="750">Workflow Identity · scope and persistence</text>
+    <text x="64" y="174" fill="#98a8bd" font-size="20">Stable IDs define relationships. Titles, position, and visible order never retarget execution.</text>
+
+    <g filter="url(#shadow)">
+      <rect x="60" y="224" width="470" height="420" rx="20" fill="url(#validCard)" stroke="#3f8b69" stroke-width="2"/>
+      <rect x="60" y="224" width="470" height="52" rx="20" fill="#245f48"/>
+      <path d="M60 255h470v21H60z" fill="#245f48"/>
+      <circle cx="88" cy="250" r="12" fill="#163d2d" stroke="#82dfae" stroke-width="2"/>
+      <path d="M81 250l5 5 10-12" fill="none" stroke="#9cf0c5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="110" y="255" fill="#d8ffea" font-size="15" font-weight="700" letter-spacing="1.5">VALID SCOPE</text>
+      <text x="88" y="326" fill="#f0f5fc" font-size="27" font-weight="750">Same root graph</text>
+      <text x="88" y="359" fill="#a9c5b8" font-size="16">Provider and consumer share one graph boundary.</text>
+
+      <rect x="88" y="389" width="414" height="158" rx="14" fill="#0d1715" stroke="#3c6f59" stroke-dasharray="8 7"/>
+      <text x="108" y="416" fill="#739a88" font-size="13" font-weight="700" letter-spacing="1.2">ROOT GRAPH</text>
+      <rect x="110" y="443" width="132" height="68" rx="12" fill="#1d3b30" stroke="#4c9472"/>
+      <text x="134" y="473" fill="#d9f5e7" font-size="15" font-weight="700">Provider</text>
+      <text x="128" y="495" fill="#83ad99" font-size="12">collector</text>
+      <rect x="348" y="443" width="132" height="68" rx="12" fill="#1d3b30" stroke="#4c9472"/>
+      <text x="366" y="473" fill="#d9f5e7" font-size="15" font-weight="700">Consumer</text>
+      <text x="374" y="495" fill="#83ad99" font-size="12">executor</text>
+      <path d="M242 477H348" fill="none" stroke="#71d5a5" stroke-width="4" marker-end="url(#arrowGreen)"/>
+      <rect x="241" y="424" width="144" height="28" rx="14" fill="#162b24" stroke="#40795f"/>
+      <text x="254" y="443" fill="#9be2bd" font-size="11">stable ID reference</text>
+
+      <text x="88" y="582" fill="#c2ddcf" font-size="15" font-weight="650">✓ Resolves by collector_id + resource_id</text>
+      <text x="88" y="611" fill="#819f91" font-size="14">Renaming either visible label does not retarget it.</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="565" y="224" width="470" height="420" rx="20" fill="url(#subgraphCard)" stroke="#567fc3" stroke-width="2"/>
+      <rect x="565" y="224" width="470" height="52" rx="20" fill="#315d9e"/>
+      <path d="M565 255h470v21H565z" fill="#315d9e"/>
+      <circle cx="593" cy="250" r="12" fill="#1d3c6c" stroke="#9fc2ff" stroke-width="2"/>
+      <path d="M586 250l5 5 10-12" fill="none" stroke="#b9d3ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="615" y="255" fill="#e0ebff" font-size="15" font-weight="700" letter-spacing="1.5">VALID SCOPE</text>
+      <text x="593" y="326" fill="#f0f5fc" font-size="27" font-weight="750">Same Subgraph definition</text>
+      <text x="593" y="359" fill="#aebed7" font-size="16">The relationship is authored inside the definition.</text>
+
+      <rect x="593" y="389" width="414" height="158" rx="14" fill="#101624" stroke="#5879ae" stroke-dasharray="8 7"/>
+      <text x="613" y="416" fill="#7996c2" font-size="13" font-weight="700" letter-spacing="1.2">SUBGRAPH DEFINITION</text>
+      <rect x="615" y="443" width="132" height="68" rx="12" fill="#1c2e4d" stroke="#527ab8"/>
+      <text x="639" y="473" fill="#e0eaff" font-size="15" font-weight="700">Provider</text>
+      <text x="636" y="495" fill="#8ca6cf" font-size="12">definition-local</text>
+      <rect x="853" y="443" width="132" height="68" rx="12" fill="#1c2e4d" stroke="#527ab8"/>
+      <text x="871" y="473" fill="#e0eaff" font-size="15" font-weight="700">Consumer</text>
+      <text x="874" y="495" fill="#8ca6cf" font-size="12">definition-local</text>
+      <path d="M747 477H853" fill="none" stroke="#79a6f4" stroke-width="4" marker-end="url(#arrowBlue)"/>
+      <rect x="748" y="424" width="134" height="28" rx="14" fill="#17243a" stroke="#456da9"/>
+      <text x="760" y="443" fill="#acc9f8" font-size="11">persisted in definition</text>
+
+      <rect x="593" y="569" width="122" height="34" rx="17" fill="#192844" stroke="#456ba3"/>
+      <text x="620" y="592" fill="#a9c6f3" font-size="13">Instance A</text>
+      <rect x="727" y="569" width="122" height="34" rx="17" fill="#192844" stroke="#456ba3"/>
+      <text x="754" y="592" fill="#a9c6f3" font-size="13">Instance B</text>
+      <text x="867" y="591" fill="#8298ba" font-size="13">isolated runtime state</text>
+      <text x="593" y="624" fill="#8197b8" font-size="14">No instance searches another instance for resources.</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="1070" y="224" width="470" height="420" rx="20" fill="url(#rejectedCard)" stroke="#864956" stroke-width="2"/>
+      <rect x="1070" y="224" width="470" height="52" rx="20" fill="#713742"/>
+      <path d="M1070 255h470v21h-470z" fill="#713742"/>
+      <circle cx="1098" cy="250" r="12" fill="#4a252c" stroke="#f092a1" stroke-width="2"/>
+      <path d="M1092 244l12 12M1104 244l-12 12" stroke="#ffb0bc" stroke-width="3" stroke-linecap="round"/>
+      <text x="1120" y="255" fill="#ffe2e7" font-size="15" font-weight="700" letter-spacing="1.5">REJECTED</text>
+      <text x="1098" y="326" fill="#f0f5fc" font-size="27" font-weight="750">Cross-workflow lookup</text>
+      <text x="1098" y="359" fill="#c5a5ab" font-size="16">A matching title is not executable identity.</text>
+
+      <rect x="1098" y="389" width="174" height="158" rx="14" fill="#171116" stroke="#70404a" stroke-dasharray="8 7"/>
+      <text x="1118" y="416" fill="#a06b75" font-size="13" font-weight="700">WORKFLOW A</text>
+      <rect x="1119" y="454" width="132" height="68" rx="12" fill="#342027" stroke="#7d4954"/>
+      <text x="1143" y="484" fill="#f1dbe0" font-size="15" font-weight="700">Provider</text>
+      <text x="1135" y="506" fill="#a97b84" font-size="12">title: “Shared”</text>
+
+      <rect x="1338" y="389" width="174" height="158" rx="14" fill="#171116" stroke="#70404a" stroke-dasharray="8 7"/>
+      <text x="1358" y="416" fill="#a06b75" font-size="13" font-weight="700">WORKFLOW B</text>
+      <rect x="1359" y="454" width="132" height="68" rx="12" fill="#342027" stroke="#7d4954"/>
+      <text x="1377" y="484" fill="#f1dbe0" font-size="15" font-weight="700">Consumer</text>
+      <text x="1375" y="506" fill="#a97b84" font-size="12">title: “Shared”</text>
+
+      <path d="M1251 488H1359" fill="none" stroke="#db6f80" stroke-width="3" stroke-dasharray="8 7"/>
+      <circle cx="1305" cy="488" r="18" fill="#321b21" stroke="#db6f80" stroke-width="2"/>
+      <path d="M1297 480l16 16M1313 480l-16 16" stroke="#f293a2" stroke-width="3" stroke-linecap="round"/>
+
+      <text x="1098" y="582" fill="#efb1bc" font-size="15" font-weight="650">✕ No fallback by title, position, or slot number</text>
+      <text x="1098" y="611" fill="#a57b83" font-size="14">Missing provider → explicit failure, never silent retargeting.</text>
+    </g>
+
+    <g transform="translate(60 690)">
+      <rect width="1480" height="184" rx="18" fill="#121923" stroke="#344259"/>
+      <line x1="740" y1="22" x2="740" y2="162" stroke="#2d394c"/>
+
+      <circle cx="36" cy="42" r="11" fill="#173d2d" stroke="#71d5a5"/>
+      <path d="M30 42l4 4 8-10" fill="none" stroke="#9bedc1" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="58" y="48" fill="#d8f5e7" font-size="16" font-weight="700" letter-spacing="1.3">EXECUTABLE IDENTITY</text>
+      <text x="30" y="81" fill="#829d91" font-size="14">Persisted IDs survive rename, reorder, save, reload, and valid group copy.</text>
+      <g font-size="13" font-weight="650">
+        <rect x="30" y="108" width="126" height="36" rx="18" fill="#173328" stroke="#3e735b"/><text x="48" y="132" fill="#9ddab9">document_id</text>
+        <rect x="168" y="108" width="104" height="36" rx="18" fill="#173328" stroke="#3e735b"/><text x="190" y="132" fill="#9ddab9">node_id</text>
+        <rect x="284" y="108" width="126" height="36" rx="18" fill="#173328" stroke="#3e735b"/><text x="302" y="132" fill="#9ddab9">collector_id</text>
+        <rect x="422" y="108" width="130" height="36" rx="18" fill="#173328" stroke="#3e735b"/><text x="440" y="132" fill="#9ddab9">resource_id</text>
+        <rect x="564" y="108" width="104" height="36" rx="18" fill="#173328" stroke="#3e735b"/><text x="582" y="132" fill="#9ddab9">slot_id</text>
+      </g>
+
+      <circle cx="776" cy="42" r="11" fill="#382329" stroke="#db7888"/>
+      <path d="M770 36l12 12M782 36l-12 12" stroke="#f4a1ae" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="798" y="48" fill="#f2d9de" font-size="16" font-weight="700" letter-spacing="1.3">PRESENTATION ONLY</text>
+      <text x="770" y="81" fill="#9f858b" font-size="14">Useful for humans, but never a lookup key or executable fallback.</text>
+      <g font-size="13" font-weight="650">
+        <rect x="770" y="108" width="88" height="36" rx="18" fill="#302026" stroke="#6d424b"/><text x="794" y="132" fill="#d6aeb6">title</text>
+        <rect x="870" y="108" width="88" height="36" rx="18" fill="#302026" stroke="#6d424b"/><text x="892" y="132" fill="#d6aeb6">label</text>
+        <rect x="970" y="108" width="134" height="36" rx="18" fill="#302026" stroke="#6d424b"/><text x="990" y="132" fill="#d6aeb6">canvas order</text>
+        <rect x="1116" y="108" width="130" height="36" rx="18" fill="#302026" stroke="#6d424b"/><text x="1136" y="132" fill="#d6aeb6">slot position</text>
+        <rect x="1258" y="108" width="150" height="36" rx="18" fill="#302026" stroke="#6d424b"/><text x="1276" y="132" fill="#d6aeb6">visible proximity</text>
+      </g>
+    </g>
+
+    <g transform="translate(60 906)">
+      <rect width="1480" height="46" rx="12" fill="#182331" stroke="#41516a"/>
+      <text x="22" y="29" fill="#79a4ec" font-size="14" font-weight="750" letter-spacing="1.4">COPY RULE</text>
+      <text x="132" y="29" fill="#b6c3d4" font-size="15">Copy provider and consumer together when their relationship must survive. An isolated consumer never searches elsewhere.</text>
+    </g>
+  </g>
+</svg>

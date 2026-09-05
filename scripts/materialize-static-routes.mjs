@@ -5,9 +5,11 @@ const root = resolve(import.meta.dirname, "..");
 const dist = resolve(root, "dist");
 const template = await readFile(resolve(dist, "index.html"), "utf8");
 const contracts = JSON.parse(await readFile(resolve(root, "src/generated/node-contracts.json"), "utf8"));
+const documentationTarget = JSON.parse(await readFile(resolve(root, "documentation-target.json"), "utf8"));
+const rootDescription = `BV Node Pack ${documentationTarget.targetVersion} documentation ${documentationTarget.releaseState.replaceAll("-", " ")} for ComfyUI.`;
 
 const routes = [
-  ["/", "BV Node Pack Documentation", "BV Node Pack 1.0 documentation for ComfyUI."],
+  ["/", "BV Node Pack Documentation", rootDescription],
   ["/getting-started/installation", "Installation", "Install, update, and verify BV Node Pack."],
   ["/getting-started/quick-start", "Quick Start", "Create a deterministic first BV Node Pack workflow."],
   ["/concepts/regional-v3", "Regional V3", "Persisted contexts, collectors, resources, and scoped capabilities."],
@@ -32,7 +34,7 @@ const routes = [
   ["/troubleshooting", "Troubleshooting", "Diagnose BV Node Pack installation, graph, model, and UI problems."],
   ["/troubleshooting/known-issues", "Known Issues", "Confirmed BV Node Pack limitations and workarounds."],
   ["/support/reporting-issues", "Reporting Issues", "Prepare a reproducible BV Node Pack bug report."],
-  ["/reference/glossary", "Glossary", "Canonical BV Node Pack 1.0 terminology."],
+  ["/reference/glossary", "Glossary", `Canonical terminology for the BV Node Pack ${documentationTarget.targetVersion} documentation target.`],
   ["/reference/changelog", "Changelog", "Complete BV Node Pack version history with source and reconstruction boundaries."],
   ["/reference/acknowledgements", "Acknowledgements", "Projects and integrations used by documented BV workflows."],
   ["/migration/deprecated-nodes", "Deprecated Nodes", "Replacement paths and temporary compatibility guarantees."],
@@ -42,7 +44,7 @@ const routes = [
 for (const [route, title, description] of routes) {
   let html = template
     .replace("<title>BV Node Pack Documentation</title>", `<title>${escapeHtml(title)} · BV Node Pack</title>`)
-    .replace('content="BV Node Pack 1.0 documentation for ComfyUI."', `content="${escapeHtml(description)}"`);
+    .replace('content="BV Node Pack documentation for ComfyUI."', `content="${escapeHtml(description)}"`);
   const target = route === "/" ? resolve(dist, "index.html") : resolve(dist, route.slice(1), "index.html");
   await mkdir(resolve(target, ".."), {recursive: true});
   await writeFile(target, html, "utf8");

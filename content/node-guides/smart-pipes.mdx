@@ -1,4 +1,4 @@
-export const meta = {title:"Build with Smart Pipes",slug:"/node-guides/smart-pipes",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.0.0",lastVerified:"2026-08-25"}
+export const meta = {title:"Build with Smart Pipes",slug:"/node-guides/smart-pipes",category:"Node Guides",documentationStatus:"in-progress",appliesTo:"1.3.0",lastVerified:"2026-08-25"}
 
 ## Goal
 
@@ -21,11 +21,11 @@ Use **BV Smart Pipe Merge** with explicit source order. Genuine branch writes
 beat inherited base values; later divergent writes win. Wireless routing remains
 workflow-scoped and must not leak across simultaneously open workflows.
 
-## Pending release: DG routing through Subgraphs
+## DG routing through Subgraphs in 1.3.0
 
-The development candidate uses the shared DG connection infrastructure for
-Smart Pipe selections. This is not yet a released-version promise: user acceptance
-and the version update remain pending.
+Version 1.3.0 uses the shared DG connection infrastructure for Smart Pipe
+selections. Automated fixtures cover routing and saved connections; verify your
+actual nested workflow with save/reload and execution after updating.
 
 Choose the upstream Smart Pipe through its configuration. The NodePack manages
 the connection across graph boundaries; do not drag from a DG anchor. Debug lines
