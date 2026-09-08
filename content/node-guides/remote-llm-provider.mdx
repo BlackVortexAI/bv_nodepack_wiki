@@ -73,7 +73,7 @@ there if the proxy serves untrusted users.
 ## User settings and secrets
 
 BV Node Pack runtime state lives in ComfyUI's private System User directory,
-which the `/userdata` HTTP API never serves:
+which ComfyUI's own `/userdata` routes do not serve:
 
 ```text
 <ComfyUI user directory>/__bv_nodepack/
@@ -84,12 +84,15 @@ which the `/userdata` HTTP API never serves:
 ```
 
 Versions before 1.4.2 stored these files under `default/bv_nodepack/`. The
-first start of 1.4.2 moves them: each file is copied, verified and then removed
-from the public folder. An existing private file is never overwritten; a
+first start of 1.4.2 moves them: settings, secrets and catalogs are copied,
+verified and then removed from the public folder; the response cache is deleted
+there and rebuilt on demand. An existing private file is never overwritten; a
 differing public file is kept beside it as `<name>.legacy-<time>-<id>.recovered`,
-which is never loaded. On a ComfyUI without the System User API the pack stores
-nothing in the public folder and disables API-key providers with a clear
-message until ComfyUI is updated.
+which is never loaded. The ComfyUI startup log lists each migrated, removed,
+recovered or failed file. On a ComfyUI without the System User API the pack
+neither reads nor writes the public folder and disables API-key providers with
+a clear message; existing public files remain there until ComfyUI is updated or
+you remove them.
 
 `remote_llm_settings.json` is an optional advanced override document. It can
 select a default provider profile and override a profile's model, reasoning
