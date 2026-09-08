@@ -2,18 +2,26 @@ export const meta = {
   slug: "/node-guides/remote-llm-provider",
   title: "Configure a Remote LLM Provider",
   documentationStatus: "under-review",
-  appliesTo: "1.3.0",
+  appliesTo: "1.4.1",
 };
 
 ## Choose a provider
 
 Add **BV Remote LLM Provider** and choose a hosted or local
 OpenAI-compatible profile. The shipped provider catalog defines the supported
-profiles and their product defaults. Values selected on the node are serialized
-as normal workflow widgets; credentials are not.
+profiles and their product defaults. The profile, model, reasoning effort and
+timeout are serialized as normal workflow widgets; the destination address and
+credentials are not.
 
-For a custom compatible service, use a profile that permits a custom endpoint.
-Treat that endpoint as private infrastructure information when it contains an
+The node has no endpoint widget. The backend decides where requests go:
+
+- fixed profiles always use their catalog address;
+- **OpenAI Compatible** uses the address you approved when saving its API key;
+- **Local OpenAI Compatible (Custom)** uses the `custom_endpoint` entry for that
+  profile in `remote_llm_settings.json`, or its catalog loopback address.
+
+A workflow, including an imported one, cannot select a destination. Treat a
+custom endpoint as private infrastructure information when it contains an
 internal host name, address, tenant, or routing identifier.
 
 ## Configure credentials
@@ -23,12 +31,13 @@ authentication. BV Node Pack stores keys separately from both the workflow and
 the optional user-default settings. Deleting a configured key does not rewrite
 workflow JSON.
 
-The dialog shows the exact destination that will receive the key. Verify that
-address before saving. Each key is bound to its profile and complete approved
-endpoint, including scheme, host, port and path. A workflow cannot authorize a
-different destination by changing its endpoint widget. To use a different
-destination, open **Configure API Key**, verify the new address and enter the key
-again. No existing key is prefilled or silently reassigned.
+The dialog shows the exact destination that will receive the key. For the
+custom profile you enter the Chat Completions URL in the dialog itself; fixed
+profiles display their catalog address. Verify that address before saving. Each
+key is bound to its profile and complete approved endpoint, including scheme,
+host, port and path. To use a different destination, open **Configure API Key**,
+enter the new address, verify it and enter the key again. No existing key is
+prefilled or silently reassigned.
 
 Existing keys for fixed catalog providers continue to use their catalog endpoint.
 An older key for a custom provider has no destination approval and is blocked until
@@ -56,8 +65,23 @@ BV Node Pack runtime state belongs below the active ComfyUI user directory:
 ```
 
 `remote_llm_settings.json` is an optional advanced override document. It can
-select a default provider profile and override only that profile's custom
-endpoint, model, reasoning effort, and timeout. When the file is absent, the
+select a default provider profile and override a profile's model, reasoning
+effort, timeout and, for the key-less local custom profile, its endpoint:
+
+```json
+{
+  "schema": "bv.remote_llm.settings",
+  "version": 1,
+  "default_profile_id": "openai-compatible",
+  "profile_defaults": {
+    "local-openai-compatible": {
+      "custom_endpoint": "http://127.0.0.1:5000/v1/chat/completions"
+    }
+  }
+}
+```
+
+Only HTTPS or loopback HTTP addresses are accepted. When the file is absent, the
 provider catalog supplies the same defaults in memory; source checkout and Wiki
 directories do not need a generated copy.
 
