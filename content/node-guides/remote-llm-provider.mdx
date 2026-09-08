@@ -2,7 +2,7 @@ export const meta = {
   slug: "/node-guides/remote-llm-provider",
   title: "Configure a Remote LLM Provider",
   documentationStatus: "under-review",
-  appliesTo: "1.4.1",
+  appliesTo: "1.4.2",
 };
 
 ## Choose a provider
@@ -53,16 +53,43 @@ Local profiles such as Ollama, LM Studio, llama.cpp, vLLM, and LocalAI can use
 their catalogued loopback endpoints without bearer authentication. Confirm the
 selected local server and model are running before executing the workflow.
 
+## Who may save or delete a key
+
+Saving or deleting an API key is a management action. BV Node Pack accepts it
+only from a client on the same machine while ComfyUI listens on a loopback
+address (`--listen 127.0.0.1` or `::1`), the same rule ComfyUI-Manager applies
+in its local mode. There is no password. On a `--listen` server the dialog
+reports that management is local-only; edit the files below directly, or create
+`admin_settings.json` next to them with
+
+```json
+{"schema": "bv.admin.settings", "version": 1, "allow_remote_management": true}
+```
+
+to open management deliberately to every client that can reach the server. A
+reverse proxy running on the same machine counts as local; protect the routes
+there if the proxy serves untrusted users.
+
 ## User settings and secrets
 
-BV Node Pack runtime state belongs below the active ComfyUI user directory:
+BV Node Pack runtime state lives in ComfyUI's private System User directory,
+which the `/userdata` HTTP API never serves:
 
 ```text
-<ComfyUI user directory>/default/bv_nodepack/
+<ComfyUI user directory>/__bv_nodepack/
   remote_llm_settings.json
   remote_llm_secrets.json
+  admin_settings.json          (optional operator opt-in, see above)
   cache/remote_llm/
 ```
+
+Versions before 1.4.2 stored these files under `default/bv_nodepack/`. The
+first start of 1.4.2 moves them: each file is copied, verified and then removed
+from the public folder. An existing private file is never overwritten; a
+differing public file is kept beside it as `<name>.legacy-<time>-<id>.recovered`,
+which is never loaded. On a ComfyUI without the System User API the pack stores
+nothing in the public folder and disables API-key providers with a clear
+message until ComfyUI is updated.
 
 `remote_llm_settings.json` is an optional advanced override document. It can
 select a default provider profile and override a profile's model, reasoning
