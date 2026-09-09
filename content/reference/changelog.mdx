@@ -1,9 +1,126 @@
-export const meta = { slug: "/reference/changelog", title: "Changelog", documentationStatus: "under-review", appliesTo: "1.3.0", lastVerified: "2026-09-05" };
+export const meta = { slug: "/reference/changelog", title: "Changelog", documentationStatus: "under-review", appliesTo: "1.3.0", lastVerified: "2026-09-09" };
 
 This page contains the complete version history recoverable from the repository's
 own changelogs and version commits. Versions 0.0.7 through 0.0.1 are visibly separated
 because their summaries are reconstructed from Git commit evidence rather than a
 contemporary changelog.
+
+## 1.4.3 — 2026-09-08
+
+- Make the **BV Seed** action buttons respond to normal clicks again, also when
+  the seed is exposed on a Subgraph node. Since ComfyUI frontend 1.49 the canvas
+  treats pointer movement later than 32 ms after pressing as a drag, so ordinary
+  clicks on canvas buttons were often lost; the seed buttons now take over the
+  press and fire on release inside the button.
+- Trim the frontend bundle: the JSON editor loads only Prism's core and JSON
+  grammar instead of the full Prism build.
+- Refactor three backend call sites to plain imports and a single download-host
+  constant (autocomplete dataset environment lookup, LUT downloader session,
+  catalog source URLs). No behaviour, limit or safeguard changes; these were the
+  literals the Comfy Registry's automated scan reported for 1.4.1 and 1.4.2.
+- Add a repository test that mirrors the Registry's automated scan over the
+  packaged file set against a checked-in baseline. It is a compatibility check,
+  not a security test.
+
+After updating: reload the browser so the seed button fix is picked up. If other
+canvas buttons still need several clicks, raise the ComfyUI setting
+`Comfy.Pointer.ClickBufferTime` from 32 to 150 ms. Restart ComfyUI and reload the
+browser after updating both backend and frontend.
+
+## 1.4.2 — 2026-09-08
+
+- Store Remote LLM settings and API keys, the response cache, LUT working
+  catalogs and the LoRA header cache in ComfyUI's private System User directory
+  `user/__bv_nodepack/`, with a verified one-time migration from the public
+  `user/default/bv_nodepack/` folder. Without the System User API the pack fails
+  closed instead of using the public folder.
+- Accept management requests (API keys, LUT install, catalog channel) only from
+  local clients of a loopback-only ComfyUI, with an explicit operator opt-in file
+  for `--listen` servers. Read routes and the catalog refresh stay open.
+- Download LUT catalogs and files only from `raw.githubusercontent.com`, checked
+  before any connection, and never follow redirects.
+- Apply one folder-containment rule to LoRA previews, sidecars, Civitai model
+  hashes and the LUT install directory, resolving links before use.
+- Bound raster masks to 32 megapixels, deduplicate autocomplete dataset
+  selections, check LUT existence before downloading and limit parallel installs.
+- Exclude `.github/` from the Registry package and remove outdated example
+  workflows, fixtures and scripts from the runtime repository.
+
+After updating: BV runtime files move once at startup from `user/default/bv_nodepack/`
+to `user/__bv_nodepack/`; the startup log lists every migrated, removed, recovered
+or failed file, and a differing private file keeps the public content next to it
+as `*.recovered`. Until this update the public files were potentially readable
+through `/userdata` by anyone who could reach the server; consider rotating API
+keys if that applies to your setup. On a ComfyUI without the System User API,
+API-key providers and catalog updates are disabled with a clear message. For a
+`--listen` server, management actions need `admin_settings.json` in
+`user/__bv_nodepack/` with `{"schema": "bv.admin.settings", "version": 1,
+"allow_remote_management": true}`, which deliberately opens them to every client
+that can reach the server. Foreign LUT catalogs are not supported; place your own
+`.cube` files in the LUT folder instead. Restart ComfyUI and reload the browser.
+
+## 1.4.1 — 2026-09-08
+
+- Restrict **BV Text Log Writer** names to `.txt`, `.json` and `.log`; other
+  endings are rejected before anything is written.
+- Approve every workflow-supplied LoRA path with one shared rule: inside the
+  configured ComfyUI LoRA folders and `.safetensors` only. This covers LoRA
+  loading and the Civitai metadata hashes; pickle-based files never reach
+  `torch.load`, and files outside those folders are never read.
+- Remove the endpoint widget from **BV Remote LLM Provider**. The destination is
+  resolved by the backend from the provider catalog, the approved API-key binding
+  or the local settings file; the Configure dialog takes the destination for
+  custom bearer profiles. Saved workflows load unchanged apart from the dropped
+  endpoint value.
+- Move internal design notes out of the Registry package.
+
+After updating: rename text logs that used other endings. Convert pickle-based
+LoRAs (`.pt`, `.ckpt`, `.bin`) before referencing them. For **OpenAI Compatible**,
+open **Configure API Key**, enter the destination there and save the key again;
+for **Local OpenAI Compatible (Custom)**, set
+`profile_defaults.local-openai-compatible.custom_endpoint` in
+`remote_llm_settings.json` when the catalog loopback address does not fit.
+Restart ComfyUI and reload the browser.
+
+## 1.4.0 — 2026-09-08
+
+- Add reference-driven regional editing with **BV Reference Registry**, inline
+  `@` references, regional tool controls and the Krea 2 Identity Edit path.
+- Add an exclusive workflow-wide Global LoRA Registry with per-editor opt-out,
+  preserving legacy groups and manual selections. Share occurrence-aware automatic
+  MODEL/CLIP preparation across attention and Native Conditioning consumers.
+- Append Native Conditioning's MODEL input and output while retaining the
+  positive and negative output ordinals; use the returned MODEL with the sampler.
+- Support official Krea 2 LoRA key mappings and header-based routing evidence.
+  Catalog routing distinguishes token candidates, multipass and unknown files;
+  target-model compatibility remains unknown without a concrete model check.
+- Autosave valid Registry edits, catalog additions and Undo/Redo. Keep peer
+  Global changes synchronized and preserve invalid drafts without replacing
+  valid state.
+- Grow Registry nodes to a bounded content height before scrolling, enlarge the
+  catalog and its preview pane, fill and paginate results automatically, and
+  persist header-check results across restarts.
+- Show validated Civitai links from local metadata and concise routing
+  information; fix Quick Edit spacing and textarea resizing; improve Smart
+  Pipe/Subgraph lifecycle and sizing behaviour.
+- Add **BV Image Dimensions**, which reads an image's aspect ratio and
+  square-area resolution for **BV Empty Latent Random Ratio**.
+
+After updating: enable **Global** in the intended LoRA Registry; only one Registry
+may be active across the workflow and its Subgraphs, and conflicting saved
+selections require an explicit choice. With **BV Regional Native Conditioning**,
+connect the source MODEL input and use its MODEL output (slot 2) for the sampler
+when applying Global LoRAs; positive and negative outputs stay in slots 0 and 1.
+Registry dialog changes save immediately to the node configuration; save the
+workflow separately to persist them to disk. Restart ComfyUI and reload the
+browser after updating both backend and frontend.
+
+The 1.4.x releases have automated regression coverage, a server-side HTTP probe
+and browser reviews on an isolated loopback instance. Full live model-generation
+and saved-workflow acceptance across every supported model and Subgraph
+arrangement are not established by those tests; verify important workflows after
+updating. Registry review remains open in
+[issue #217](https://github.com/Comfy-Org/registry-backend/issues/217).
 
 ## 1.3.0 — 2026-09-05
 

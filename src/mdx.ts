@@ -1,6 +1,6 @@
 import type {ComponentType} from "react";
 
-type ContentModule = {default: ComponentType; meta: {slug: string; title: string; documentationStatus?: string}};
+type ContentModule = {default: ComponentType; meta: {slug: string; title: string; documentationStatus?: string; appliesTo?: string}};
 const modules = import.meta.glob<ContentModule>("../content/**/*.mdx", {eager: true});
 
 export const contentBySlug = new Map(

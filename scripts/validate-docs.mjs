@@ -24,7 +24,7 @@ if (!["in-preparation", "released", "archived"].includes(documentationTarget.rel
 if (typeof documentationTarget.releaseLabel !== "string" || !documentationTarget.releaseLabel.trim()) errors.push("Documentation release label is missing");
 if (typeof contracts.sourceVersion !== "string" || !contracts.sourceVersion.trim()) errors.push("Contract snapshot source version is missing");
 if (typeof contracts.generated !== "string" || !contracts.generated.trim()) errors.push("Contract snapshot generation date is missing");
-if (contracts.nodes.length !== 62) errors.push(`Expected 62 public nodes, found ${contracts.nodes.length}`);
+if (contracts.nodes.length !== 64) errors.push(`Expected 64 public nodes, found ${contracts.nodes.length}`);
 if (contracts.nodes.some(node => node.internal || node.status === "internal")) errors.push("Public contracts contain internal nodes");
 
 for (const node of contracts.nodes) {
@@ -75,7 +75,14 @@ for (const route of routes) {
 
 const contentFiles = await walk(resolve(root, "content"));
 const contentSlugs = [];
+// A page declares the release it was verified against. It may trail the documentation
+// target (verified on an earlier release and not re-checked since), but it may never
+// claim a release newer than the target.
 const targetVersionExemptSlugs = new Set(["/migration/upgrading-to-1-0", "/reference/changelog"]);
+const compareVersions = (a, b) => {
+  const [x, y] = [a, b].map(version => version.split(".").map(Number));
+  return x[0] - y[0] || x[1] - y[1] || x[2] - y[2];
+};
 for (const file of contentFiles.filter(file => file.endsWith(".mdx"))) {
   const source = await readFile(file, "utf8");
   const slug = source.match(/slug:\s*["']([^"']+)["']/)?.[1];
@@ -83,8 +90,9 @@ for (const file of contentFiles.filter(file => file.endsWith(".mdx"))) {
   else {
     contentSlugs.push(slug);
     const appliesTo = source.match(/appliesTo:\s*["']([^"']+)["']/)?.[1];
-    if (!targetVersionExemptSlugs.has(slug) && appliesTo !== documentationTarget.targetVersion) {
-      errors.push(`${file} applies to ${appliesTo ?? "no target"}, expected ${documentationTarget.targetVersion}`);
+    if (!targetVersionExemptSlugs.has(slug)) {
+      if (!appliesTo || !/^[0-9]+\.[0-9]+\.[0-9]+$/.test(appliesTo)) errors.push(`${file} applies to ${appliesTo ?? "no target"}, expected a release version up to ${documentationTarget.targetVersion}`);
+      else if (compareVersions(appliesTo, documentationTarget.targetVersion) > 0) errors.push(`${file} applies to ${appliesTo}, which is newer than the documentation target ${documentationTarget.targetVersion}`);
     }
   }
   for (const match of source.matchAll(/\]\((\/bv_nodepack_wiki)?(\/[^)#\s]+)(?:#[^)]+)?\)/g)) {

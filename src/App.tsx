@@ -100,14 +100,16 @@ function Sidebar({path, go, open, close, documentationStatus}: {path: string; go
   </aside>;
 }
 
-function Toc({items, documentationStatus}: {items: string[]; documentationStatus: string}) {
-  return <aside className="toc"><b>On this page</b>{items.map(item => <a key={item} href={`#${item.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>{item}</a>)}<hr/><small>Target</small><code>BV Node Pack {targetVersion}</code><small>Release</small><span>{targetReleaseLabel}</span><small>Documentation</small><span>{documentationStatus.replaceAll("-", " ")}</span></aside>;
+function Toc({items, documentationStatus, appliesTo}: {items: string[]; documentationStatus: string; appliesTo?: string}) {
+  return <aside className="toc"><b>On this page</b>{items.map(item => <a key={item} href={`#${item.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>{item}</a>)}<hr/><small>Target</small><code>BV Node Pack {targetVersion}</code><small>Release</small><span>{targetReleaseLabel}</span>{appliesTo && <><small>Page verified against</small><code>BV Node Pack {appliesTo}</code></>}<small>Documentation</small><span>{documentationStatus.replaceAll("-", " ")}</span></aside>;
 }
 
 function Layout({path, go, children, toc = []}: {path: string; go: (path: string) => void; children: React.ReactNode; toc?: string[]}) {
   const [menu, setMenu] = useState(false);
-  const documentationStatus = contentBySlug.get(path)?.meta.documentationStatus ?? "under-review";
-  return <div className="shell"><a href="#content" className="skip">Skip to content</a><Header go={go} onMenu={() => setMenu(true)} documentationStatus={documentationStatus}/><Sidebar path={path} go={go} open={menu} close={() => setMenu(false)} documentationStatus={documentationStatus}/><main id="content">{children}</main>{toc.length > 0 && <Toc items={toc} documentationStatus={documentationStatus}/>} {menu && <button className="scrim" onClick={() => setMenu(false)} aria-label="Close navigation overlay"/>}</div>;
+  const meta = contentBySlug.get(path)?.meta;
+  const documentationStatus = meta?.documentationStatus ?? "under-review";
+  const appliesTo = typeof meta?.appliesTo === "string" ? meta.appliesTo : undefined;
+  return <div className="shell"><a href="#content" className="skip">Skip to content</a><Header go={go} onMenu={() => setMenu(true)} documentationStatus={documentationStatus}/><Sidebar path={path} go={go} open={menu} close={() => setMenu(false)} documentationStatus={documentationStatus}/><main id="content">{children}</main>{toc.length > 0 && <Toc items={toc} documentationStatus={documentationStatus} appliesTo={appliesTo}/>} {menu && <button className="scrim" onClick={() => setMenu(false)} aria-label="Close navigation overlay"/>}</div>;
 }
 
 function AssetImage({src, alt, assetId}: {src: string; alt: string; assetId: string}) {
@@ -226,6 +228,7 @@ function behaviorFor(node: NodeContract) {
   return "The node evaluates from its serialized widget values and connected inputs. Keep values deterministic when the node is used in a reproducible documentation workflow.";
 }
 function limitationsFor(node: NodeContract) {
+  if (node.slug === "bv-regional-krea-2-attention") return <>Experimental output may change. The <code>multipass_legacy</code> regional-LoRA path can fail in ComfyUI WeightHooks with quantized models, including an <code>AttributeError</code> for <code>weight_scale</code>. As checked on 6 September 2026, <a href="https://github.com/Comfy-Org/ComfyUI/issues/14382">ComfyUI #14382</a> remains open. The related fixes are still open and unmerged: <a href="https://github.com/Comfy-Org/ComfyUI/pull/14413">#14413</a> addresses synthetic quantization keys, <a href="https://github.com/Comfy-Org/ComfyUI/pull/15532">#15532</a> addresses setter-backed WeightHooks, and <a href="https://github.com/Comfy-Org/ComfyUI/pull/15533">#15533</a> addresses offloaded Hook weights. The closed <a href="https://github.com/BlackVortexAI/bv_nodepack/issues/4">BV report #4</a> records this failure; its closure does not establish an upstream fix. These reports do not establish a fix for every Krea model or quantization variant.</>;
   if (node.status === "experimental") return "Experimental output may change. Compare results with an unchanged seed, model, sampler, resolution, and workflow before adopting it for quality-sensitive work.";
   if (node.status === "deprecated") return "Compatibility is temporary. The node may be removed after 25 October 2026; migrate and resave important workflows first.";
   if (node.name.includes("Remote LLM")) return "Provider availability, model behavior, rate limits, and structured-output support are controlled by the selected service. API keys are stored separately from workflow JSON.";

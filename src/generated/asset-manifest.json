@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-05",
+  "generated": "2026-09-09",
   "assets": [
     {
       "id": "bv-latent-random-aspect-ratio--node--default",
@@ -730,6 +730,22 @@
       "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
     },
     {
+      "id": "bv-reference-registry--node--default",
+      "page": "/node-reference/bv-reference-registry",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Reference Registry in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-reference-registry--connection--minimal",
+      "page": "/node-reference/bv-reference-registry",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Reference Registry. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "aiGeneratedReviewRequired": true
+    },
+    {
       "id": "bv-regional-anima-adapter--node--default",
       "page": "/node-reference/bv-regional-anima-adapter",
       "type": "node",
@@ -1314,6 +1330,22 @@
       "sha256": "a02f0570ef367675f2d891a9b6b7c1d74b454af6195fde2c1d4ece3fd08b5e3f",
       "workflowEmbedded": true,
       "caption": "Native wiring diagram, visually and structurally reviewed. Not an executed workflow; additional inputs and model resources may be required."
+    },
+    {
+      "id": "bv-image-dimensions--node--default",
+      "page": "/node-reference/bv-image-dimensions",
+      "type": "node",
+      "status": "missing",
+      "instructions": "Transparent export of BV Image Dimensions in its default newly-created state. Show the title, widgets, and normal public ports; no selection outline or cursor.",
+      "aiGeneratedReviewRequired": false
+    },
+    {
+      "id": "bv-image-dimensions--connection--minimal",
+      "page": "/node-reference/bv-image-dimensions",
+      "type": "connection",
+      "status": "missing",
+      "instructions": "Minimal meaningful ConfigUI wiring centered on BV Image Dimensions. Use a neutral dark canvas and only the smallest required upstream/downstream context.",
+      "aiGeneratedReviewRequired": true
     },
     {
       "id": "bv-inspect-any--node--default",

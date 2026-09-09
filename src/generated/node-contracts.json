@@ -1,7 +1,7 @@
 {
-  "targetVersion": "1.3.0",
-  "sourceVersion": "1.3.0",
-  "generated": "2026-09-05",
+  "targetVersion": "1.4.3",
+  "sourceVersion": "1.4.3",
+  "generated": "2026-09-09",
   "nodes": [
     {
       "name": "BV Latent Random Aspect Ratio",
@@ -1760,6 +1760,36 @@
       "inputError": null
     },
     {
+      "name": "BV Reference Registry",
+      "slug": "bv-reference-registry",
+      "description": "Collect native images, audio and video with stable identities for BV Regional Prompt reference catalogs.",
+      "category": "🌀 BV Node Pack/regional/references",
+      "section": "Regional Prompting",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "config_json",
+            "type": "STRING"
+          }
+        ],
+        "optional": [
+          {
+            "name": "media",
+            "type": "COMFY_AUTOGROW_V3"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "resource_provider",
+          "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+        }
+      ],
+      "inputError": null
+    },
+    {
       "name": "BV Regional Anima Adapter",
       "slug": "bv-regional-anima-adapter",
       "description": "Compile a BV Regional document for the external Anima regional-conditioning chain format.",
@@ -2286,6 +2316,106 @@
             "type": "BV_REGIONAL_LORA_BINDINGS",
             "legacy": true,
             "legacyGuidance": "Use the BV_REGIONAL context input."
+          },
+          {
+            "name": "mode",
+            "type": "choice: generation | identity_edit"
+          },
+          {
+            "name": "vae",
+            "type": "VAE"
+          },
+          {
+            "name": "target_latent",
+            "type": "LATENT"
+          },
+          {
+            "name": "edit_fit",
+            "type": "choice: fit | crop"
+          },
+          {
+            "name": "reference_boost",
+            "type": "FLOAT"
+          },
+          {
+            "name": "reference_resource_provider_1",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_2",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_3",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_4",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_5",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_6",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_7",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_8",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_9",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_10",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_11",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_12",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_13",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_14",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_15",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_16",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_17",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_18",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_19",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_20",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
           }
         ]
       },
@@ -2708,6 +2838,10 @@
             "type": "BV_REGIONAL_LORA_BINDINGS",
             "legacy": true,
             "legacyGuidance": "Use the BV_REGIONAL context input."
+          },
+          {
+            "name": "model",
+            "type": "MODEL"
           }
         ]
       },
@@ -2719,6 +2853,10 @@
         {
           "name": "negative",
           "type": "CONDITIONING"
+        },
+        {
+          "name": "patched_model",
+          "type": "MODEL"
         }
       ],
       "inputError": null
@@ -3082,6 +3220,90 @@
           {
             "name": "canvas_image",
             "type": "IMAGE"
+          },
+          {
+            "name": "reference_v3_config_json",
+            "type": "STRING"
+          },
+          {
+            "name": "reference_resource_provider_1",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_2",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_3",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_4",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_5",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_6",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_7",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_8",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_9",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_10",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_11",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_12",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_13",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_14",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_15",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_16",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_17",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_18",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_19",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
+          },
+          {
+            "name": "reference_resource_provider_20",
+            "type": "BV_RUNTIME_RESOURCE_PROVIDER"
           }
         ],
         "hidden": [
@@ -3392,10 +3614,6 @@
             "type": "choice: OpenAI Compatible | OpenAI | Venice | Abacus.AI | Ollama (Local) | LM Studio (Local) | llama.cpp Server (Local) | vLLM (Local) | LocalAI (Local) | Local OpenAI Compatible (Custom)"
           },
           {
-            "name": "custom_endpoint",
-            "type": "STRING"
-          },
-          {
             "name": "model",
             "type": "STRING"
           },
@@ -3574,6 +3792,34 @@
       "outputs": [
         {
           "name": "color",
+          "type": "INT"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Image Dimensions",
+      "slug": "bv-image-dimensions",
+      "description": "Read an image's exact aspect ratio and square-area resolution for BV Empty Latent Random Ratio.",
+      "category": "🌀 BV Node Pack/image",
+      "section": "Utilities",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "image",
+            "type": "IMAGE"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "ratio",
+          "type": "STRING"
+        },
+        {
+          "name": "custom_resolution",
           "type": "INT"
         }
       ],

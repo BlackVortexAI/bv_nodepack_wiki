@@ -1,14 +1,22 @@
 # BV Node Pack Documentation
 
-English documentation source for BV Node Pack 1.3.0.
+English documentation source for BV Node Pack 1.4.3.
 
 The site covers installation, core concepts, complete public-node reference,
 task-oriented guides, workflow recipes, UI behavior, compatibility, migration,
-troubleshooting, and support. All 62 public nodes have reviewed Nord screenshots;
-56 have reviewed connection diagrams, four have no applicable native connection
-example and two retain explicit capture limitations. These diagrams are not
-executed workflow recipes. Optional missing guide artwork is omitted from reader
-pages; the asset manifest retains all 19 missing supplementary assets and workflows.
+troubleshooting, and support. 62 of the 64 public nodes have reviewed Nord
+screenshots from the 1.3.0 capture pass; 56 have reviewed connection diagrams,
+four have no applicable native connection example and two retain explicit
+capture limitations. The two nodes added in 1.4.0 (BV Image Dimensions,
+BV Reference Registry) and the four nodes whose ports changed since 1.3.0
+(BV Regional Krea 2 Attention, BV Regional Native Conditioning, BV Regional
+Prompt, BV Remote LLM Provider) still await a 1.4.x capture pass. These diagrams
+are not executed workflow recipes. Optional missing guide artwork is omitted from
+reader pages; the asset manifest retains all 23 missing assets and workflows.
+
+Each content page declares the release it was verified against (`appliesTo`).
+Pages may trail the documentation target until they are re-checked; they may
+never claim a release newer than the target.
 
 ## Local preview
 
@@ -72,7 +80,7 @@ are committed, reviewed snapshot inputs. `dist/` is an ephemeral CI artifact.
 
 ## Content status
 
-- Target documentation version: 1.3.0
+- Target documentation version: 1.4.3
 - Public node reference pages: committed snapshots generated from an explicitly
   selected BV Node Pack checkout
 - Screenshot and workflow status: tracked in `src/generated/asset-manifest.json`
