@@ -39,6 +39,7 @@ export const pages: PageInfo[] = [
   {path: "/support/reporting-issues", title: "Reporting Issues", summary: "Prepare a reproducible BV Node Pack bug report without leaking secrets.", section: "Support"},
   {path: "/reference/glossary", title: "Glossary", summary: "Canonical terms used throughout BV Node Pack documentation.", section: "Reference"},
   {path: "/reference/changelog", title: "Changelog", summary: "Complete BV Node Pack version history with source and reconstruction boundaries.", section: "Reference"},
+  {path: "/reference/security-and-registry-evidence", title: "Security and Registry Evidence", summary: "Route boundaries, file and download limits, release process and the dated Registry review status.", section: "Reference"},
   {path: "/reference/acknowledgements", title: "Acknowledgements", summary: "Projects and integrations that support documented BV workflows.", section: "Reference"},
   {path: "/migration/deprecated-nodes", title: "Deprecated Nodes", summary: "Replacement paths and temporary compatibility guarantees.", section: "Compatibility"},
 ];

@@ -24,7 +24,7 @@ if (!["in-preparation", "released", "archived"].includes(documentationTarget.rel
 if (typeof documentationTarget.releaseLabel !== "string" || !documentationTarget.releaseLabel.trim()) errors.push("Documentation release label is missing");
 if (typeof contracts.sourceVersion !== "string" || !contracts.sourceVersion.trim()) errors.push("Contract snapshot source version is missing");
 if (typeof contracts.generated !== "string" || !contracts.generated.trim()) errors.push("Contract snapshot generation date is missing");
-if (contracts.nodes.length !== 64) errors.push(`Expected 64 public nodes, found ${contracts.nodes.length}`);
+if (contracts.nodes.length !== 65) errors.push(`Expected 65 public nodes, found ${contracts.nodes.length}`);
 if (contracts.nodes.some(node => node.internal || node.status === "internal")) errors.push("Public contracts contain internal nodes");
 
 for (const node of contracts.nodes) {
@@ -65,7 +65,7 @@ for (const asset of manifest.assets) {
     }
   }
 }
-const fixedRoutes = ["", "getting-started/installation", "getting-started/quick-start", "concepts/regional-v3", "concepts/workflow-identity", "node-reference", "node-guides/regional-v3", "node-guides/lut-library", "node-guides/lora-library", "node-guides/detailer-loop", "node-guides/smart-pipes", "node-guides/prompt-processing", "node-guides/remote-llm-provider", "node-guides/workflow-control", "node-guides/subgraph-interface", "node-guides/latent-utilities", "workflow-recipes", "workflow-recipes/verification", "ui-guide", "ui-guide/image-export", "compatibility", "migration/upgrading-to-1-0", "migration/deprecated-nodes", "troubleshooting", "troubleshooting/known-issues", "support/reporting-issues", "reference/glossary", "reference/changelog", "reference/acknowledgements"];
+const fixedRoutes = ["", "getting-started/installation", "getting-started/quick-start", "concepts/regional-v3", "concepts/workflow-identity", "node-reference", "node-guides/regional-v3", "node-guides/lut-library", "node-guides/lora-library", "node-guides/detailer-loop", "node-guides/smart-pipes", "node-guides/prompt-processing", "node-guides/remote-llm-provider", "node-guides/workflow-control", "node-guides/subgraph-interface", "node-guides/latent-utilities", "workflow-recipes", "workflow-recipes/verification", "ui-guide", "ui-guide/image-export", "compatibility", "migration/upgrading-to-1-0", "migration/deprecated-nodes", "troubleshooting", "troubleshooting/known-issues", "support/reporting-issues", "reference/glossary", "reference/changelog", "reference/acknowledgements", "reference/security-and-registry-evidence"];
 const routes = [...fixedRoutes, ...contracts.nodes.map(node => `node-reference/${node.slug}`)];
 const routeSet = new Set(routes.map(route => `/${route}`.replace(/\/$/, "") || "/"));
 for (const route of routes) {

@@ -36,6 +36,7 @@ const routes = [
   ["/support/reporting-issues", "Reporting Issues", "Prepare a reproducible BV Node Pack bug report."],
   ["/reference/glossary", "Glossary", `Canonical terminology for the BV Node Pack ${documentationTarget.targetVersion} documentation target.`],
   ["/reference/changelog", "Changelog", "Complete BV Node Pack version history with source and reconstruction boundaries."],
+  ["/reference/security-and-registry-evidence", "Security and Registry Evidence", "Route boundaries, file and download limits, release process and the dated Registry review status."],
   ["/reference/acknowledgements", "Acknowledgements", "Projects and integrations used by documented BV workflows."],
   ["/migration/deprecated-nodes", "Deprecated Nodes", "Replacement paths and temporary compatibility guarantees."],
   ...contracts.nodes.map(node => [`/node-reference/${node.slug}`, node.name, node.description]),

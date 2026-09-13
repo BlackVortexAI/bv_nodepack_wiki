@@ -1,14 +1,14 @@
 # BV Node Pack Documentation
 
-English documentation source for BV Node Pack 1.4.3.
+English documentation source for BV Node Pack 1.4.4.
 
 The site covers installation, core concepts, complete public-node reference,
 task-oriented guides, workflow recipes, UI behavior, compatibility, migration,
-troubleshooting, and support. 62 of the 64 public nodes have reviewed Nord
+troubleshooting, and support. 62 of the 65 public nodes have reviewed Nord
 screenshots from the 1.3.0 capture pass; 56 have reviewed connection diagrams,
 four have no applicable native connection example and two retain explicit
 capture limitations. The two nodes added in 1.4.0 (BV Image Dimensions,
-BV Reference Registry) and the four nodes whose ports changed since 1.3.0
+BV Reference Registry), the node added in 1.4.4 (BV Text) and the four nodes whose ports changed since 1.3.0
 (BV Regional Krea 2 Attention, BV Regional Native Conditioning, BV Regional
 Prompt, BV Remote LLM Provider) still await a 1.4.x capture pass. These diagrams
 are not executed workflow recipes. Optional missing guide artwork is omitted from
@@ -80,7 +80,7 @@ are committed, reviewed snapshot inputs. `dist/` is an ephemeral CI artifact.
 
 ## Content status
 
-- Target documentation version: 1.4.3
+- Target documentation version: 1.4.4
 - Public node reference pages: committed snapshots generated from an explicitly
   selected BV Node Pack checkout
 - Screenshot and workflow status: tracked in `src/generated/asset-manifest.json`

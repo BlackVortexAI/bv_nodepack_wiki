@@ -1,9 +1,48 @@
-export const meta = { slug: "/reference/changelog", title: "Changelog", documentationStatus: "under-review", appliesTo: "1.3.0", lastVerified: "2026-09-09" };
+export const meta = { slug: "/reference/changelog", title: "Changelog", documentationStatus: "under-review", appliesTo: "1.3.0", lastVerified: "2026-09-13" };
 
 This page contains the complete version history recoverable from the repository's
 own changelogs and version commits. Versions 0.0.7 through 0.0.1 are visibly separated
 because their summaries are reconstructed from Git commit evidence rather than a
 contemporary changelog.
+
+## 1.4.4 — 2026-09-13
+
+- Add **BV Text**, a native multiline text node with a STRING output and optional
+  writing assistance: translate or improve the field through the configured Remote
+  LLM provider, undo the last replacement, and switch between General, Krea 2 and
+  Custom prompt profiles. Assistance runs only when clicked; queue execution returns
+  the stored text unchanged. The assistance route is management-gated, reads at most
+  192 KiB, keeps one request in flight and can only reach the endpoint the stored API
+  key was approved for.
+- Reuse prepared MODEL/CLIP state for Krea 2 and Anima LLLite consumers across
+  repeated runs when the LoRA stack, strengths and files are unchanged; any file,
+  option or patch change invalidates the entry.
+- Give every Remote LLM request one wall-clock budget that covers connecting, the
+  status line and headers, chunked framing and the body. A provider that stalls or
+  trickles data is cut off at the configured timeout; the writing-assistance slot is
+  freed for the next request. Writing assistance uses the profile's configured
+  `timeout_seconds` instead of a fixed 60 seconds.
+- Read every JSON request body of the pack's routes through one bounded reader with a
+  route-specific limit; oversized or malformed bodies are refused with 413 or 400
+  before any work starts.
+- Ship `SECURITY.md` with the pack's security model and add the
+  [Security and Registry evidence](/reference/security-and-registry-evidence) page.
+- Start the frontend bundle with a readable header naming the vendored libraries and
+  versions; list all eight bundled libraries in `THIRD_PARTY_NOTICES.md`.
+- Turn the Registry scan replica into a hard test, add a packaged-file-set test, and
+  exclude design references, brand sources and a TypeScript declaration from the
+  package. Compatibility and packaging checks, not security tests.
+- Publish only from a commit whose Validate run succeeded, with read-only permissions,
+  a pinned comfy-cli, a manifest of the packaged files before the upload and a
+  comparison of the stored archive afterwards. Validate audits the UI dependencies
+  and verifies that a rebuild emits nothing but the committed bundle.
+
+After updating: restart ComfyUI and reload the browser so the rebuilt bundle and the
+new BV Text node are picked up. Remote LLM requests now fail at the configured
+timeout even when the provider keeps sending slowly; raise `timeout_seconds` in the
+private settings file if a legitimate provider needs longer. Writing-assistance
+settings live in the node's workflow properties and travel with saved workflows and
+image metadata.
 
 ## 1.4.3 — 2026-09-08
 

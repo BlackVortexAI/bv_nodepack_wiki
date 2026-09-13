@@ -1,7 +1,7 @@
 {
-  "targetVersion": "1.4.3",
-  "sourceVersion": "1.4.3",
-  "generated": "2026-09-09",
+  "targetVersion": "1.4.4",
+  "sourceVersion": "1.4.4",
+  "generated": "2026-09-13",
   "nodes": [
     {
       "name": "BV Latent Random Aspect Ratio",
@@ -3875,6 +3875,30 @@
         {
           "name": "seed",
           "type": "INT"
+        }
+      ],
+      "inputError": null
+    },
+    {
+      "name": "BV Text",
+      "slug": "bv-text",
+      "description": "Write native text with optional manual translation, wording improvement and Undo; outputs the stored STRING without running an LLM during generation.",
+      "category": "🌀 BV Node Pack/utils",
+      "section": "Utilities",
+      "status": "stable",
+      "legacyPorts": false,
+      "inputs": {
+        "required": [
+          {
+            "name": "text",
+            "type": "STRING"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING"
         }
       ],
       "inputError": null

@@ -1,0 +1,190 @@
+export const meta = { slug: "/reference/security-and-registry-evidence", title: "Security and Registry Evidence", documentationStatus: "under-review", appliesTo: "1.4.4", lastVerified: "2026-09-13" };
+
+This page is the long form of the pack's [SECURITY.md](https://github.com/BlackVortexAI/bv_nodepack/blob/main/SECURITY.md).
+It lists every HTTP route the pack registers with what a caller controls and what
+limits apply, the file, download and initialization boundaries, the verification
+that was run for 1.4.4, and the Comfy Registry review status at the recorded time.
+It describes the pack; it is not a certification, and the Registry's decision about a
+version is separate from anything written here.
+
+## Registry status at the recorded time
+
+Read on 13 September 2026, 14:16 UTC, from the
+[Registry version history](https://api.comfy.org/nodes/bv_nodepack/versions?include_status_reason=true):
+
+| Versions | Status | Recorded reason |
+|---|---|---|
+| 1.4.3 | Active | `policy-v0.4: reviewed SAFE (code-verified, FP override)` by the Registry reviewer |
+| 1.4.2 | Active | `policy-v0.4: reviewed SAFE (code-verified)` |
+| 1.3.0, 1.4.0, 1.4.1 | Banned | `policy-v0.4: ssrf` (short label, no file or input named) |
+| 1.0.1 to 1.2.3 | Banned | `policy-v0.2` verdicts naming code execution or arbitrary file write reachable through unauthenticated workflow or route input, without a file or input |
+| 1.0.0 and older | Active | automated checks |
+
+The manual review that activated 1.4.3 followed the hardening described below and the
+[review request thread](https://github.com/Comfy-Org/registry-backend/issues/217),
+which the maintainer closed on 13 September 2026. The `ssrf` label on 1.3.0 to 1.4.1
+is consistent with the catalog path closed in 1.4.2 (a caller could replace the
+working LUT catalog through ComfyUI's public user-data routes and thereby choose a
+download URL), but the reviewer did not name the input, so this remains our reading.
+1.4.4 is scanned again after publication; a new version can be flagged until it is
+reviewed regardless of what earlier versions received.
+
+## Threat model
+
+A caller may reach ComfyUI's HTTP routes or submit workflow and widget data without
+any authentication of their own. The pack must not treat client-selected fields as
+operator authorization. The ComfyUI process, the host account, other installed
+extensions and the operator-managed model directories are trusted parts of the
+deployment; the pack does not isolate them from one another and is not a sandbox
+for hostile workflows or model files.
+
+## Management gate
+
+Management routes answer only when every ComfyUI listener address is a loopback
+address and the request's own socket peer is a loopback address. Forwarded headers
+and the ComfyUI user header are ignored, because a client sets them freely. The
+private `admin_settings.json` can enable remote management for a `--listen` server;
+that opens the management routes to every client that can reach the server and does
+not add per-user authorization. A reverse proxy on the same host is a loopback peer
+and must authenticate its own clients. This is a reachability restriction, not a
+login; there is no separate management token.
+
+Source: `py/util/admin_gate.py`; tests: `tests/test_admin_gate.py`.
+
+## Route map
+
+All paths start with `/bv_nodepack`. *Management* means the gate above. *Public*
+means any client that reaches ComfyUI. Body limits are enforced by one shared
+reader that streams the request and refuses oversized (413) or malformed (400)
+bodies before any work starts.
+
+| Route | Caller-controlled input | Effect and boundary | Body limit |
+|---|---|---|---|
+| GET `/completion/status` | none | public: dataset names and sizes | – |
+| POST `/completion/search` | search term, limit, dataset names | public: term clipped to 256 characters, at most 32 datasets by basename, limit 1 to 100; infinite or absurd values fall back to the default | 16 KiB |
+| GET `/detectors/models` | none | public: file names of configured detector folders | – |
+| GET `/loras/catalog` | none | public: scans configured LoRA folders, updates the private header cache | – |
+| GET `/loras/preview` | logical LoRA name | public: name must resolve inside configured LoRA folders after following links; preview is a sibling file with a fixed suffix | – |
+| GET `/luts/catalog` | channel name | public: catalog with install state; creates the download directory below `models/luts` | – |
+| GET `/luts/catalog/status` | none | public: refresh worker state and management capability | – |
+| PUT `/luts/catalog/channel` | channel | management: `stable` or `experimental`, private settings write, refresh | 1 KiB |
+| POST `/luts/catalog/refresh` | none | **public by decision**: fetches the catalog from the fixed source, coalesced per channel, writes private working data | – |
+| GET `/luts/models` | none | public: LUT file names | – |
+| POST `/luts/install` | catalog entry id, channel, version | management: URL, file name and hash come from the validated catalog; one allowed host, no redirects, 8 MiB, hash and format checked before the file becomes visible | 4 KiB |
+| POST `/remote_llm/assist` | text, profile, model, options, style guide | management: strict field set, one request in flight, provider endpoint is the approved key binding, no cache write | 192 KiB |
+| GET `/remote_llm/providers` | none | public: profiles, whether a key is configured, approved and effective endpoints; no key values | – |
+| POST `/remote_llm/api_key` | profile, key, endpoint | management: endpoint validated (HTTPS or loopback HTTP, no credentials, query or fragment) and bound to the key in private storage | 16 KiB |
+| DELETE `/remote_llm/api_key/{profile}` | profile | management: removes the key from private storage | – |
+
+Sources: `py/util/completion/routes.py`, `py/util/detector_routes.py`, `py/util/lora_routes.py`,
+`py/util/lut_routes.py`, `py/util/remote_llm_routes.py`, `py/util/http_body.py`.
+Tests: `tests/test_completion_routes.py`, `tests/test_http_body.py`, `tests/test_lora_routes.py`,
+`tests/test_lut_routes.py`, `tests/test_remote_llm_endpoint_binding.py`, `tests/test_prompt_assist.py`.
+
+## Network egress
+
+The pack contacts two kinds of destinations. LUT catalogs and LUT files come from one
+fixed host, without redirects, with size caps, and the file hash must match the
+catalog before installation. Remote LLM providers are the endpoints the operator
+configured: the catalog address for fixed profiles, the endpoint the stored API key
+was approved for, or the loopback address in the private settings file for the
+key-less local profile. A workflow, a writing-assistance request or an edited
+settings file cannot redirect a key to another endpoint. Remote endpoints use HTTPS
+with normal certificate verification; plain HTTP is accepted for loopback only;
+redirects are rejected.
+
+Every provider request has one wall-clock budget, the configured timeout. It starts
+after the provider's host name has been resolved (name resolution is bounded by the
+operating system, not by the pack) and covers connecting to each resolved address
+with the remaining budget, the TLS handshake, the status line, the headers, chunk
+framing and the body. A watchdog shuts the connection down when the budget is spent,
+so a stalling or trickling provider ends in a failed request instead of a blocked
+worker. Responses are capped at 1 MiB. The pack also requests one catalog refresh when ComfyUI starts. Startup
+fetch and public refresh are retained decisions, documented here so they are not
+mistaken for oversights; an installation that must not contact the network at
+startup should block the catalog host at the network level.
+
+Only the Prompt Enhancer and the writing assistance send user content to a third
+party. Both are management-gated and show the effective endpoint before first use.
+
+Sources: `py/util/lut_catalog.py`, `py/util/remote_llm.py`. Tests: `tests/test_lut_catalog.py`,
+`tests/test_remote_llm_provider.py` (status-line, header, chunked, trailer and body
+stalls against a local server), `tests/test_remote_llm_endpoint_binding.py`.
+
+## Files and storage
+
+| Input or trigger | Sink | Boundary |
+|---|---|---|
+| LoRA selection in a workflow or registry | weight loading | names resolve inside configured LoRA folders after following links; `.safetensors` only; ComfyUI's safe loader |
+| Text Log Writer name and content | file below `output/bv_logs` | sanitized name, `.txt`, `.json` or `.log` only, linked files and directories refused, exclusive creation |
+| LUT selection | text parser and installed `.cube` file | 16 MiB parser cap; installation as described in the route map |
+| Regional mask data | image decoding | prefix, size and pixel budgets checked before decoding, document-wide raster budget |
+| LLLite model patch | ComfyUI's model patch loader | name from ComfyUI's configured `model_patches` folder; loader behavior is ComfyUI's |
+| Startup migration | private settings, secrets and caches | ComfyUI's private System User directory, fails closed without the API; public files are copied, verified and then removed; conflicts are kept as `*.recovered` |
+| Prepared MODEL/CLIP reuse | in-memory only | no disk cache exists, so nothing is deserialized; entries are keyed by file identity and invalidated on change |
+
+Private storage protects against other HTTP clients, not against the host account or
+other extensions in the same process. Keys stored before 1.4.2 lived in the public
+`user/default/` tree and should be rotated if the server was ever reachable from other
+machines while such a key existed.
+
+## Frontend bundle
+
+`js/bv_nodepack.core.js` is built by Vite from the TypeScript sources in `ui/src`. It is
+minified, not obfuscated: it starts with a readable header naming the vendored
+libraries and versions, two builds of the same commit are byte-identical, and
+`THIRD_PARTY_NOTICES.md` lists all eight bundled libraries with license and lockfile
+integrity. The automated Registry scan reports one informational pattern in this
+file; it is `Function.prototype.bind` inside the React, React DOM and scheduler
+production builds (21 occurrences, none in BV code). The pack refactors its own code
+freely but does not edit vendored library code, including not to change how an
+automated scan reads it.
+
+## Verification for 1.4.4
+
+Run on 13 September 2026 on the release candidate tree with the embedded interpreter
+of the local ComfyUI installation (Python 3.13, torch 2.13) and Node 24:
+
+- Python unit tests: 796 tests, 0 failures, 8 skips (native model paths without a
+  model file), run through a clean-path runner because the local embedded interpreter
+  prepends ComfyUI's own test package. They include 39 transport tests against local HTTP
+  and TLS servers and deterministic connect-phase fakes:
+  stalled status lines, headers, chunk headers, trailers, bodies and error bodies,
+  a stalled TLS handshake, an untrusted certificate (still rejected), an unreachable
+  address, and the negative test that writing assistance cannot reach an endpoint
+  other than the approved key binding.
+- Frontend tests: 999 passed; TypeScript type check clean; two consecutive
+  production builds byte-identical.
+- Registry scan replica over the packaged file set: exactly the one accepted React
+  finding, no match outside the baseline.
+- Packaged-file-set test and publish-manifest tests: development trees, build inputs,
+  design references and brand sources excluded; runtime files, notices and README
+  images present; archive comparison rejects byte changes and duplicate members.
+- Isolated ComfyUI 0.34.0 instance (loopback, frontend 1.49.6) running the exported
+  1.4.4 tree: 31 HTTP probes passed, among them the served bundle header, the new
+  node's registration, 413/400 answers of all four bounded readers, ignored forwarded
+  headers, the public refresh route and the assist route failing generically against
+  an unresolvable approved endpoint.
+
+Not covered by these runs: a `--listen` deployment (the gate's fail-closed behavior
+on non-loopback listeners is unit-tested only), GPU and model paths including the
+memory behavior of the preparation caches (no model files on the test machine),
+deployments behind a reverse proxy, and the Registry's own scanner and review, which
+are not public.
+
+## Release process
+
+The Validate workflow runs the Python and frontend suites, the type check, an npm
+audit and a rebuild that must reproduce the committed bundle and emit nothing else.
+The publish job runs only for a commit whose Validate run succeeded, with read-only
+repository permissions and a pinned comfy-cli. It writes a manifest of the packaged
+files with hashes, refuses to publish when a development-only or secret-looking file
+would be included, uploads, and then compares the archive the Registry stored with
+the manifest. Both files are kept as run artifacts of the publish workflow.
+
+## Reporting a concern
+
+Open an issue in the [bv_nodepack repository](https://github.com/BlackVortexAI/bv_nodepack/issues)
+naming the release, the entry point, the input and the observed effect. Do not post
+credentials, private prompts or sensitive workflow files; ask for a private channel in
+the issue if the details are sensitive.
